@@ -39,11 +39,32 @@ SUL_national_corperation_subsidies: "National Corperation Subsidies"
 SUL_new_republic_senate_vote: "New Republic Senate Vote"
 SUL_new_republic_senate_vote_desc: "It is time we chose our side in the Galactic Senate. Will we stick closely to the republic with a centrist government or carve our own future with populist rule?"
 
+SUL_veterans_from_endor: "Endor Veterans"
+
 SUL_events.1.t: "Our Side In The Senate"
 SUL_events.1.d: "It is time we chose our side in the Galactic Senate. Will we stick closely to the republic with a centrist government or carve our own future with populist rule?"
 SUL_events.1.a: "Go Centrist"
 SUL_events.1.b: "Go Populist"
 
+
+###
+
+tt_sul_spend_1500_credits:0 "£dollar_sign_texticon §Y1500.00 Billion credits§! will be §Rremoved§! from the treasury."
+
+ tt_sul_spend_500_credits:0 "£dollar_sign_texticon §Y500.00 Billion credits§! will be §Rremoved§! from the treasury."
+
+ tt_sul_spend_250_credits:0 "£dollar_sign_texticon §Y250.00 Billion credits§! will be §Rremoved§! from the treasury."
+
+tt_sul_gain_250_credits:0 "£dollar_sign_texticon §Y250.00 Billion credits§! will be §Gadded§! to the treasury."
+
+ tt_sul_gain_150_credits:0 "£dollar_sign_texticon §Y150.00 Billion credits§! will be §Gadded§! to the treasury."
+
+ tt_sul_spend_100_credits:0 "£dollar_sign_texticon §Y100.00 Billion credits§! will be §Rremoved§! from the treasury."
+
+ tt_sul_spend_50_credits:0 "£dollar_sign_texticon §Y50.00 Billion credits§! will be §Rremoved§! from the treasury."
+
+
+###
 ########################
 ########################
 ########################

@@ -37,4 +37,25 @@
 			logistics_skill = 1
 		}
 	}
+	SUL_nerra_nora={
+		name="Nerra Nora"
+		portraits={
+			army={
+				large="GFX_portrait_sian"
+			}
+		}
+		corps_commander = {
+			traits = {
+				jungle_rat
+				winter_specialist
+				trickster
+				guerilla_fighter
+			 }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
 }

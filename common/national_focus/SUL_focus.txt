@@ -129,7 +129,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SUL_filler_1
+		id = SUL_veterans_from_endor
 		icon = GFX_reb_goal
 		cost = 5
 		x = 0
@@ -143,7 +143,8 @@ focus_tree = {
 		mutually_exclusive = {
 		}
 		completion_reward = {
-			
+			add_manpower = 2500
+			recruit_character = SUL_nerra_nora
 		}
 
 		ai_will_do = {
@@ -151,21 +152,28 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SUL_filler_4
+		id = SUL_imperial_factories
 		icon = GFX_reb_goal
 		cost = 5
 		x = -1
 		y = 1
-		relative_position_id = SUL_filler_1
+		relative_position_id = SUL_veterans_from_endor
 		prerequisite = {
-			focus = SUL_filler_1
+			focus = SUL_veterans_from_endor
 		}
 		search_filters = {
 		}
 		mutually_exclusive = {
 		}
 		completion_reward = {
-			
+			419 ={
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+					}
+			}
 		}
 
 		ai_will_do = {
@@ -173,21 +181,26 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SUL_filler_5
+		id = SUL_new_republic_loans
 		icon = GFX_reb_goal
 		cost = 5
 		x = 0
 		y = 1
-		relative_position_id = SUL_filler_4
+		relative_position_id = SUL_imperial_factories
 		prerequisite = {
-			focus = SUL_filler_4
+			focus = SUL_imperial_factories
 		}
 		search_filters = {
 		}
 		mutually_exclusive = {
 		}
 		completion_reward = {
-			
+			add_timed_idea = {
+				idea = SUL_new_republic_loans
+				days = 120
+			}
+			custom_effect_tooltip = tt_sul_gain_250_credits
+		add_to_variable = { currency_amount^primary_currency = 250 }
 		}
 
 		ai_will_do = {
@@ -200,9 +213,9 @@ focus_tree = {
 		cost = 5
 		x = 1
 		y = 1
-		relative_position_id = SUL_filler_1
+		relative_position_id = SUL_veterans_from_endor
 		prerequisite = {
-			focus = SUL_filler_1
+			focus = SUL_veterans_from_endor
 		}
 		search_filters = {
 		}
@@ -285,7 +298,7 @@ focus_tree = {
 			focus = SUL_defence_pact_bith
 		}
 		prerequisite = {
-			focus = SUL_filler_5
+			focus = SUL_new_republic_loans
 		}
 		available={
 			ERI={
