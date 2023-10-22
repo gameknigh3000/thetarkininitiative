@@ -3,144 +3,180 @@ guiTypes = {
 	containerWindowType = {
 			name = "pen_internal_factions_ui_window"
 			position = { x = 0 y = 0 }
-			size = { width = 100% height= 778 }
+			size = { width = 100% height= 745 }
 
 		iconType = {
 			name ="PEN_internal_factions_bg"
-			spriteType = "GFX_pentastar"
-			position = { x = 60	 y = 5 }
-			orientation = UPPER_LEFT
+			spriteType = "GFX_pentastar_banner_small"
+			position = { x = 162	 y = -20 }
+			Orientation = centre
 		}
 
 
 
 		buttonType = {
 			name ="ardus_portrait"
-			spriteType = "GFX_PEN_ui_portrait"
-			position = { x = 217	 y = 50 }
-			orientation = UPPER_LEFT
+			spriteType = "GFX_PEN_ui_portrait_kaine"
+			position = { x = 30	 y = 20 }
+			Orientation = centre
+			pdx_tooltip = "PEN_ardus_portrait_tt"
+		}
+		buttonType = {
+			name ="ardus_portrait_selected"
+			spriteType = "GFX_PEN_ui_portrait_selected"
+			position = { x = 30	 y = 20 }
+			Orientation = centre
+			pdx_tooltip = "PEN_ardus_portrait_tt"
 		}
 
 		buttonType = {
 			name ="elta_portrait"
-			spriteType = "GFX_PEN_ui_portrait"
-			position = { x = 100	 y = 140 }
-			orientation = UPPER_LEFT
+			spriteType = "GFX_PEN_ui_portrait_elta"
+			position = { x = 30	 y = 180 }
+			pdx_tooltip = "PEN_elta_portrait_tt"
+		}
+		buttonType = {
+			name ="elta_portrait_selected"
+			spriteType = "GFX_PEN_ui_portrait_selected"
+			position = { x = 30	 y = 180 }
+			Orientation = centre
+			pdx_tooltip = "PEN_elta_portrait_tt"
 		}
 
 		buttonType = {
 			name ="wyrn_portrait"
-			spriteType = "GFX_PEN_ui_portrait"
-			position = { x = 148	 y = 270 }
-			orientation = UPPER_LEFT
+			spriteType = "GFX_PEN_ui_portrait_wyrn"
+			position = { x = 355	 y = 180 }
+			pdx_tooltip = "PEN_wyrn_portrait_tt"
+		}
+		buttonType = {
+			name ="wyrn_portrait_selected"
+			spriteType = "GFX_PEN_ui_portrait_selected"
+			position = { x = 355	 y = 180 }
+			Orientation = centre
+			pdx_tooltip = "PEN_wyrn_portrait_tt"
 		}
 
 		buttonType = {
 			name ="gregor_portrait"
-			spriteType = "GFX_PEN_ui_portrait"
-			position = { x = 285	 y = 270 }
-			orientation = UPPER_LEFT
+			spriteType = "GFX_PEN_ui_portrait_gregor"
+			position = { x = 355	 y = 20 }
+			pdx_tooltip = "PEN_gregor_portrait_tt"
+		}
+		buttonType = {
+			name ="gregor_portrait_selected"
+			spriteType = "GFX_PEN_ui_portrait_selected"
+			position = { x = 355	 y = 20 }
+			pdx_tooltip = "PEN_gregor_portrait_tt"
 		}
 
 		buttonType = {
 			name ="ib_portrait"
-			spriteType = "GFX_PEN_ui_portrait"
-			position = { x = 334	 y = 140 }
-			orientation = UPPER_LEFT
+			spriteType = "GFX_PEN_ui_portrait_ib"
+			position = { x = 30	 y = 340 }
+			pdx_tooltip = "PEN_ib_portrait_tt"
 		}
-
-
+		buttonType = {
+			name ="ib_portrait_selected"
+			spriteType = "GFX_PEN_ui_portrait_selected"
+			position = { x = 30	 y = 340 }
+			pdx_tooltip = "PEN_ib_portrait_tt"
+		}
 
 		iconType = {
-			name ="PEN_loyalty_influence_bg"
-			spriteType = "GFX_loyalty_influence_bg"
-			position = { x = 5	 y = 580 }
-			orientation = UPPER_LEFT
+			name ="ibc_portrait_locked"
+			spriteType = "GFX_PEN_ui_portrait_locked"
+			position = { x = 355	 y = 340 }
 		}
+		buttonType = {
+			name ="ibc_portrait"
+			spriteType = "GFX_PEN_ui_portrait"
+			position = { x = 355	 y = 340 }
+			pdx_tooltip = "PEN_ibc_portrait_tt"
+		}
+		buttonType = {
+			name ="ibc_portrait_selected"
+			spriteType = "GFX_PEN_ui_portrait_selected"
+			position = { x = 355	 y = 340 }
+			pdx_tooltip = "PEN_ibc_portrait_tt"
+		}
+
 
 		iconType = {
 			name ="PEN_loyalty_bar"
-			spriteType = "GFX_PEN_progress_bar"
-			position = { x = 21	 y = 602 }
+			spriteType = "GFX_PEN_ui_loyalty_bar"
+			position = { x = 48	 y = 527 }
 			pdx_tooltip = "PEN_loyalty_tt"
-			orientation = UPPER_LEFT
 		}
 
 		iconType = {
 			name ="PEN_influence_bar"
-			spriteType = "GFX_PEN_progress_bar"
-			position = { x = 85	 y = 602 }
+			spriteType = "GFX_PEN_ui_influence_bar"
+			position = { x = 97	 y = 527 }
 			pdx_tooltip = "PEN_influence_tt"
-			orientation = UPPER_LEFT
+		}
+
+		iconType = {
+			name ="PEN_desc_box"
+			spriteType = "GFX_PEN_ui_desc_box"
+			position = { x = 355	 y = 540 }
+		}
+
+		iconType = {
+			name ="PEN_info_box"
+			spriteType = "GFX_PEN_ui_info_box"
+			position = { x = 145	 y = 597 }
 		}
 
 		instantTextBoxType = {
 			name ="faction_name_text"
-			position = { x = 230 y = 587 }
-			font = "hoi_16mbs"
+			position = { x = 150 y = 525 }
+			font = "hoi_30header"
 			text = "PEN_faction_name_loc"
 			format = center
 			maxHeight = 24
-			orientation = UPPER_LEFT
 		}
 		
 		instantTextBoxType = {
 			name ="loyalty_text"
-			position = { x = -55 y = 755 }
+			position = { x = -32 y = 505 }
 			font = "hoi_16mbs"
 			text = "PEN_loyalty_text_loc"
 			format = center
 			maxHeight = 24
-			orientation = UPPER_LEFT
 		}
 
 		instantTextBoxType = {
 			name ="influence_text"
-			position = { x = 10 y = 755 }
+			position = { x = 22 y = 505 }
 			font = "hoi_16mbs"
 			text = "PEN_influence_text_loc"
 			format = center
 			maxHeight = 24
-			orientation = UPPER_LEFT
 		}
 
 		instantTextBoxType = {
 			name ="effects_text"
-			position = { x = 168 y = 623 }
+			position = { x = 155 y = 603 }
 			font = "hoi_16mbs"
 			text = "PEN_effects_text_loc"
 			format = left
-			maxHeight = 150
-			maxWidth = 160
+			maxHeight = 126
+			maxWidth = 180
 			fixedsize = yes
-			orientation = UPPER_LEFT
 			pdx_tooltip = "PEN_effects_text_loc"
 		}
 
 		instantTextBoxType = {
 			name ="description_text"
-			position = { x = 338 y = 623 }
+			position = { x = 362 y = 546 }
 			font = "hoi_16mbs"
 			text = "PEN_description_text_loc"
 			format = left
-			maxHeight = 150
-			maxWidth = 160
+			maxHeight = 180
+			maxWidth = 110
 			fixedsize = yes
-			orientation = UPPER_LEFT
 			pdx_tooltip = "PEN_description_text_loc"
-		}
-
-		instantTextBoxType = {
-			name ="explanation_text"
-			position = { x = 5 y = 430 }
-			font = "hoi_16mbs"
-			text = "PEN_description_text_loc"
-			format = left
-			maxHeight = 150
-			maxWidth = 400
-			fixedsize = yes
-			orientation = UPPER_LEFT
-			pdx_tooltip = "PEN_explanation_text_loc"
 		}
 	}
 }

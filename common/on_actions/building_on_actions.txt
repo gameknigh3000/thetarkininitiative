@@ -1,16 +1,484 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			## ADDS UNIQUE BUILDINGS VARIABLE TO THEIR RESPECTIVE STATES
+			3 = {
+				set_variable = {unique_building_on_state = token:the_maw_station}
+				set_state_flag = wonder_built_no_destroy_1
+			}
+			22 = {
+				set_variable = {unique_building_on_state = token:ring_of_kafrene}
+				set_state_flag = wonder_built_no_destroy_1
+			}
+			103 = {
+				set_variable = {unique_building_on_state = token:the_wheel}
+				set_state_flag = wonder_built_no_destroy_1
+			}
+			375 = {
+				set_variable = {unique_building_on_state = token:mustafar_works}
+			}
+			18 = {
+				set_variable = {unique_building_on_state = token:beskar_mine}
+			}
+			445 = {
+				set_variable = {unique_building_on_state = token:cloud_city}
+			}
+			97 = {
+				set_variable = {unique_building_on_state = token:theed_palace}
+			}
+			554 = {
+				set_variable = {unique_building_on_state = token:jabbas_palace}
+			}
+			131 = {
+				set_variable = {unique_building_on_state = token:casino_catonica}
+			}
+			151 = {
+				set_variable = {unique_building_on_state = token:yavin_temple}
+			}
+			436 = {
+				set_variable = {unique_building_on_state = token:sundari}
+			}
+			107 = {
+				set_variable = {unique_building_on_state = token:vaders_castle}
+			}
 
+
+	### TILE BLOCKER SET UP, dont have to do it here but makes it easier to edit generalised tile blockers.
+	## For Unique tile blockers its recommended to use the countries history file rather then this file (but commands will be same as below)
+			555 = { ## Kashykkk
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+			}
+	## GENERAL TILE BLOCKERS
+		### DATHOMIR
+			143 = {## TILE BLOCKER EXAMPLE - DATHOMIR BADLANDS AREA
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dathomir_badlands}
+				set_variable = {building_2 = token:dathomir_badlands}
+			}
+			486 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dathomir_badlands}
+				set_variable = {building_2 = token:dathomir_badlands}
+			}
+			487 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dathomir_badlands}
+				set_variable = {building_2 = token:dathomir_badlands}
+			}
+			8 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dathomir_badlands}
+				set_variable = {building_2 = token:rock_slides}
+			}
+		## BYSS
+			439 ={
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dangerous_fauna}
+				set_variable = {building_2 = token:untamed_jungle}
+			}
+			363 ={
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:untamed_jungle}
+				set_variable = {building_2 = token:ruined_city}
+			}
+		## Mustafar
+			434 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:lava_fields}
+			}
+			435 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:lava_fields}
+				set_variable = {building_2 = token:rock_slides}
+			}
+			436 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:lava_fields}
+			}
+		## Bespin
+			447 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:inhospitable_area}
+				set_variable = {building_2 = token:inhospitable_area}
+			}
+		## Taris
+			160 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:ruined_city}
+			}
+			15 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:ruined_city}
+			}
+			163 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:ruined_city}
+			}
+		##	Korriban
+			14 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:rock_slides}
+			}
+			158 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+			161 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+		## Jedah
+			297 ={
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:glassed_surface}
+				set_variable = {building_2 = token:inhospitable_area}
+			}
+			61 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+			286 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+			288 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:glassed_surface}
+				set_variable = {building_2 = token:rock_slides}
+			}
+		## Mandalore
+			18 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:glassed_surface}
+				set_variable = {building_2 = token:glassed_surface}
+			}
+			169 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:glassed_surface}
+				set_variable = {building_2 = token:glassed_surface}
+			}
+			172 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:glassed_surface}
+				set_variable = {building_2 = token:glassed_surface}
+			}
+			166 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:glassed_surface}
+				set_variable = {building_2 = token:glassed_surface}
+			}
+		## Tatooine - god help me on this one
+			551 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+			553 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dead_land_desert}
+				set_variable = {building_2 = token:dead_land_desert}
+			}
+			425 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+			552 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+			426 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+			424 = {
+				set_state_flag = tile_blocker_building_1
+				set_variable = {building_1 = token:dead_land_desert}
+			}
+		## Ryloth
+			390 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dead_land_desert}
+				set_variable = {building_2 = token:dead_land_desert}
+			}
+			396 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:dead_land_desert}
+				set_variable = {building_2 = token:dead_land_desert}
+			}
+		## Eadu
+			349 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:rock_slides}
+				set_variable = {building_2 = token:rock_slides}
+			}
+			343 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:rock_slides}
+				set_variable = {building_2 = token:snow_area}
+			}
+			80 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:rock_slides}
+				set_variable = {building_2 = token:snow_area}
+			}
+			345 = {
+				set_state_flag = tile_blocker_building_1
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_1 = token:rock_slides}
+				set_variable = {building_2 = token:snow_area}
+			}
+		## Coruscant 
+			235	= {
+				set_state_flag = tile_blocker_building_2
+				set_variable = {building_2 = token:undercity_slums}
+			}
+	### END
 		}
 	}
-	on_daily = {
+	on_daily_VON = {
 		effect = {
-
+			## BUILDING CONSTRUCTION CONTROLLER, 4 arrays, building 1,state location and time left ,and building 2. 
+			## It works by tracking building progress linked to its state location and every day reducing by 1. At -1 building will have its effect granted and idea given
+			for_each_loop = {
+				array = global.building_state_constructer_1
+				value = v
+				index = current_array_index
+				set_temp_variable = {state_id_finder = global.building_state_constructer_1^current_array_index}
+				var:state_id_finder = {
+					subtract_from_variable = { time_left_building_1 = 1 }
+				}
+				if = {
+					limit = {
+						var:state_id_finder = {
+							check_variable = { time_left_building_1 = -1 }
+						}
+					}
+					## create building effect
+					var:state_id_finder = {
+						set_temp_variable = {idea_token_passer = building_1}
+						controller = {
+							add_ideas = var:idea_token_passer
+						}
+						meta_effect = {
+							text = {
+								[BUILDING_NAME]_add_effect = yes
+							}
+							BUILDING_NAME = "[?building_1.GetTokenKey]"
+						}
+						clear_variable = time_left_building_1
+					}
+					##
+					add_to_temp_array = {indexs_to_remove_1 = current_array_index}
+					
+				}
+			}
+			for_each_loop = {
+				array = global.building_state_constructer_2
+				value = v
+				index = current_array_index
+				set_temp_variable = {state_id_finder = global.building_state_constructer_2^current_array_index}
+				var:state_id_finder = {
+					subtract_from_variable = { time_left_building_2 = 1 }
+				}
+				if = {
+					limit = {
+						var:state_id_finder = {
+							check_variable = { time_left_building_2 = -1 }
+						}
+					}
+					## create building effect
+					var:state_id_finder = {
+						set_temp_variable = {idea_token_passer = building_2}
+						controller = {
+							add_ideas = var:idea_token_passer
+						}
+						meta_effect = {
+							text = {
+								[BUILDING_NAME]_add_effect = yes
+							}
+							BUILDING_NAME = "[?building_2.GetTokenKey]"
+						}
+						clear_variable = time_left_building_2
+					}
+					##
+					add_to_temp_array = {indexs_to_remove_2 = current_array_index}
+					
+				}
+			}
+			## Finally get rid of all indexs that needed to be removed
+			log = "[?indexs_to_remove_1^0]"
+			for_each_loop = {
+				array = indexs_to_remove_1
+				value = index_location
+				remove_from_array = {
+					array = global.building_state_constructer_1
+					index = index_location
+				}
+				log = ""
+			}
+			for_each_loop = {
+				array = indexs_to_remove_2
+				value = index_location
+				remove_from_array = {
+					array = global.building_state_constructer_2
+					index = index_location
+				}
+			}
 		}
 	}
 	on_state_control_changed = {
 		effect = {
+	#### BUILDING 1 CONTROLLER
+			## Controls state change ownership when buildings are involved, i.e. taking buildings benfits from the losing side and transferring them to the victor
+			FROM.FROM = {
+				if = {
+					limit = {
+						has_var = building_1
+					}
+					set_variable = {building_name_passer = building_1}
+				}
+			}
+			## Below grabs the building and enacts its removal effect on the country that lost the building
+			if = {
+				limit = {
+					has_variable = building_name_passer
+				}
+				if = {
+					limit = {
+						check_variable = {building_name_passer = var:corporate_office_1}
+					}
+					FROM = {
+						corporate_office_1_remove_effect = yes
+					}
+					ROOT = {
+						corporate_office_1_add_effect = yes
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {building_name_passer = var:corporate_office_2}
+					}
+					FROM = {
+						corporate_office_1_remove_effect = yes
+					}
+					ROOT = {
+						corporate_office_1_add_effect = yes
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {building_name_passer = var:corporate_office_3}
+					}
+					FROM = {
+						corporate_office_1_remove_effect = yes
+					}
+					ROOT = {
+						corporate_office_1_add_effect = yes
+					}
+				}
+				## ADD AND REMOVE IDEAS
+				FROM = {
+					if = {
+						limit = { ## FIND IF ANY STATE ALREADY HAS BUILDING AS NOT TO REMOVE IDEA FROM BUILDINGS THAT ARE THERE
+							NOT ={
+								any_controlled_state = {
+									has_variable = building_name_passer
+								}
+							}
+						}
+						remove_ideas = var:building_name_passer
+					}
+				}
+				ROOT = {
+					add_ideas = var:building_name_passer
+				}
+			}
+			clear_variable = building_name_passer
+	#### BUILDING 2 CONTROLLER
+			FROM.FROM = {
+				if = {
+					limit = {
+						has_var = building_2
+					}
+					set_variable = {building_name_passer = building_2}
+				}
+			}
+			## Below grabs the building and enacts its removal effect on the country that lost the building and add effect on country that gained it
+			if = {
+				limit = {
+					has_variable = building_name_passer
+				}
+				if = {
+					limit = {
+						check_variable = {building_name_passer = var:corporate_office_1}
+					}
+					FROM = {
+						corporate_office_1_remove_effect = yes
+					}
+					ROOT = {
+						corporate_office_1_add_effect = yes
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {building_name_passer = var:corporate_office_2}
+					}
+					FROM = {
+						corporate_office_1_remove_effect = yes
+					}
+					ROOT = {
+						corporate_office_1_add_effect = yes
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {building_name_passer = var:corporate_office_3}
+					}
+					FROM = {
+						corporate_office_1_remove_effect = yes
+					}
+					ROOT = {
+						corporate_office_1_add_effect = yes
+					}
+				}
+				FROM = {
+					if = {
+						limit = { ## FIND IF ANY STATE ALREADY HAS BUILDING AS NOT TO REMOVE IDEA FROM BUILDINGS THAT ARE THERE
+							NOT ={
+								any_controlled_state = {
+									has_variable = building_name_passer
+								}
+							}
+						}
+						remove_ideas = var:building_name_passer
+					}
+				}
+				ROOT = {
+						add_ideas = var:building_name_passer
+				}
+			}
+	### END OF BUILDING CONTROLLER
+	### No idea what this is below - Neverfire
 			if = {
 				limit = {
 					FROM.FROM = {

@@ -1,0 +1,3720 @@
+scripted_gui = {
+	corporate_state_screen = {
+	
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		window_name = "corporate_state_screen"
+		
+		visible = {
+			always = yes
+		}
+		
+		effects = {
+			building_1_click = {
+				if = {
+					limit = {
+						is_fully_controlled_by = ROOT
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_state_flag = tile_blocker_building_1
+							}
+						}
+						ROOT = {
+							if = {
+								limit = {
+									ROOT = {
+										has_country_flag = building_1_open
+									}
+								}
+								clr_country_flag = building_2_open
+								clr_country_flag = building_1_open
+							}
+							else = {
+								set_country_flag = building_1_open
+								clr_country_flag = building_2_open
+							}
+						}
+					}
+				}
+				else = {
+					clr_country_flag = building_2_open
+					clr_country_flag = building_1_open
+				}
+			}
+			building_2_click = {
+				if = {
+					limit = {
+						is_fully_controlled_by = ROOT
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_state_flag = tile_blocker_building_2
+							}
+						}
+						ROOT = {
+							if = {
+								limit = {
+									ROOT = {
+										has_country_flag = building_2_open
+									}
+								}
+								clr_country_flag = building_2_open
+								clr_country_flag = building_1_open
+							}
+							else = {
+								set_country_flag = building_2_open
+								clr_country_flag = building_1_open
+							}
+						}
+					}
+				}
+				else = {
+					clr_country_flag = building_2_open
+					clr_country_flag = building_1_open
+				}
+			}
+			remove_building_1_click = {
+				if = {
+					limit = {
+						has_state_flag = tile_blocker_building_1
+					}
+					meta_effect = {
+						text = {
+							[BUILDING_NAME]_tile_blocker_cost_effect = yes ## ENACTS A CUSTOM TRIGGER IN BUILDING SCRIPTED EFFECTS
+						}
+						BUILDING_NAME = "[?building_1.GetTokenKey]"
+					}
+				}else = {
+					set_temp_variable = {building_name_passer = building_1}
+					clear_building_1_effects = yes
+				}
+			}
+			remove_building_2_click = {
+				if = {
+					limit = {
+						has_state_flag = tile_blocker_building_2
+						is_fully_controlled_by = ROOT
+					}
+					meta_effect = {
+						text = {
+							[BUILDING_NAME]_tile_blocker_cost_effect = yes ## ENACTS A CUSTOM TRIGGER IN BUILDING SCRIPTED EFFECTS
+						}
+						BUILDING_NAME = "[?building_2.GetTokenKey]"
+					}
+				}else = {
+					set_temp_variable = {building_name_passer = building_2}
+					clear_building_2_effects = yes
+				}
+			}
+		}
+		
+		triggers = {
+			building_back_visible = {
+				#has_state_flag = senate_building
+			}
+			remove_building_1_visible = {
+				is_fully_controlled_by = ROOT
+				NOT = {
+					has_state_flag = wonder_built_no_destroy_1
+				}
+			}
+			remove_building_2_visible = {
+				is_fully_controlled_by = ROOT
+				NOT = {
+					has_state_flag = wonder_built_no_destroy_2
+				}
+			}
+		}
+
+		properties = {
+			building_1 = {
+				image = "[GetBuilding1icon]"
+			}
+			building_2 = {
+				image = "[GetBuilding2icon]"
+			}
+		}
+
+		ai_enabled = {
+            always = no
+		}
+
+		ai_check = {
+		}
+
+		ai_weights = {
+		}
+	}
+	corporate_state_construction_screen_buttons = {
+	
+		context_type = selected_state_context
+		parent_window_token = corporate_state_construction_screen
+		
+		window_name = "corporate_state_construction_screen_buttons"
+		
+		visible = {
+			ROOT = {
+				OR = {
+					has_country_flag = building_1_open
+					has_country_flag = building_2_open
+				}
+			}
+			is_fully_controlled_by = ROOT
+		}
+		effects = {
+			navy_button_click = {
+				ROOT = {
+					set_country_flag = navy_buildings
+					clr_country_flag = military_buildings
+					clr_country_flag = government_buildings
+					clr_country_flag = economics_buildings
+				}
+			}
+			military_button_click = {
+				ROOT = {
+					set_country_flag = military_buildings
+					clr_country_flag = navy_buildings
+					clr_country_flag = government_buildings
+					clr_country_flag = economics_buildings
+				}
+			}
+			government_button_click = {
+				ROOT = {
+					set_country_flag = government_buildings
+					clr_country_flag = navy_buildings
+					clr_country_flag = military_buildings
+					clr_country_flag = economics_buildings
+				}
+			}
+			economic_button_click = {
+				ROOT = {
+					set_country_flag = economics_buildings
+					clr_country_flag = navy_buildings
+					clr_country_flag = military_buildings
+					clr_country_flag = government_buildings
+				}
+			}
+		}
+	}
+	corporate_state_construction_screen_navy = {
+	
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		window_name = "corporate_state_construction_screen_navy"
+		
+		visible = {
+			ROOT = {
+				AND = {
+					OR = {
+						has_country_flag = building_1_open
+						has_country_flag = building_2_open
+					}
+					has_country_flag = navy_buildings
+				}
+			}
+			is_fully_controlled_by = ROOT
+
+		}
+		
+		effects = {
+			shipyard_1_click = {
+				show_ideas_tooltip = building_shipyard_1
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:building_shipyard_1 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:building_shipyard_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			light_shipyard_2_click = {
+				show_ideas_tooltip = light_shipyard_2
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:light_shipyard_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:light_shipyard_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			light_shipyard_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:light_shipyard_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:light_shipyard_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			medium_shipyard_1_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:medium_shipyard_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:medium_shipyard_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			medium_shipyard_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:medium_shipyard_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:medium_shipyard_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			heavy_shipyard_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:heavy_shipyard_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:heavy_shipyard_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			starfighters_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:starfighter_factory_1 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:starfighter_factory_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			starfighters_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:starfighter_factory_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:starfighter_factory_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			starfighters_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:starfighter_factory_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:starfighter_factory_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			starbombers_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:starbomber_factory_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:starbomber_factory_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			starbombers_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:starbomber_factory_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:starbomber_factory_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+		}
+		
+		triggers = {
+			shipyard_1_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:building_shipyard_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:building_shipyard_1 }
+					}
+				}
+			}
+			light_shipyard_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:light_shipyard_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:light_shipyard_2 }
+					}
+				}
+			}
+			light_shipyard_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:light_shipyard_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:light_shipyard_2 }
+					}
+				}
+			}
+			light_shipyard_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:light_shipyard_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:light_shipyard_3 }
+					}
+				}
+			}
+			medium_shipyard_1_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:medium_shipyard_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:medium_shipyard_2 }
+					}
+				}
+			}
+			medium_shipyard_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:medium_shipyard_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:medium_shipyard_3 }
+					}
+				}
+			}
+			heavy_shipyard_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:heavy_shipyard_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:heavy_shipyard_3 }
+					}
+				}
+			}
+			starfighters_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:starfighter_factory_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:starfighter_factory_1 }
+					}
+				}
+			}
+			starfighters_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:starfighter_factory_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:starfighter_factory_2 }
+					}
+				}
+			}
+			starfighters_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:starfighter_factory_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:starfighter_factory_3 }
+					}
+				}
+			}
+			starbombers_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:starbomber_factory_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:starbomber_factory_2 }
+					}
+				}
+			}
+			starbombers_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:starbomber_factory_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:starbomber_factory_3 }
+					}
+				}
+			}
+		}
+		ai_enabled = {
+            always = no
+		}
+
+		ai_check = {
+		}
+
+		ai_weights = {
+		}
+	}
+	corporate_state_construction_screen_military = {
+	
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		window_name = "corporate_state_construction_screen_military"
+		
+		visible = {
+			ROOT = {
+				OR = {
+					has_country_flag = building_1_open
+					has_country_flag = building_2_open
+				}
+			}
+			is_fully_controlled_by = ROOT
+		}
+		
+		effects = {
+			arms_factory_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:arms_factory_1 }
+                    set_variable = { time_left_building_1 = 80}
+					set_temp_variable = {speed_multiplier_factor = modifier@production_speed_buildings_factor}
+					add_to_temp_variable = {speed_multiplier_factor = modifier@production_speed_buildings_factor}
+					divide_variable = {time_left_building_1 = modifier@production_speed_buildings_factor}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:arms_factory_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			arms_factory_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:soft_arms_factory_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:soft_arms_factory_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			arms_factory_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:soft_arms_factory_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:soft_arms_factory_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			tank_factory_2_click = { 
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:tank_factory_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:tank_factory_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			tank_factory_3_click = { 
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:tank_factory_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:tank_factory_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			training_facilities_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:training_facilities_1 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:training_facilities_1 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			special_forces_training_facilities_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:special_forces_training_2 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:special_forces_training_2 }
+					set_variable = { time_left_building_2 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			special_forces_training_facilities_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:special_forces_training_3 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:special_forces_training_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+					
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			military_bootcamp_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:military_bootcamp_2 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:military_bootcamp_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			military_bootcamp_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:military_bootcamp_3 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:military_bootcamp_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			small_anti_air_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:anti_air_1 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:anti_air_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			medium_guns_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:anti_air_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:anti_air_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			big_guns_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:anti_air_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:anti_air_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+		}
+		
+		triggers = {
+			arms_factory_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:arms_factory_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:arms_factory_1 }
+					}
+				}
+			}
+			arms_factory_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:soft_arms_factory_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:soft_arms_factory_2 }
+					}
+				}
+			}
+			arms_factory_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:soft_arms_factory_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:soft_arms_factory_3 }
+					}
+				}
+			}
+			tank_factory_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:tank_factory_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:tank_factory_2 }
+					}
+				}
+			}
+			tank_factory_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:tank_factory_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:tank_factory_3 }
+					}
+				}
+			}
+			training_facilities_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:training_facilities_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:training_facilities_1 }
+					}
+				}
+			}
+			special_forces_training_facilities_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:special_forces_training_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:special_forces_training_2 }
+					}
+				}
+			}
+			special_forces_training_facilities_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:special_forces_training_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:special_forces_training_3 }
+					}
+				}
+			}
+			military_bootcamp_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:military_bootcamp_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:military_bootcamp_2 }
+					}
+				}
+			}
+			military_bootcamp_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:military_bootcamp_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:military_bootcamp_3 }
+					}
+				}
+			}
+			small_anti_air_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:anti_air_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:anti_air_1 }
+					}
+				}
+			}
+			medium_guns_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:anti_air_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:anti_air_2 }
+					}
+				}
+			}
+			big_guns_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:anti_air_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:anti_air_3 }
+					}
+				}
+			}
+		}
+
+		ai_enabled = {
+            always = no
+		}
+
+		ai_check = {
+		}
+
+		ai_weights = {
+		}
+	}
+	corporate_state_construction_screen_government = {
+	
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		window_name = "corporate_state_construction_screen_government"
+		
+		visible = {
+			ROOT = {
+				OR = {
+					has_country_flag = building_1_open
+					has_country_flag = building_2_open
+				}
+				has_country_flag = government_buildings
+			}
+			is_fully_controlled_by = ROOT
+		}
+		
+		effects = {
+			intelligence_center_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:intelligence_centre_1 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:intelligence_centre_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			monitoring_beacon_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:monitoring_beacon_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:monitoring_beacon_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			monitoring_beacon_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:monitoring_beacon_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:monitoring_beacon_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			spy_academy_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:spy_academy_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:spy_academy_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			spy_academy_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+					set_variable = { building_1 = token:spy_academy_3 }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:spy_academy_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			research_center_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:research_center_1 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:research_center_1 }
+					set_variable = { time_left_building_2 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			research_center_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:research_center_2 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:research_center_2 }
+					set_variable = { time_left_building_2 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			research_center_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { building_1 = token:research_center_3 }
+					set_variable = { time_left_building_1 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { building_2 = token:research_center_3 }
+					set_variable = { time_left_building_2 = 80}
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			military_academy_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:military_academy_1 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:military_academy_1 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			military_college_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:military_college_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:military_college_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			military_college_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:military_college_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:military_college_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			naval_academy_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:naval_academy_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:naval_academy_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			admiraly_academy_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:naval_academy_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:naval_academy_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			starship_academy_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:starfighter_academy_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:starfighter_academy_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			taxation_1_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:taxation_center_1 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:taxation_center_1 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			taxation_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:taxation_center_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:taxation_center_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			taxation_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:taxation_center_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:taxation_center_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+		}
+		
+		triggers = {
+			intelligence_center_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:intelligence_centre_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:intelligence_centre_1 }
+					}
+				}
+			}
+			monitoring_beacon_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:monitoring_beacon_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:monitoring_beacon_2 }
+					}
+				}
+			}
+			monitoring_beacon_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:monitoring_beacon_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:monitoring_beacon_3 }
+					}
+				}
+			}
+			spy_academy_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:spy_academy_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:spy_academy_2 }
+					}
+				}
+			}
+			spy_academy_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:spy_academy_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:spy_academy_3 }
+					}
+				}
+			}
+			research_center_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:research_center_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:research_center_1 }
+					}
+				}
+			}
+			research_center_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:research_center_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:research_center_2 }
+					}
+				}
+			}
+			research_center_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:research_center_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:research_center_3 }
+					}
+				}
+			}
+			military_academy_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:military_academy_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:military_academy_1 }
+					}
+				}
+			}
+			military_college_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:military_college_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:military_college_2 }
+					}
+				}
+			}
+			military_college_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:military_college_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:military_college_3 }
+					}
+				}
+			}
+			naval_academy_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:naval_academy_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:naval_academy_2 }
+					}
+				}
+			}
+			admiraly_academy_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:naval_academy_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:naval_academy_3 }
+					}
+				}
+			}
+			starship_academy_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:starfighter_academy_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:starfighter_academy_3 }
+					}
+				}
+			}
+			taxation_1_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:taxation_center_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:taxation_center_1 }
+					}
+				}
+			}
+			taxation_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:taxation_center_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:taxation_center_2 }
+					}
+				}
+			}
+			taxation_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:taxation_center_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:taxation_center_3 }
+					}
+				}
+			}
+		}
+
+		ai_enabled = {
+            always = no
+		}
+
+		ai_check = {
+		}
+
+		ai_weights = {
+		}
+	}
+	corporate_state_construction_screen_economic = {
+	
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		window_name = "corporate_state_construction_screen_economic"
+		
+		visible = {
+			ROOT = {
+				OR = {
+					has_country_flag = building_1_open
+					has_country_flag = building_2_open
+				}
+				has_country_flag = economics_buildings
+			}
+			is_fully_controlled_by = ROOT
+		}
+		
+		effects = {
+			unique_building_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = unique_building_on_state }## unique_building_on_state is a state variable holding the states unique building idea, it is used to then locate its add and removal effects
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+					set_state_flag = wonder_built_no_destroy_1
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = unique_building_on_state }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+					set_state_flag = wonder_built_no_destroy_2
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			unique_building_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					meta_effect = {
+						text = {
+							set_variable = { building_2 = token:[BUILDING_NAME]_2 }
+						}
+						BUILDING_NAME = "[?unique_building_on_state.GetTokenKey]"
+					}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					meta_effect = {
+						text = {
+							set_variable = { building_2 = token:[BUILDING_NAME]_2 }
+						}
+						BUILDING_NAME = "[?unique_building_on_state.GetTokenKey]"
+					}
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			unique_building_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					meta_effect = {
+						text = {
+							set_variable = { building_1 = token:[BUILDING_NAME]_3 }
+						}
+						BUILDING_NAME = "[?unique_building_on_state.GetTokenKey]"
+					}
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+					## unique_building_on_state is a state variable holding the states unique building idea, it is used to then locate its add and removal effects
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					meta_effect = {
+						text = {
+							set_variable = { building_2 = token:[BUILDING_NAME]_3 }
+						}
+						BUILDING_NAME = "[?unique_building_on_state.GetTokenKey]"
+					}
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			homstead_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}
+					set_variable = { building_1 = token:homestead_1 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}
+					set_variable = { building_2 = token:homestead_1 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			homstead_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}	
+					set_variable = { building_1 = token:homestead_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}	
+					set_variable = { building_2 = token:homestead_2 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			homstead_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}
+					set_variable = { time_left_building_1 = 80}	
+					set_variable = { building_1 = token:homestead_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}
+					set_variable = { time_left_building_2 = 80}	
+					set_variable = { building_2 = token:homestead_3 }
+					add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			corporate_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:corporate_office_1 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:corporate_office_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			corporate_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:corporate_office_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:corporate_office_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			corporate_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:corporate_office_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:corporate_office_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			recycle_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:recycle_center_1 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:recycle_center_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			recycle_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:recycle_center_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:recycle_center_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			recycle_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:recycle_center_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:recycle_center_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			refinery_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:fuel_refinery_1 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:fuel_refinery_1 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			refinery_2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:fuel_refinery_2 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:fuel_refinery_2 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+			refinery_3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					hidden_effect = {
+						clear_building_1_effects = yes
+					}	
+					set_variable = { building_1 = token:fuel_refinery_3 }
+                    set_variable = { time_left_building_1 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_1
+                        value = THIS.id
+                    }
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					hidden_effect = {
+						clear_building_2_effects = yes
+					}	
+					set_variable = { building_2 = token:fuel_refinery_3 }
+                    set_variable = { time_left_building_2 = 80}
+                    add_to_array = {
+                        array = global.building_state_constructer_2
+                        value = THIS.id
+                    }
+				}
+				ROOT = {
+					subtract_from_variable = { currency_amount^primary_currency = 500 }
+				}
+			}
+		}
+		properties = {
+			unique_building = {
+				image = "[GetUniqueBuildingIcon]"
+			}
+			unique_building_2 = {
+				image = "[GetUniqueBuildingIcon]"
+			}
+			unique_building_3 = {
+				image = "[GetUniqueBuildingIcon]"
+			}
+		}
+		triggers = {
+			unique_building_visible = {
+				has_variable = unique_building_on_state
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = wonder_built_no_destroy_1
+							has_state_flag = wonder_built_no_destroy_2
+						}
+					}
+					always = yes
+				}else_if = {
+					limit = {
+						has_state_flag = building_1_open
+						has_state_flag = wonder_built_no_destroy_1
+					}
+					always = yes
+				}else_if = {
+					limit = {
+						has_state_flag = building_2_open
+						has_state_flag = wonder_built_no_destroy_2
+					}
+					always = yes
+				}else = {
+					always = no
+				}
+			}
+			unique_building_2_visible = {
+				has_variable = unique_building_on_state
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = wonder_built_no_destroy_1
+							has_state_flag = wonder_built_no_destroy_2
+						}
+					}
+					always = yes
+				}else_if = {
+					limit = {
+						has_state_flag = building_1_open
+						has_state_flag = wonder_built_no_destroy_1
+					}
+					always = yes
+				}else_if = {
+					limit = {
+						has_state_flag = building_2_open
+						has_state_flag = wonder_built_no_destroy_2
+					}
+					always = yes
+				}else = {
+					always = no
+				}
+			}
+			unique_building_3_visible = {
+				has_variable = unique_building_on_state
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = wonder_built_no_destroy_1
+							has_state_flag = wonder_built_no_destroy_2
+						}
+					}
+					always = yes
+				}else_if = {
+					limit = {
+						has_state_flag = building_1_open
+						has_state_flag = wonder_built_no_destroy_1
+					}
+					always = yes
+				}else_if = {
+					limit = {
+						has_state_flag = building_2_open
+						has_state_flag = wonder_built_no_destroy_2
+					}
+					always = yes
+				}else = {
+					always = no
+				}
+			}
+			homstead_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:homestead_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:homestead_1 }
+					}
+				}
+			}
+			homstead_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:homestead_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:homestead_2 }
+					}
+				}
+			}
+			homstead_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:homestead_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:homestead_3 }
+					}
+				}
+			}
+			corporate_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:corporate_office_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:corporate_office_1 }
+					}
+				}
+			}
+			corporate_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:corporate_office_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:corporate_office_2 }
+					}
+				}
+			}
+			corporate_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:corporate_office_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:corporate_office_3 }
+					}
+				}
+			}
+			recycle_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:recycle_center_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:recycle_center_1 }
+					}
+				}
+			}
+			recycle_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:recycle_center_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:recycle_center_2 }
+					}
+				}
+			}
+			recycle_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:recycle_center_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:recycle_center_3 }
+					}
+				}
+			}
+			refinery_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:fuel_refinery_1 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:fuel_refinery_1 }
+					}
+				}
+			}
+			refinery_2_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:fuel_refinery_2 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:fuel_refinery_2 }
+					}
+				}
+			}
+			refinery_3_click_enabled = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_1_open
+						}
+					}
+					NOT = {
+						check_variable = { building_1 = token:fuel_refinery_3 }
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							has_country_flag = building_2_open
+						}
+					}
+					NOT = {
+						check_variable = { building_2 = token:fuel_refinery_3 }
+					}
+				}
+			}
+		}
+
+		ai_enabled = {
+            always = no
+		}
+
+		ai_check = {
+		}
+
+		ai_weights = {
+		}
+	}
+}
+

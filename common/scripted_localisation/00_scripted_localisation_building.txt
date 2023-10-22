@@ -1,0 +1,91 @@
+defined_text = {
+	name = GetBuilding1icon
+	text = {
+		trigger = {
+			NOT = {
+				has_variable = building_1
+			}
+		}
+		localization_key = "GFX_build_building"
+	}
+	text = {
+		localization_key = "GFX_[?building_1.GetTokenKey]"
+	}
+}
+defined_text = {
+	name = GetBuilding2icon
+	text = {
+		trigger = {
+			NOT = {
+				has_variable = building_2
+			}
+		}
+		localization_key = "GFX_build_building"
+	}
+	text = {
+		localization_key = "GFX_[?building_2.GetTokenKey]"
+	}
+}
+defined_text = {
+	name = GetUniqueBuildingIcon
+	text = {
+		localization_key = "GFX_[?unique_building_on_state.GetTokenKey]_small"
+	}
+}
+defined_text = {
+	name = GetUnqiueBuilding1Tooltip
+	text = {
+		localization_key = "[?unique_building_on_state.GetTokenKey]_tt"
+	}
+}
+defined_text = {
+	name = GetUnqiueBuilding2Tooltip
+	text = {
+		localization_key = "[?unique_building_on_state.GetTokenKey]_2_tt"
+	}
+}
+defined_text = {
+	name = GetUnqiueBuilding3Tooltip
+	text = {
+		localization_key = "[?unique_building_on_state.GetTokenKey]_3_tt"
+	}
+}
+
+
+defined_text = {
+	name = tile_blocker_or_normal_building_1
+	text = {
+		trigger = {
+			has_state_flag = tile_blocker_building_1
+		}
+		localization_key = "tile_blocker_main_handler_1"
+	}
+	text = {
+		localization_key = "demolish_building_tt"
+	}
+}
+defined_text = {
+	name = tile_blocker_or_normal_building_2
+	text = {
+		trigger = {
+			has_state_flag = tile_blocker_building_2
+		}
+		localization_key = "tile_blocker_main_handler_2"
+	}
+	text = {
+		localization_key = "demolish_building_tt"
+	}
+}
+
+defined_text = {
+	name = GetTileBlockerCostTooltip_1
+	text = {
+		localization_key = "[?building_1.GetTokenKey]_tile_blocker_cost_tt"
+	}
+}
+defined_text = {
+	name = GetTileBlockerCostTooltip_2
+	text = {
+		localization_key = "[?building_2.GetTokenKey]_tile_blocker_cost_tt"
+	}
+}

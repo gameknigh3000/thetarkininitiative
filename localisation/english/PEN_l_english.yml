@@ -1,5 +1,8 @@
 ﻿l_english:
- ##############Custom############
+ #########################################################
+ ###################### Custom Loc #######################
+ #########################################################
+
  autonomy_pen_corporate_puppet:0 "Alignment Corporation"
  autonomy_pen_corporate_puppet_autonomous:0 "Autonomous Alignment Corporation"
  autonomy_imperial_sector:0 "Imperial Sector"
@@ -58,7 +61,7 @@
  PEN_bounty_outer_sector_activated_loc:0 "§gThis will §YUnlock Decisions§! in the §YBounty of the Outer Sector§! category upon completion.\n(Decisions focus on exploiting resource areas.)§!"
  PEN_enforcement_piracy_decisions_loc:0 "\n§gThis will §YUnlock Decisions§! in the §YPirate Activity§! category upon completion.\n(Decisions focus on fighting piracy.)§!"
  
- PEN_unlock:0 "\n§gThis will §YUnlock Focuses§! upon completion.§!"
+ PEN_unlock:0 "§gThis will §YUnlock Focuses§! upon completion.§!"
  PEN_unlock_reinforcevfcz:0 "\n§gThis will §YUnlock Focuses§! upon completion.\n(Branch focuses on the development of VFCZ planets and puppets.)§!"
  PEN_unlock_reformvfcz:0 "§gThis will §YUnlock Focuses§! upon completion.\n(Branch focuses on developing the capital and fair labour.)§!"
  PEN_unlock_imperialhandbook:0 "\n§gThis will §YUnlock Focuses§! upon completion.\n(Branch focuses on offense and quantity of arms.)§!"
@@ -87,25 +90,33 @@
  ########################################################################################
  ################################### FACTIONS ###########################################
  ########################################################################################
-
-
  
+ #Focus Effect
+ PEN_factions_governors_upset:0 "\n§YInternal Factions Update:§!\n§gImperial Governors§!:\n   Loyalty: §R-15%§!\n   Influence: §Y+10%§!"
+ 
+ #GUI
+ PEN_ardus_portrait_tt:0 "§gFaction:§!\nArdus Kaine Faction\n\n§gRepresentative:§!\nArdus Kaine"
+ PEN_elta_portrait_tt:0 "§gFaction:§!\nDynamic Automata\n\n§gRepresentative:§!\nElta Besk"
+ PEN_wyrn_portrait_tt:0 "§gFaction:§!\nGalentro Heavy Works\n\n§gRepresentative:§!\nWyrn Otro"
+ PEN_gregor_portrait_tt:0 "§gFaction:§!\nVelcar Free Commerce Zone\n\n§gRepresentative:§!\nGregor Raquoran"
+ PEN_ib_portrait_tt:0 "§gFaction:§!\nImperial Governors\n\n§gRepresentative:§!\nIb Dekeet"
+ PEN_ibc_portrait_tt:0 "§gFaction:§!\nIntergalactic Banking Clan\n\n§gRepresentative:§!\nClu Lesser"
  PEN_faction_name_loc:0 "[GetInternalFactionName]"
  PEN_ardus_faction_name_loc:0 "Ardus Kaine Faction"
  PEN_elta_faction_name_loc:0 "Dynamic Automata"
  PEN_wyrn_faction_name_loc:0 "Galentro Heavy Works"
  PEN_ib_faction_name_loc:0 "Imperial Governors"
  PEN_gregor_faction_name_loc:0 "Velcar Free Commerce Zone"
- PEN_influence_text_loc:0 "Influence"
- PEN_loyalty_text_loc:0 "Loyalty"
- PEN_effects_text_loc:0 "[GetInternalFactionEffects]"
- PEN_ardus_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_ardus_pp_gain_loc]%§!\nStability: §Y[?PEN_ardus_stability_loc]%§!"
- PEN_elta_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_automata_pp_gain_loc]%§!\nFactory Output: §Y[?PEN_automata_factory_output_loc]%§!"
- PEN_wyrn_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_galentro_pp_gain_loc]%§!\nDockyard Output: §Y[?PEN_galentro_dockyard_output_loc]%§!"
- PEN_ib_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_governors_pp_gain_loc]%§!\nWar Support: §Y[?PEN_governors_war_support_loc]%§!\nConscription Factor: §Y[?PEN_governors_conscription_factor_loc]%§!"
- PEN_gregor_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_vfcz_pp_gain_loc]%§!\nResource Gain Efficiency: §Y[?PEN_vfcz_resource_gain_efficiency_loc]%§!\nTrade Opinion Factor: §Y[?PEN_vfcz_trade_opinion_loc]%§!"
- PEN_description_text_loc:0 "[GetInternalFactionDesc]"
- PEN_ardus_faction_desc_loc:0 "Kaine Desc"
+ PEN_influence_text_loc:0 "§gInfluence§!"
+ PEN_loyalty_text_loc:0 "§gLoyalty§!"
+ PEN_effects_text_loc:0 "                      §gEffects§!\n[GetInternalFactionEffects]"
+ PEN_ardus_faction_effects_loc:0 "Authority Factor: §Y[?PEN_ardus_pp_gain_loc]%§!\nStability: §Y[?PEN_ardus_stability_loc]%§!\n\n                      §gRange:§!\nAuthority Factor: §Y-30% - 30%§!\nStability: §Y-20% - 20%§!"
+ PEN_elta_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_automata_pp_gain_loc]%§!\nFactory Output: §Y[?PEN_automata_factory_output_loc]%§!\n\n                      §gRange:§!\nAuthority Factor: §Y-30% - 30%§!\nStability: §Y-20% - 20%§!"
+ PEN_wyrn_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_galentro_pp_gain_loc]%§!\nDockyard Output: §Y[?PEN_galentro_dockyard_output_loc]%§!\n\n                      §gRange:§!\nAuthority Factor: §Y-30% - 30%§!\nStability: §Y-20% - 20%§!"
+ PEN_ib_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_governors_pp_gain_loc]%§!\nWar Support: §Y[?PEN_governors_war_support_loc]%§!\nConscription Factor: §Y[?PEN_governors_conscription_factor_loc]%§!\n\n                      §gRange:§!\nAuthority Factor: §Y-30% - 30%§!\nStability: §Y-20% - 20%§!"
+ PEN_gregor_faction_effects_loc:0 "Political Power Factor: §Y[?PEN_vfcz_pp_gain_loc]%§!\nResource Gain Efficiency: §Y[?PEN_vfcz_resource_gain_efficiency_loc]%§!\nTrade Opinion Factor: §Y[?PEN_vfcz_trade_opinion_loc]%§!\n\n                      §gRange:§!\nAuthority Factor: §Y-30% - 30%§!\nStability: §Y-20% - 20%§!"
+ PEN_description_text_loc:0 "       §gDescription§!\n[GetInternalFactionDesc]"
+ PEN_ardus_faction_desc_loc:0 "The Ardus Kaine Faction comprises mostly of ex-navy personnel that have made it to the Chamber. These have been swayed by Kaines adept oratory skills and form the backbone of his political power."
  PEN_elta_faction_desc_loc:0 "Dynamic Automata Desc"
  PEN_wyrn_faction_desc_loc:0 "Galentro Desc"
  PEN_ib_faction_desc_loc:0 "Imperials Desc"
@@ -167,7 +178,7 @@
 
  #################Decisions###############
  PEN_pirate_activity_category:0 "Pentastar Space: Pirate Activity"
- PEN_pirate_activity_category_desc:0 "With the formation of the Pentastar Alignment several criminal groups have increased their activities in Pentastar space.\n\nOne figure in particular stands out amongst the rogues, an Entrallan named Roark Slader. Previously an honourable militiaman, Roark has, since the Alignment arrived, strayed into crime and become a key figure in criminal, pirate networks.\n\nEven though it is hard to admit, the pirates have proven to be effective raiders and if we fail to respond effectively the pirate threat may grow to become uncontrollable."
+ PEN_piracy_desc_loc:0 "With the formation of the Pentastar Alignment several criminal groups have increased their activities in Pentastar space.\n\nOne figure in particular stands out amongst the rogues, an Entrallan named Roark Slader. Previously an honourable militiaman, Roark has, since the Alignment arrived, strayed into crime and become a key figure in criminal, pirate networks.\n\nEven though it is hard to admit, the pirates have proven to be effective raiders and if we fail to respond effectively the pirate threat may grow to become uncontrollable."
  PEN_piracy_attacks_grow:0 "Pirate Activity Rising"
  PEN_piracy_raid_pirate_stronghold:0 "Organise Raid on a Pirate Stronghold"
  PEN_piracy_hunt_pirate_fleets:0 "Hunt Down Pirate Fleets"

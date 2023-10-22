@@ -31,8 +31,24 @@ spriteTypes = {
 		texturefile = "gfx/leaders/ERI/sander.png"
 	}
 	spriteType = {
+		name = "GFX_portrait_cronus"
+		texturefile = "gfx/leaders/ERI/cronus.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_sander_eye"
+		texturefile = "gfx/leaders/ERI/sander_eye.png"
+	}
+	spriteType = {
 		name = "GFX_portrait_sander_small"
 		texturefile = "gfx/interface/imperial/leader/sander.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_cronus_small"
+		texturefile = "gfx/interface/imperial/leader/cronus.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_sander_eye_small"
+		texturefile = "gfx/interface/imperial/leader/sander_eye.png"
 	}
 	spriteType = {
 		name = "GFX_portrait_nakha_urus"
@@ -172,7 +188,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_portrait_trueton"
-		texturefile = "gfx/leaders/GMA/trueton.png"
+		texturefile = "gfx/leaders/NoProgressA/trueton.png"
 	}
 	spriteType = {
 		name = "GFX_portrait_trueton_small"
@@ -614,5 +630,25 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_portrait_fenn_shysa"
 		texturefile = "gfx/leaders/PRO/fenn_shysa.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_the_mandalorian"
+		texturefile = "gfx/leaders/PRO/the_mandalorian.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_attichitcuk"
+		texturefile = "gfx/leaders/KYK/attichitcuk.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_tojjevvuk"
+		texturefile = "gfx/leaders/KYK/tojjevvuk.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_savan"
+		texturefile = "gfx/leaders/BLA/savan.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_kenth_vane"
+		texturefile = "gfx/leaders/SAL/kenth_vane.png"
 	}
 }
