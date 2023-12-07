@@ -13,7 +13,13 @@ focus_tree = {
 			tag = BOT
 		}
 	}
-
+	shared_focus = REB_the_warlord_crisis
+	shared_focus = REB_new_republic_defense_forces
+	shared_focus = REB_new_republic_economy
+	shared_focus = REB_new_republic_research
+	shared_focus = REB_new_republic_intelligence
+	shared_focus = REB_the_first_chief_of_state
+	
 	focus = {
 		id = BOT_many_bothans_died
 		icon = GFX_BOT_bothans_died
@@ -459,16 +465,16 @@ focus_tree = {
 			always = no
 		}
 		allow_branch = {
-			REB = {
-				has_completed_focus = REB_the_republic_reborn
+			REB={
+				has_cosmetic_tag = NEW
 			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		bypass = {
-			REB = {
-				has_completed_focus = REB_the_republic_reborn
+			REB={
+				has_cosmetic_tag = NEW
 			}
 		}
 		completion_reward = {
@@ -1664,8 +1670,8 @@ focus_tree = {
 		icon = GFX_bothan_goal
 		cost = 7.2
 		allow_branch = {
-			REB = {
-				has_completed_focus = REB_the_republic_reborn
+			REB={
+				has_cosmetic_tag = NEW
 			}
 		}
 		x = 11
@@ -2041,8 +2047,8 @@ focus_tree = {
 		x = 14
 		y = 10
 		allow_branch = {
-			REB = {
-				has_completed_focus = REB_the_republic_reborn
+			REB={
+				has_cosmetic_tag = NEW
 			}
 		}
 		ai_will_do = {

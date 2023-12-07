@@ -1,0 +1,72 @@
+bookmarks = {
+	bookmark = {
+		name = "Minor Nations"
+		desc = "mm_minor_nations_desc"
+		date = 0004.1.1.2
+		picture = "GFX_select_date_neutrals"
+		default_country = "PRO"
+		
+		
+		"PRO"={
+			history = "MANDALORE_GATHERING_STORM_DESC"
+			ideology = neutral
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"CHS"={
+			history = "CHISS_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				
+			}
+			focuses = {
+			}
+		}
+		"DAT"={
+			history = "NIGHT_SISTERS_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"HAP"={
+			history = "HAPES_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"COR"={
+			history = "CORELLIA_GATHERING_STORM_DESC"
+			ideology = imperial
+			ideas = {
+				COR_corellian_resistance
+				COR_corsec
+			}
+			focuses = {
+				COR_two_warlords_enter_one_leaves
+				COR_five_worlds
+				COR_a_founding_member_of_the_alliance
+			}
+		}
+		"SSI"={
+			history = "SSI_RUUVI_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

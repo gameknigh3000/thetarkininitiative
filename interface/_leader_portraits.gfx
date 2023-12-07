@@ -95,6 +95,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/ZSJ/zsinj.png"
 	}
 	spriteType = {
+		name = "GFX_portrait_melvar"
+		texturefile = "gfx/leaders/ZSJ/melvar.png"
+	}
+	spriteType = {
 		name = "GFX_portrait_zsinj_small"
 		texturefile = "gfx/interface/imperial/leader/zsinj.png"
 	}
@@ -650,5 +654,9 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_portrait_kenth_vane"
 		texturefile = "gfx/leaders/SAL/kenth_vane.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_octavian_grant"
+		texturefile = "gfx/leaders/PEN/octavian_grant.png"
 	}
 }

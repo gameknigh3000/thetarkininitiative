@@ -8,6 +8,11 @@ focus_tree = {
 			tag = kyk
 		}
 	}
+	shared_focus = REB_the_warlord_crisis
+	shared_focus = REB_new_republic_defense_forces
+	shared_focus = REB_new_republic_economy
+	shared_focus = REB_new_republic_research
+	shared_focus = REB_new_republic_intelligence
 	focus = {
 		id = KYK_taming_the_wild_life
 		icon = GFX_KYK_Frame
@@ -17,12 +22,32 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_taming_the_wild_life"
 		}
 		relative_position_id = KYK_brutal_fauna
 		prerequisite = { focus = KYK_brutal_fauna }
 	}
+
+	focus = {
+		id = KYK_a_change_in_course
+		icon = GFX_KYK_Frame
+		cost = 7.2
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 1
+		}
+		text_icon = Kashyyyk_focus_style
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KYK_a_change_in_course"
+		}
+		relative_position_id = KYK_toyevvuk
+		prerequisite = { focus = KYK_toyevvuk }
+	}
+
+	
 	focus = {
 		id = KYK_wroshyr_trees
 		icon = GFX_KYK_Frame
@@ -32,8 +57,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_wroshyr_trees"
+			custom_effect_tooltip = wroshyr_trees_effect
 		}
 		relative_position_id = KYK_brutal_fauna
 		prerequisite = { focus = KYK_brutal_fauna }
@@ -41,13 +67,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_brutal_fauna
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_brutal_fauna
 		cost = 7.2
 		x = 34
 		y = 0
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_brutal_fauna"
 		}
@@ -55,18 +82,19 @@ focus_tree = {
 
 	focus = {
 		id = KYK_wyyyschokk_spiders
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_spiders
 		cost = 7.2
-		x = 0
+		x = 5
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_wyyyschokk_spiders"
 		}
-		relative_position_id = KYK_the_shadoweave_caverns
-		prerequisite = { focus = KYK_the_shadoweave_caverns }
+		relative_position_id = KYK_the_shadowlands
+		prerequisite = { focus = KYK_the_shadowlands }
 	}
 
 	focus = {
@@ -78,6 +106,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_the_shadowlands"
 		}
@@ -94,6 +123,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_vying_for_leadership"
 		}
@@ -103,15 +133,20 @@ focus_tree = {
 
 	focus = {
 		id = KYK_clear_out_the_shadowlands
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_clear_out_the_shadowlands
 		cost = 7.2
 		x = -2
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_clear_out_the_shadowlands"
+			555 = {
+				clear_building_2_effects = yes
+				clear_building_1_effects = yes
+				clr_state_flag = tile_blocker_building_1
+			}		
 		}
 		relative_position_id = KYK_the_shadowlands
 		prerequisite = { focus = KYK_the_shadowlands }
@@ -120,15 +155,16 @@ focus_tree = {
 
 	focus = {
 		id = KYK_preserve_the_forest
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_preserve_the_forest
 		cost = 7.2
 		x = 2
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_preserve_the_forest"
+			add_stability = 0.2
 		}
 		relative_position_id = KYK_the_shadowlands
 		prerequisite = { focus = KYK_the_shadowlands }
@@ -144,6 +180,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			hidden_effect = {
 				recruit_character = KYK_Kerrithrarr
@@ -165,6 +202,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_sawa_clan"
 		}
@@ -181,8 +219,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_kaapauku_clan"
+
 		}
 		relative_position_id = KYK_an_improved_arms_industry
 		prerequisite = { focus = KYK_an_improved_arms_industry }
@@ -197,6 +236,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_strongfist_clan"
 		}
@@ -214,6 +254,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_kachirho_clan"
 		}
@@ -230,20 +271,30 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			if = {
 				limit = {
-					has_completed_focus = KYK_attichitcuk
+					has_completed_focus = KYK_tojjevvuk
 				}
 				swap_ideas = {
 					remove_idea = attichitcuk_loyal
 					add_idea = attichitcuk_disloyal
 				}
 			}
+			if = {
+				limit = {
+					has_completed_focus = KYK_attichitcuk
+				}
+				set_temp_variable = {supplied_agent_name = token:chewbacca}
+				agent_recruitment_effect = yes
+			}
 		}
 		relative_position_id = KYK_ties_with_the_smugglers
-		prerequisite = { focus = KYK_ties_with_the_smugglers }
-		prerequisite = { focus = KYK_a_change_in_course }
+		prerequisite = {
+			focus = KYK_ties_with_the_smugglers
+			focus = KYK_a_change_in_course
+		}
 	}
 
 	focus = {
@@ -255,6 +306,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_chevappa_clan"
 		}
@@ -271,6 +323,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_puurrgerr_clan"
 		}
@@ -288,6 +341,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_gkrur_clan"
 		}
@@ -305,6 +359,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_hardcore_clan"
 		}
@@ -314,34 +369,19 @@ focus_tree = {
 
 	focus = {
 		id = KYK_krorral_architecture
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_krorral_achitecture
 		cost = 7.2
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_krorral_architecture"
 		}
 		relative_position_id = KYK_gkrur_clan
 		prerequisite = { focus = KYK_gkrur_clan }
-	}
-
-	focus = {
-		id = KYK_the_shadoweave_caverns
-		icon = GFX_KYK_Frame
-		cost = 7.2
-		x = 5
-		y = 1
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_the_shadoweave_caverns"
-		}
-		relative_position_id = KYK_taming_the_wild_life
-		prerequisite = { focus = KYK_taming_the_wild_life }
 	}
 
 	focus = {
@@ -353,8 +393,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_hunting_for_sport"
+			555 = {
+				clear_building_2_effects = yes
+				clr_state_flag = tile_blocker_building_2
+			}		
 		}
 		relative_position_id = KYK_wyyyschokk_spiders
 		prerequisite = { focus = KYK_wyyyschokk_spiders }
@@ -370,6 +414,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_the_wyyyschokk_riders"
 		}
@@ -387,6 +432,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			hidden_effect = {
 				recruit_character = KYK_tojjevvuk
@@ -412,6 +458,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			hidden_effect = {
 				recruit_character = KYK_attichitcuk
@@ -433,6 +480,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			add_ideas = kyk_new_building_techniques
 		}
@@ -449,6 +497,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_clan_based_military"
 		}
@@ -463,6 +512,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = tribal_military
@@ -476,15 +526,18 @@ focus_tree = {
 
 	focus = {
 		id = KYK_appazanna_engineering_works
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_zanna
 		cost = 7.2
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_appazanna_engineering_works"
+			mio:appazanna_engineering_organization = {
+				add_mio_size = 1
+			}
 		}
 		relative_position_id = KYK_rebuild_what_was_lost
 		prerequisite = { focus = KYK_rebuild_what_was_lost }
@@ -499,6 +552,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_keep_tribal_allegiances"
 		}
@@ -509,13 +563,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_war_chiefs
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_warchiefs
 		cost = 7.2
 		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = unorganized_military
@@ -535,6 +590,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_defending_our_homes"
 		}
@@ -551,6 +607,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_centralized_command_structure"
 		}
@@ -560,13 +617,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_rebuild_what_was_lost
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_rebuild_what_was_lost
 		cost = 7.2
 		x = 24
 		y = 0
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			add_timed_idea = {
 				idea = rebuilding_kashyyyk
@@ -578,33 +636,33 @@ focus_tree = {
 	focus = {
 		id = KYK_the_imperial_refinery
 		icon = GFX_KYK_the_imperial_refinery
-		cost = 7.2
+		cost = 1.5
 		x = 18
 		y = 0
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_the_imperial_refinery"
+			custom_effect_tooltip = imperial_refinery_focus
 		}
 	}
 
 	focus = {
 		id = KYK_dismantle_it
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_dismantle_it_shine
 		cost = 7.2
 		x = -2
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			custom_effect_tooltip = minus100credits_tt
 			subtract_from_variable = { currency_amount^primary_currency = 100 }
-			remove_ideas = imperial_refinery
-			add_timed_idea = {
-				idea = imperial_refinery
-				days = 180
+			281 = {
+				clear_building_1_effects = yes
 			}
 		}
 		relative_position_id = KYK_the_imperial_refinery
@@ -614,24 +672,44 @@ focus_tree = {
 
 	focus = {
 		id = KYK_reopen_it
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_reopen_it_refinery
 		cost = 7.2
 		x = 2
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			custom_effect_tooltip = minus500credits_tt
-			subtract_from_variable = { currency_amount^primary_currency = 500 }
-			swap_ideas = {
-				remove_idea = imperial_refinery
-				add_idea = imperial_refinery_bigger
-			}
+			custom_effect_tooltip = minus150credits_tt
+			subtract_from_variable = { currency_amount^primary_currency = 150 }
+			281 = {
+				clear_building_1_effects = yes
+				set_variable = {unique_building_on_state = token:imperial_refinery_positive}
+				set_temp_variable = {REQUESTED_BUILDING = token:imperial_refinery_positive}
+				Add_building_to_slot_immediately = yes
+			} 
 		}
 		relative_position_id = KYK_the_imperial_refinery
 		prerequisite = { focus = KYK_the_imperial_refinery }
 		mutually_exclusive = { focus = KYK_dismantle_it }
+	}
+
+	focus = {
+		id = KYK_hidden_activities
+		icon = GFX_KYK_Frame
+		cost = 7.2
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 1
+		}
+		text_icon = Kashyyyk_focus_style
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KYK_hidden_activities"
+		}
+		relative_position_id = KYK_a_change_in_course
+		prerequisite = { focus = KYK_a_change_in_course }
 	}
 
 	focus = {
@@ -643,6 +721,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_prevent_leakage"
 		}
@@ -652,13 +731,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_dispose_of_the_chemicals
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_dispose_of_chemicals
 		cost = 7.2
 		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			custom_effect_tooltip = minus100credits_tt
 			subtract_from_variable = { currency_amount^primary_currency = 100 }
@@ -670,15 +750,17 @@ focus_tree = {
 		prerequisite = { focus = KYK_dismantle_it }
 	}
 
+
 	focus = {
 		id = KYK_water_treatment_facilities
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_water_treatment
 		cost = 7.2
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			custom_effect_tooltip = minus300credits_tt
 			subtract_from_variable = { currency_amount^primary_currency = 300 }
@@ -697,13 +779,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_selling_wroshyr_sap
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_selling_sap
 		cost = 7.2
 		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			add_ideas = wroshyr_sap_sales
 		}
@@ -720,8 +803,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_retaking_kashyyyk"
+			add_timed_idea = {
+				idea = retaking_kashyyyk
+				days = 180
+			}
 		}
 	}
 
@@ -734,8 +821,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_a_new_leader"
+			country_event = KYK.1
 		}
 		relative_position_id = KYK_retaking_kashyyyk
 		prerequisite = { focus = KYK_retaking_kashyyyk }
@@ -743,13 +831,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_strong_republic_ties
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_strong_republic_ties
 		cost = 7.2
 		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_strong_republic_ties"
 		}
@@ -760,13 +849,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_boost_the_claatuvac_guild
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_claatuvac
 		cost = 7.2
 		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_boost_the_claatuvac_guild"
 		}
@@ -784,6 +874,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			if = {
 				every_country = {
@@ -814,6 +905,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_vengeance_against_collaborators"
 		}
@@ -823,13 +915,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_new_republic_officers
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_new_republic_officers
 		cost = 7.2
 		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_new_republic_officers"
 		}
@@ -839,13 +932,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_the_honor_guard
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_wookie_honor_guard
 		cost = 7.2
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			remove_ideas = unorganized_military_2
 		}
@@ -855,13 +949,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_wookie_bezerkers
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_wookie_berzerker
 		cost = 7.2
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_wookie_bezerkers"
 		}
@@ -878,14 +973,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			random_owned_state = {
+				limit = {
+					has_avaliable_building_slot = yes
 				}
+				set_temp_variable = {REQUESTED_BUILDING = token:soft_arms_factory_1}
+				Add_building_to_slot_immediately = yes
 			}
 		}
 		relative_position_id = KYK_defending_our_homes
@@ -901,6 +996,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_study_combined_arms"
 		}
@@ -917,6 +1013,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_wookie_air_academy"
 		}
@@ -926,13 +1023,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_power_in_the_senate
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_power_in_the_senate
 		cost = 7.2
 		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_power_in_the_senate"
 		}
@@ -949,8 +1047,47 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_the_white_claws"
+			division_template = {
+				name = "White Claws" 
+				division_names_group = USA_INF_01
+				priority = 0
+				regiments = {
+					wookiees = { x = 0 y = 0 }
+					wookiees = { x = 1 y = 0 }
+					wookiees = { x = 2 y = 0 }
+					wookiees = { x = 3 y = 0 }
+					wookiees = { x = 0 y = 1 }
+					wookiees = { x = 1 y = 1 }
+					wookiees = { x = 2 y = 1 }
+					wookiees = { x = 0 y = 2 }
+					wookiees = { x = 1 y = 2 }
+					wookiees = { x = 1 y = 3 }
+					wookiees = { x = 2 y = 2 }
+					wookiees = { x = 2 y = 2 }
+
+				}
+				support = {
+					#military_police = { x = 0 y = 0 }
+				}
+			}
+			ROOT = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"White Claws\" division_template = \"White Claws\" start_experience_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"White Claws\" division_template = \"White Claws\" start_experience_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"White Claws\" division_template = \"White Claws\" start_experience_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
 		}
 		relative_position_id = KYK_vengeance_against_collaborators
 		prerequisite = { focus = KYK_vengeance_against_collaborators }
@@ -965,6 +1102,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_ties_with_the_smugglers"
 		}
@@ -973,46 +1111,15 @@ focus_tree = {
 	}
 
 	focus = {
-		id = KYK_a_change_in_course
-		icon = GFX_KYK_Frame
-		cost = 7.2
-		x = 1
-		y = 1
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_a_change_in_course"
-		}
-		relative_position_id = KYK_toyevvuk
-		prerequisite = { focus = KYK_toyevvuk }
-	}
-
-	focus = {
-		id = KYK_hidden_activities
-		icon = GFX_KYK_Frame
-		cost = 7.2
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_hidden_activities"
-		}
-		relative_position_id = KYK_a_change_in_course
-		prerequisite = { focus = KYK_a_change_in_course }
-	}
-
-	focus = {
 		id = KYK_a_new_republic_military_base
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_new_republic_base
 		cost = 7.2
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_a_new_republic_military_base"
 		}
@@ -1020,47 +1127,47 @@ focus_tree = {
 		prerequisite = { focus = KYK_power_in_the_senate }
 	}
 
+	
+
 	focus = {
 		id = KYK_rebuild_kachirho
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_kachiro_tree
 		cost = 7.2
 		x = 26
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		prerequisite = { focus = KYK_rebuild_what_was_lost }
 		completion_reward = {
 			custom_effect_tooltip = minus100credits_tt
 			subtract_from_variable = { currency_amount^primary_currency = 100 }
 			53 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
+				clear_building_2_effects = yes
+				set_variable = {unique_building_on_state = token:kashyyyk_tree}
+				set_temp_variable = {REQUESTED_BUILDING = token:kashyyyk_tree}
+				Add_building_to_slot_immediately = yes
 			}
 		}
 	}
 
 	focus = {
 		id = KYK_resettle_awrathakka
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_rebuild_awrath
 		cost = 7.2
 		x = -2
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			270 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
+				clear_building_2_effects = yes
+				set_variable = {unique_building_on_state = token:kashyyyk_tree}
+				set_temp_variable = {REQUESTED_BUILDING = token:kashyyyk_tree}
+				Add_building_to_slot_immediately = yes
 			}
 		}
 		relative_position_id = KYK_rebuild_what_was_lost
@@ -1069,21 +1176,20 @@ focus_tree = {
 
 	focus = {
 		id = KYK_rwookrrorro
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_rwookrrorro
 		cost = 7.2
 		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			281 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
+				clear_building_2_effects = yes
+				set_variable = {unique_building_on_state = token:kashyyyk_tree}
+				set_temp_variable = {REQUESTED_BUILDING = token:kashyyyk_tree}
+				Add_building_to_slot_immediately = yes
 			}
 		}
 		relative_position_id = KYK_resettle_awrathakka
@@ -1092,21 +1198,21 @@ focus_tree = {
 
 	focus = {
 		id = KYK_an_improved_arms_industry
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_an_improved_arms_industry
 		cost = 7.2
 		x = 2
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			random_owned_state = {
+				limit = {
+					has_avaliable_building_slot = yes
 				}
+				set_temp_variable = {REQUESTED_BUILDING = token:arms_factory_1}
+				Add_building_to_slot_immediately = yes
 			}
 		}
 		relative_position_id = KYK_rwookrrorro
@@ -1116,15 +1222,22 @@ focus_tree = {
 
 	focus = {
 		id = KYK_establish_a_major_spaceport
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_major_spaceport
 		cost = 7.2
 		x = 2
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_establish_a_major_spaceport"
+			281 = {
+				set_building_level = {
+					type = naval_base
+					level = 8
+					instant_build = yes
+				}
+			}
 		}
 		relative_position_id = KYK_water_treatment_facilities
 		prerequisite = { focus = KYK_water_treatment_facilities }
@@ -1133,13 +1246,14 @@ focus_tree = {
 
 	focus = {
 		id = KYK_honouring_the_land
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_honoring_the_land
 		cost = 7.2
 		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_honouring_the_land"
 		}
@@ -1157,6 +1271,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			add_ideas = camouflaged_homes
 		}
@@ -1173,6 +1288,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_the_defence_fleet"
 		}
@@ -1189,6 +1305,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_the_expeditionary_forces"
 		}
@@ -1205,6 +1322,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
@@ -1224,6 +1342,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_shared_tech_agreements"
 		}
@@ -1240,6 +1359,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_looking_to_zeltros"
 		}
@@ -1256,6 +1376,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			remove_ideas = slave_raids_kyk
 		}
@@ -1272,6 +1393,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_annihilate_the_slavers"
 		}
@@ -1288,6 +1410,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_a_new_wookie_colony"
 		}
@@ -1304,6 +1427,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			remove_ideas = humiliated_by_trandosha
 		}
@@ -1320,6 +1444,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_pelts_for_peace"
 		}
@@ -1336,6 +1461,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_force_the_end_of_slavery"
 		}
@@ -1353,6 +1479,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			remove_ideas = humiliated_by_trandosha
 		}
@@ -1369,6 +1496,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_wroshyr_wood"
 		}
@@ -1385,6 +1513,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus KYK_collaborate_with_nre"
 		}
@@ -1394,7 +1523,7 @@ focus_tree = {
 
 	focus = {
 		id = KYK_expansion_of_thikkiiana_city
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_thikkiiana
 		cost = 7.2
 		x = 26
 		y = 3
@@ -1402,15 +1531,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			custom_effect_tooltip = minus200credits_tt
 			subtract_from_variable = { currency_amount^primary_currency = 200 }
 			273 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
+				53 = {
+					clear_building_2_effects = yes
+					set_variable = {unique_building_on_state = token:kashyyyk_tree_2}
+					set_temp_variable = {REQUESTED_BUILDING = token:kashyyyk_tree_2}
+					Add_building_to_slot_immediately = yes
 				}
 			}
 		}
@@ -1418,7 +1548,7 @@ focus_tree = {
 
 	focus = {
 		id = KYK_government_subsidies
-		icon = GFX_KYK_Frame
+		icon = GFX_KYK_government_subsidies
 		cost = 7.2
 		x = 24
 		y = 2
@@ -1426,8 +1556,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus KYK_government_subsidies"
+			custom_effect_tooltip = minus100credits_tt
+			subtract_from_variable = { currency_amount^primary_currency = 100 }
+			mio:appazanna_engineering_organization = {
+				add_mio_funds = 1000
+			}
 		}
 	}
 	focus = {
@@ -1439,6 +1574,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		text_icon = Kashyyyk_focus_style
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = tojj_neutral

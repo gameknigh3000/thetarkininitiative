@@ -1,52 +1,286 @@
-clear_building_1_effects = {
-	if = {
-		limit = { ## FIND IF ANY STATE ALREADY HAS BUILDING AS NOT TO REMOVE IDEA FROM BUILDINGS THAT ARE THERE
-			NOT ={
-				controller = {
-					any_controlled_state = {
-						has_variable = building_name_passer
+Add_building_to_slot_with_time_constraint = { ## THIS IS FOR ADDING BUILDINGS FOR NO COST BUT STILL REQUIRING BUILD TIME, STATE SCOPE
+	hidden_effect = {
+		if = {
+			limit = { ## TRIES TO BUILD IN 1st SLOT THEN IN SECOND, WILL ALWAYS REPLACE SECOND BUILDING
+				NOT = {
+					has_variable = building_1
+				}
+			}
+			hidden_effect = {
+				clear_building_1_effects = yes
+			}
+			set_variable = { building_1 = REQUESTED_BUILDING }
+			set_variable = { time_left_building_1 = CONSTRUCT_TIME}
+			set_state_flag = building_1_to_be_handled
+			time_calculation_for_buildings = yes
+			add_to_array = {
+				array = global.building_state_constructer_1
+				value = THIS.id
+			}
+			if = {
+				limit = {
+					check_variable = {building_1 = unique_building_on_state}
+				}
+				set_state_flag = wonder_built_no_destroy_1
+			}
+		}else = {
+			hidden_effect = {
+				clear_building_2_effects = yes
+			}
+			set_variable = { building_2 = REQUESTED_BUILDING }
+			set_variable = { time_left_building_2 = CONSTRUCT_TIME}
+			time_calculation_for_buildings = yes
+			add_to_array = {
+				array = global.building_state_constructer_2
+				value = THIS.id
+			}
+			if = {
+				limit = {
+					check_variable = {building_2 = unique_building_on_state}
+				}
+				set_state_flag = wonder_built_no_destroy_2
+			}
+		}
+	}
+}
+Add_building_to_slot_immediately = { ## THIS ADDS BUILDINGS FOR FREE AND IMMEDIATLY, STATE SCOPE
+	custom_effect_tooltip = add_building_to_slot
+	hidden_effect = {
+		if = {
+			limit = { ## TRIES TO BUILD IN 1st SLOT THEN IN SECOND, WILL ALWAYS REPLACE SECOND BUILDING
+				NOT = {
+					has_variable = building_1
+				}
+			}
+			hidden_effect = {
+				clear_building_1_effects = yes
+			}
+			set_variable = { building_1 = REQUESTED_BUILDING }
+			set_temp_variable = {idea_token_passer = building_1}
+			controller = {
+				add_ideas = var:building_1
+			}
+			meta_effect = {
+				text = {
+					[BUILDING_NAME]_add_effect = yes
+				}
+				BUILDING_NAME = "[?building_1.GetTokenKey]"
+				debug = yes
+			}
+			if = {
+				limit = {
+					check_variable = {building_1 = unique_building_on_state}
+				}
+				set_state_flag = wonder_built_no_destroy_1
+			}
+		}else = {
+			hidden_effect = {
+				clear_building_2_effects = yes
+			}
+			set_variable = { building_2 = REQUESTED_BUILDING }
+			set_temp_variable = {idea_token_passer = building_2}
+			controller = {
+				add_ideas = var:building_2
+			}
+			meta_effect = {
+				text = {
+					[BUILDING_NAME]_add_effect = yes
+				}
+				BUILDING_NAME = "[?building_2.GetTokenKey]"
+			}
+			if = {
+				limit = {
+					check_variable = {building_2 = unique_building_on_state}
+				}
+				set_state_flag = wonder_built_no_destroy_2
+			}
+		}
+	}
+}
+
+
+#### ADDING BUILDING FOR EXAMPLE IN FOCUS TREE -- SPECFIC STATE EXAMPLE
+# 287 = {
+# 	set_temp_variable = {REQUESTED_BUILDING = token:military_academy_2}
+# 	Add_building_to_slot_immediately = yes
+# }
+
+
+#### ADDING BUILDING FOR EXAMPLE IN FOCUS TREE -- ANY EMPTY BUILDING STATE
+# random_owned_state = {
+# 	limit = {
+# 		has_avaliable_building_slot = yes
+# 	}
+# 	set_temp_variable = {REQUESTED_BUILDING = token:military_academy_2}
+# 	Add_building_to_slot_immediately = yes
+# }
+
+
+clear_building_1_effects = { ## USE THIS FOR GETTING RID OF A BUILDING
+	custom_effect_tooltip = clear_building_off_slot_1
+	hidden_effect = {
+		if = {
+			limit = { ## FIND IF ANY STATE ALREADY HAS BUILDING AS NOT TO REMOVE IDEA FROM BUILDINGS THAT ARE THERE
+				NOT ={
+					controller = {
+						any_controlled_state = {
+							has_variable = building_name_passer
+						}
 					}
 				}
 			}
+			remove_ideas = var:building_name_passer
 		}
-		remove_ideas = var:building_name_passer
-	}
-	meta_effect = {
-		text = {
-			[BUILDING_NAME]_remove_effect = yes
+		meta_effect = {
+			text = {
+				[BUILDING_NAME]_remove_effect = yes
+			}
+			BUILDING_NAME = "[?building_1.GetTokenKey]"
 		}
-		BUILDING_NAME = "[?building_1.GetTokenKey]"
+		clear_variable = building_1
+		clr_state_flag = tile_blocker_building_1
 	}
-	clear_variable = building_1
 }
-clear_building_2_effects = {
-	if = {
-		limit = { ## FIND IF ANY STATE ALREADY HAS BUILDING AS NOT TO REMOVE IDEA FROM BUILDINGS THAT ARE THERE
-			NOT ={
-				controller = {
-					any_controlled_state = {
-						has_variable = building_name_passer
+clear_building_2_effects = { ## USE THIS FOR GETTING RID OF A BUILDING
+	custom_effect_tooltip = clear_building_off_slot_2
+	hidden_effect = {
+		if = {
+			limit = { ## FIND IF ANY STATE ALREADY HAS BUILDING AS NOT TO REMOVE IDEA FROM BUILDINGS THAT ARE THERE
+				NOT ={
+					controller = {
+						any_controlled_state = {
+							has_variable = building_name_passer
+						}
 					}
 				}
 			}
+			remove_ideas = var:building_name_passer
 		}
-		remove_ideas = var:building_name_passer
-	}
-	meta_effect = {
-		text = {
-			[BUILDING_NAME]_remove_effect = yes
+		meta_effect = {
+			text = {
+				[BUILDING_NAME]_remove_effect = yes
+			}
+			BUILDING_NAME = "[?building_2.GetTokenKey]"
 		}
-		BUILDING_NAME = "[?building_2.GetTokenKey]"
+		clear_variable = building_2
+		clr_state_flag = tile_blocker_building_2
 	}
-	clear_variable = building_2
+}
+
+add_building_to_construct_slot_1 = {
+	var:state_located_for_building_changes = {
+		hidden_effect = {
+			clear_building_1_effects = yes
+		}
+		set_variable = { building_1 = potential_building_holder_for_event }
+		set_variable = { time_left_building_1 = potential_time_left_building_holder_for_event}
+		set_state_flag = building_1_to_be_handled
+		add_to_array = {
+			array = global.building_state_constructer_1
+			value = THIS.id
+		}
+	}
+	ROOT = {
+		subtract_from_variable = { currency_amount^primary_currency = potential_cost_holder_for_event }
+	}
+}
+add_building_to_construct_slot_2 = {
+	var:state_located_for_building_changes = {
+		hidden_effect = {
+			clear_building_2_effects = yes
+		}
+		set_variable = { building_2 = potential_building_holder_for_event }
+		set_variable = { time_left_building_2 = potential_time_left_building_holder_for_event}
+		time_calculation_for_buildings = yes
+		add_to_array = {
+			array = global.building_state_constructer_2
+			value = THIS.id
+		}
+	}
+	ROOT = {
+		subtract_from_variable = { currency_amount^primary_currency = potential_cost_holder_for_event }
+	}
+}
+
+sends_event_for_replacement_building = {
+	if = {
+		limit = {
+			ROOT = {
+				has_country_flag = building_1_open
+			}
+			has_variable = building_1
+		}
+		ROOT = {
+			country_event = BUILDING.1
+		}
+		### EVENT FOR BUILDING 1 CHANGE
+	}else_if = {
+		limit = {
+			ROOT = {
+				has_country_flag = building_2_open
+			}
+			has_variable = building_2
+		}
+		ROOT = {
+			country_event = BUILDING.2
+		}
+		### EVENT FOR BUILDING 2 CHANGE
+	}
+}
+sends_event_for_replacement_building_unique_building = {
+	if = {
+		limit = {
+			ROOT = {
+				has_country_flag = building_1_open
+			}
+			has_variable = building_1
+		}
+		ROOT = {
+			country_event = BUILDING.3
+		}
+		### EVENT FOR BUILDING 1 CHANGE
+	}else_if = {
+		limit = {
+			has_country_flag = building_2_open
+			has_variable = building_2
+		}
+		ROOT = {
+			country_event = BUILDING.4
+		}
+		### EVENT FOR BUILDING 2 CHANGE
+	}
 }
 
 
+time_calculation_for_buildings = {
+	set_temp_variable = {speed_multiplier_factor = modifier@production_speed_buildings_factor}
+	add_to_temp_variable = {speed_multiplier_factor = modifier@consumer_goods_factor}
+	add_to_temp_variable = {speed_multiplier_factor = 1}
 
-building_shipyard_1_add_effect = {
+	if = {
+		limit  = {
+			has_variable = potential_building_holder_for_event
+		}
+		set_temp_variable = { REQUESTED_BUILDING = potential_building_holder_for_event}
+	}
+
+
+
+	if = {
+		limit = {
+			has_state_flag = building_1_to_be_handled
+		}
+		divide_variable = {time_left_building_1 = speed_multiplier_factor}
+		clr_state_flag = building_1_to_be_handled
+	}else = {
+		divide_variable = {time_left_building_2 = speed_multiplier_factor}
+	}
+}
+
+light_shipyard_1_add_effect = {
 	add_building_construction = { type = dockyard level = 5 instant_build = yes}
 }
-building_shipyard_1_remove_effect = {
+light_shipyard_1_remove_effect = {
 	add_building_construction = { type = dockyard level = -5 instant_build = yes}
 }
 light_shipyard_2_add_effect = {
@@ -61,22 +295,22 @@ light_shipyard_3_add_effect = {
 light_shipyard_3_remove_effect = {
 	add_building_construction = { type = dockyard level = -15 instant_build = yes}
 }
-medium_shipyard_2_add_effect = {
+medium_shipyard_1_add_effect = {
   	add_building_construction = { type = dockyard level = 10 instant_build = yes}
 }
-medium_shipyard_2_remove_effect = {
+medium_shipyard_1_remove_effect = {
   	add_building_construction = { type = dockyard level = -10 instant_build = yes}
 }
-medium_shipyard_3_add_effect = {
+medium_shipyard_2_add_effect = {
   	add_building_construction = { type = dockyard level = 15 instant_build = yes}
 }
-medium_shipyard_3_remove_effect = {
+medium_shipyard_2_remove_effect = {
   	add_building_construction = { type = dockyard level = -15 instant_build = yes}
 }
-heavy_shipyard_3_add_effect = {
+heavy_shipyard_1_add_effect = {
   	add_building_construction = { type = dockyard level = 15 instant_build = yes}
 }
-heavy_shipyard_3_remove_effect = {
+heavy_shipyard_1_remove_effect = {
   	add_building_construction = { type = dockyard level = -15 instant_build = yes}
 }
 arms_factory_1_add_effect = {
@@ -85,28 +319,28 @@ arms_factory_1_add_effect = {
 arms_factory_1_remove_effect = {
   	add_building_construction = { type = arms_factory level = -5 instant_build = yes}
 }
-soft_arms_factory_2_add_effect = {
+soft_arms_factory_1_add_effect = {
 	add_building_construction = { type = arms_factory level = 10 instant_build = yes}
 }
-soft_arms_factory_2_add_effect = {
+soft_arms_factory_1_add_effect = {
 	add_building_construction = { type = arms_factory level = -10 instant_build = yes}
 }
-soft_arms_factory_3_add_effect = {
+soft_arms_factory_2_add_effect = {
 	add_building_construction = { type = arms_factory level = 15 instant_build = yes}
 }
-soft_arms_factory_3_add_effect = {
+soft_arms_factory_2_add_effect = {
   	add_building_construction = { type = arms_factory level = -15 instant_build = yes}
 }
-tank_factory_2_add_effect = {
+tank_factory_1_add_effect = {
   	add_building_construction = { type = arms_factory level = 10 instant_build = yes}
 }
-tank_factory_2_add_effect = {
+tank_factory_1_add_effect = {
   	add_building_construction = { type = arms_factory level = -10 instant_build = yes}
 }
-tank_factory_3_add_effect = {
+tank_factory_2_add_effect = {
   	add_building_construction = { type = arms_factory level = 15 instant_build = yes}
 }
-tank_factory_3_add_effect = {
+tank_factory_2_add_effect = {
   	add_building_construction = { type = arms_factory level = -15 instant_build = yes}
 }
 starfighter_factory_1_add_effect = {
@@ -127,34 +361,34 @@ starfighter_factory_3_add_effect = {
 starfighter_factory_3_remove_effect = {
   	add_building_construction = { type = arms_factory level = -15 instant_build = yes}
 }
-starbomber_factory_2_add_effect = {
+starbomber_factory_1_add_effect = {
   	add_building_construction = { type = arms_factory level = 10 instant_build = yes}
 }
-starbomber_factory_2_remove_effect = {
+starbomber_factory_1_remove_effect = {
   	add_building_construction = { type = arms_factory level = -10 instant_build = yes}
 }
-starbomber_factory_3_add_effect = {
+starbomber_factory_2_add_effect = {
   	add_building_construction = { type = arms_factory level = 15 instant_build = yes}
 }
-starbomber_factory_3_remove_effect = {
+starbomber_factory_2_remove_effect = {
   	add_building_construction = { type = arms_factory level = -15 instant_build = yes}
 }
-intelligence_centre_1_add_effect = {
+intelligence_center_1_add_effect = {
   	add_building_construction = { type = radar_station level = 1 instant_build = yes}
 }
-intelligence_centre_1_remove_effect = {
+intelligence_center_1_remove_effect = {
   	add_building_construction = { type = radar_station level = -1 instant_build = yes}
 }
-monitoring_beacon_2_add_effect = {
+sensor_array_1_add_effect = {
   	add_building_construction = { type = radar_station level = 2 instant_build = yes}
 }
-monitoring_beacon_2_remove_effect = {
+sensor_array_1_remove_effect = {
   	add_building_construction = { type = radar_station level = -2 instant_build = yes}
 }
-monitoring_beacon_3_add_effect = {
+sensor_array_2_add_effect = {
   	add_building_construction = { type = radar_station level = 4 instant_build = yes}
 }
-monitoring_beacon_3_remove_effect = {
+sensor_array_2_remove_effect = {
   	add_building_construction = { type = radar_station level = -4 instant_build = yes}
 }
 anti_air_1_add_effect = {
@@ -176,182 +410,291 @@ anti_air_3_remove_effect = {
 	add_building_construction = { type = anti_air_building level = -4 instant_build = yes}
 }
 corporate_office_1_add_effect = {
-	add_to_variable = { corporate_office_bonus = 0.2}
+	controller = {
+		add_to_variable = { building_income = 0.5}
+	}
 }
 corporate_office_1_remove_effect = {
-	add_to_variable = { corporate_office_bonus = -0.2}
+	controller = {
+		add_to_variable = { building_income = -0.5}
+	}
 }
 corporate_office_2_add_effect = {
-	add_to_variable = { corporate_office_bonus = 0.4}
+	controller = {
+		add_to_variable = { building_income = 1.0 }
+	}
 }
 corporate_office_2_remove_effect = {
-	add_to_variable = { corporate_office_bonus = -0.4}
+	controller = {
+		add_to_variable = { building_income = -1.0}
+	}
 }
 corporate_office_3_add_effect = {
-	add_to_variable = { corporate_office_bonus = 0.6}
+	controller = {
+		add_to_variable = { building_income = 2.0}
+	}
 }
 corporate_office_3_remove_effect = {
-	add_to_variable = { corporate_office_bonus = -0.6}
+	controller = {
+		add_to_variable = { building_income = -2.0}
+	}
+}
+####################
+kashyyyk_tree_add_effect = {
+	controller = {
+		add_to_variable = { building_income = 0.45}
+	}
+	add_resource = {
+		type = steel
+		amount = 4
+		state = THIS
+	}
+	add_resource = {
+		type = oil
+		amount = 3
+		state = THIS
+	}
+	add_building_construction = { type = arms_factory level = 4 instant_build = yes}
+}
+kashyyyk_tree_1_remove_effect = {
+	controller = {
+		add_to_variable = { building_income = -0.45}
+	}
+	add_resource = {
+		type = steel
+		amount = -4
+		state = THIS
+	}
+	add_resource = {
+		type = oil
+		amount = -3
+		state = THIS
+	}
+	add_building_construction = { type = arms_factory level = -4 instant_build = yes}
+}
+kashyyyk_tree_2_add_effect = {
+	controller = {
+		add_to_variable = { building_income = 1.5 }
+	}
+	add_resource = {
+		type = steel
+		amount = 7
+		state = THIS
+	}
+	add_resource = {
+		type = oil
+		amount = 5
+		state = THIS
+	}
+	add_building_construction = { type = arms_factory level = 8 instant_build = yes}
+}
+kashyyyk_tree_2_remove_effect = {
+	controller = {
+		add_to_variable = { building_income = -1.5}
+	}
+	add_resource = {
+		type = steel
+		amount = -7
+		state = THIS
+	}
+	add_resource = {
+		type = oil
+		amount = -5
+		state = THIS
+	}
+	add_building_construction = { type = arms_factory level = -8 instant_build = yes}
+}
+kashyyyk_tree_3_add_effect = {
+	controller = {
+		add_to_variable = { building_income = 2.0}
+	}
+	add_resource = {
+		type = steel
+		amount = 12
+		state = THIS
+	}
+	add_resource = {
+		type = oil
+		amount = 8
+		state = THIS
+	}
+	add_building_construction = { type = arms_factory level = 15 instant_build = yes}
+}
+kashyyyk_tree_3_remove_effect = {
+	controller = {
+		add_to_variable = { building_income = -2.0}
+	}
+	add_resource = {
+		type = steel
+		amount = -12
+		state = THIS
+	}
+	add_resource = {
+		type = oil
+		amount = -8
+		state = THIS
+	}
+	add_building_construction = { type = arms_factory level = -15 instant_build = yes}
 }
 recycle_center_1_add_effect = {
 		add_resource = {
 			type = oil
-			amount = 3
+			amount = 7
 			state = THIS
 		}
 		add_resource = {
 			type = aluminium
-			amount = 3
+			amount = 7
 			state = THIS
 		}
 		add_resource = {
 			type = chromium
-			amount = 3
+			amount = 7
 			state = THIS
 		}
 		add_resource = {
 			type = tungsten
-			amount = 3
+			amount = 7
 			state = THIS
 		}
 		add_resource = {
 			type = steel
-			amount = 3
+			amount = 7
 			state = THIS
 		}
 }
 recycle_center_1_remove_effect = {
 		add_resource = {
 			type = oil
-			amount = -3
+			amount = -7
 			state = THIS
 		}
 		add_resource = {
 			type = aluminium
-			amount = -3
+			amount = -7
 			state = THIS
 		}
 		add_resource = {
 			type = chromium
-			amount = -3
+			amount = -7
 			state = THIS
 		}
 		add_resource = {
 			type = tungsten
-			amount = -3
+			amount = -7
 			state = THIS
 		}
 		add_resource = {
 			type = steel
-			amount = -3
+			amount = -7
 			state = THIS
 		}
 }
 recycle_center_2_add_effect = {
 		add_resource = {
 			type = oil
-			amount = 6
+			amount = 14
 			state = THIS
 		}
 		add_resource = {
 			type = aluminium
-			amount = 6
+			amount = 14
 			state = THIS
 		}
 		add_resource = {
 			type = chromium
-			amount = 6
+			amount = 14
 			state = THIS
 		}
 		add_resource = {
 			type = tungsten
-			amount = 6
+			amount = 14
 			state = THIS
 		}
 		add_resource = {
 			type = steel
-			amount = 6
+			amount = 14
 			state = THIS
 		}
 }
 recycle_center_2_remove_effect = {
 		add_resource = {
 			type = oil
-			amount = -6
+			amount = -14
 			state = THIS
 		}
 		add_resource = {
 			type = aluminium
-			amount = -6
+			amount = -14
 			state = THIS
 		}
 		add_resource = {
 			type = chromium
-			amount = -6
+			amount = -14
 			state = THIS
 		}
 		add_resource = {
 			type = tungsten
-			amount = -6
+			amount = -14
 			state = THIS
 		}
 		add_resource = {
 			type = steel
-			amount = -6
+			amount = -14
 			state = THIS
 		}
 }
 recycle_center_3_add_effect = {
 		add_resource = {
 			type = oil
-			amount = 9
+			amount = 25
 			state = THIS
 		}
 		add_resource = {
 			type = aluminium
-			amount = 9
+			amount = 25
 			state = THIS
 		}
 		add_resource = {
 			type = chromium
-			amount = 9
+			amount = 25
 			state = THIS
 		}
 		add_resource = {
 			type = tungsten
-			amount = 9
+			amount = 25
 			state = THIS
 		}
 		add_resource = {
 			type = steel
-			amount = 9
+			amount = 25
 			state = THIS
 	}
 }
 recycle_center_3_remove_effect = {
 	add_resource = {
 		type = oil
-		amount = -9
+		amount = -25
 		state = THIS
 	}
 	add_resource = {
 		type = aluminium
-		amount = -9
+		amount = -25
 		state = THIS
 	}
 	add_resource = {
 		type = chromium
-		amount = -9
+		amount = -25
 		state = THIS
 	}
 	add_resource = {
 		type = tungsten
-		amount = -9
+		amount = -25
 		state = THIS
 	}
 	add_resource = {
 		type = steel
-		amount = -9
+		amount = -25
 		state = THIS
 	}
 }
@@ -523,42 +866,42 @@ cloud_city_3_remove_effect = {
 	}
 }
 
-mustafar_mining_complex_add_effect = {
+mustafar_works_add_effect = {
 	add_resource = {
 		type = steel
 		amount = 20
 		state = THIS
 	}
 }
-mustafar_mining_complex_remove_effect = {
+mustafar_works_remove_effect = {
 	add_resource = {
 		type = steel
 		amount = -20
 		state = THIS
 	}
 }
-mustafar_mining_complex_2_add_effect = {
+mustafar_works_2_add_effect = {
 	add_resource = {
 		type = steel
 		amount = 30
 		state = THIS
 	}
 }
-mustafar_mining_complex_2_remove_effect = {
+mustafar_works_2_remove_effect = {
 	add_resource = {
 		type = steel
 		amount = -30
 		state = THIS
 	}
 }
-mustafar_mining_complex_3_add_effect = {
+mustafar_works_3_add_effect = {
 	add_resource = {
 		type = steel
 		amount = 40
 		state = THIS
 	}
 }
-mustafar_mining_complex_3_remove_effect = {
+mustafar_works_3_remove_effect = {
 	add_resource = {
 		type = steel
 		amount = -40
@@ -609,6 +952,37 @@ kessel_coaxium_mines_3_remove_effect = {
 	}
 }
 
+casino_catonica_add_effect = {
+	controller = {
+		add_to_variable = { building_income = 0.7}
+	}
+}
+casino_catonica_remove_effect = {
+	controller = {
+		add_to_variable = { building_income = -0.7}
+	}
+}
+casino_catonica_2_add_effect = {
+	controller = {
+		add_to_variable = { building_income = 1.4}
+	}
+}
+casino_catonica_2_remove_effect = {
+	controller = {
+		add_to_variable = { building_income = -1.4}
+	}
+}
+casino_catonica_3_add_effect = {
+	controller = {
+		add_to_variable = { building_income = 3.0}
+	}
+}
+casino_catonica_3_remove_effect = {
+	controller = {
+		add_to_variable = { building_income = -3.0}
+	}
+}
+
 #### TILE BLOCKERS ####
 shadowlands_tile_blocker_cost_effect = { ## EMPTY AS ONLY REMOVED BY FOCUS
 
@@ -618,17 +992,764 @@ shadowlands_spiders_tile_blocker_cost_effect = { ## EMPTY AS ONLY REMOVED BY FOC
 }
 
 ### EXAMPLE
-coruscant_undercity_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+undercity_slums_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
 	if = {
 		limit = {
-			has_political_power = 100
-			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
 		}
-		subtract_from_variable = { currency_amount^primary_currency = 150 }
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
 		add_political_power = -100
 
-		## BELOW IS ALWAYS NEEDED
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+untamed_jungle_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+	if = {
+		limit = {
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
+		}
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
+		add_political_power = -100
+
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+dead_land_desert_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+	if = {
+		limit = {
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
+		}
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
+		add_political_power = -100
+
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+lava_fields_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+	if = {
+		limit = {
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
+		}
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
+		add_political_power = -100
+
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+rock_slides_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+	if = {
+		limit = {
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
+		}
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
+		add_political_power = -100
+
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+dangerous_fauna_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+	if = {
+		limit = {
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
+		}
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
+		add_political_power = -100
+
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+ruined_city_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+	if = {
+		limit = {
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
+		}
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
+		add_political_power = -100
+
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+inhospitable_area_tile_blocker_cost_effect = {
+	
+}
+snow_area_tile_blocker_cost_effect = { ## EXAMPLE OF COST BASED TILE BLOCKER
+	if = {
+		limit = {
+			controller = {
+				has_political_power > 100 ## Finds controller of states politcal power
+			}
+			check_variable = {currency_amount^primary_currency > 150} ## ACTUAL TRIGGER TO DECIDE WHAT COST OF THE TILE BLOCKER IS in money
+		}
+		subtract_from_variable = { currency_amount^primary_currency = 150 } ## REMOVES COST
+		add_political_power = -100
+
+		## BELOW IS ALWAYS NEEDED, CAN HAVE TILE BLOCKER IDEAS THAT WILL BE REMOVED BY THIS, ONLY COUNTRY IDEAS NOT STATE
+		check_building_1_or_2_removal_effect = yes
+	}
+}
+check_building_1_or_2_removal_effect = {
+	if = {
+		limit = {
+			check_variable = {building_1_or_2_holder = 1}
+		}
 		set_temp_variable = {building_name_passer = building_1}  ### THIS IS WHATS ACTUALLY REMOVING THE BUILDING
 		clear_building_1_effects = yes
+	}else = {
+		set_temp_variable = {building_name_passer = building_2}  ### THIS IS WHATS ACTUALLY REMOVING THE BUILDING
+		clear_building_2_effects = yes
 	}
+}
+
+
+
+primitive_farm_add_effect = {
+	add_state_modifier = {
+		modifier = {
+			local_manpower = 0.1
+		}
+	}
+	controller = {
+		add_to_variable = { building_income = 0.05}
+	}
+}
+
+primitive_farm_remove_effect = {
+	add_state_modifier = {
+		modifier = {
+			local_manpower = -0.1
+		}
+	}
+	controller = {
+		add_to_variable = { building_income = -0.05}
+	}
+}
+
+primitive_industry_add_effect = {
+	add_building_construction = { type = arms_factory level = 2 instant_build = yes}
+}
+primitive_industry_remove_effect = {
+	add_building_construction = { type = arms_factory level = -2 instant_build = yes}
+}
+
+
+primitive_offices_add_effect = {
+	controller = {
+		add_to_variable = { building_income = 0.2}
+	}
+}
+primitive_offices_remove_effect = {
+	controller = {
+		add_to_variable = { building_income = -0.2}
+	}
+}
+
+primitive_resource_extraction_add_effect = {
+	add_resource = {
+		type = oil
+		amount = 3
+		state = THIS
+	}
+	add_resource = {
+		type = aluminium
+		amount = 3
+		state = THIS
+	}
+	add_resource = {
+		type = chromium
+		amount = 3
+		state = THIS
+	}
+	add_resource = {
+		type = tungsten
+		amount = 3
+		state = THIS
+	}
+	add_resource = {
+		type = steel
+		amount = 3
+		state = THIS
+	}
+}
+primitive_resource_extraction_remove_effect = {
+	add_resource = {
+		type = oil
+		amount = -3
+		state = THIS
+	}
+	add_resource = {
+		type = aluminium
+		amount = -3
+		state = THIS
+	}
+	add_resource = {
+		type = chromium
+		amount = -3
+		state = THIS
+	}
+	add_resource = {
+		type = tungsten
+		amount = -3
+		state = THIS
+	}
+	add_resource = {
+		type = steel
+		amount = -3
+		state = THIS
+	}
+}
+imperial_refinery_remove_effect = {
+
+}
+
+
+imperial_refinery_positive_add_effect = {
+}
+
+test_building_effect = {
+	set_variable = {test_variable = token:spice_market_1}
+	log = "[?test_variable]"
+	log = "appended_to_@test_variable"
+	appended_to_@test_variable = yes
+}
+appended_to_26729 = {
+	log = "got here"
+}
+
+clear_left_over_building_event_variables = {
+	var:state_located_for_building_changes = {
+		clear_variable = potential_building_holder_for_event
+		clear_variable = potential_time_left_building_holder_for_event
+	}
+	clear_variable = potential_cost_holder_for_event
+	clear_variable = state_located_for_building_changes
+
+}
+
+_add_effect = { ## This is really stupid dont question it, also dont remove it or 10000000 errors
+
+}
+_remove_effect = { ## This is really stupid dont question it, also dont remove it or 10000000 errors
+
+}
+
+
+
+### FOR SAKE OF PEOPLES SANITY DO NOT LOOK FUTHER THIS IS THE MOST COMPLEX SHIT EVER DEVISED
+
+
+arms_factory_building_construction_speed_variable_setter = {
+
+	set_variable = {arms_factory_1_speed = global.arms_factory_1_global_speed}
+	set_variable = {soft_arms_factory_1_speed = global.soft_arms_factory_1_global_speed}
+	set_variable = {soft_arms_factory_2_speed = global.soft_arms_factory_2_global_speed}
+	set_variable = {tank_factory_1_speed = global.tank_factory_1_global_speed}
+	set_variable = {tank_factory_2_speed = global.tank_factory_2_global_speed}
+	
+	multiply_variable = {arms_factory_1_speed = final_calulation_multiplier}
+	multiply_variable = {soft_arms_factory_1_speed = final_calulation_multiplier}
+	multiply_variable = {soft_arms_factory_2_speed = final_calulation_multiplier}
+	multiply_variable = {tank_factory_1_speed = final_calulation_multiplier}
+	multiply_variable = {tank_factory_2_speed = final_calulation_multiplier}
+
+}
+shipyard_building_construction_speed_variable_setter = {
+	set_variable = {light_shipyard_1_speed = global.light_shipyard_1_global_speed}
+	set_variable = {light_shipyard_2_speed = global.light_shipyard_2_global_speed}
+	set_variable = {light_shipyard_3_speed = global.light_shipyard_3_global_speed}
+	set_variable = {medium_shipyard_1_speed = global.medium_shipyard_1_global_speed}
+	set_variable = {medium_shipyard_2_speed = global.medium_shipyard_2_global_speed}
+	set_variable = {heavy_shipyard_1_speed = global.heavy_shipyard_1_global_speed}
+	
+	multiply_variable = {light_shipyard_1_speed = final_calulation_multiplier}
+	multiply_variable = {light_shipyard_2_speed = final_calulation_multiplier}
+	multiply_variable = {light_shipyard_3_speed = final_calulation_multiplier}
+	multiply_variable = {medium_shipyard_1_speed = final_calulation_multiplier}
+	multiply_variable = {medium_shipyard_2_speed = final_calulation_multiplier}
+	multiply_variable = {heavy_shipyard_1_speed = final_calulation_multiplier}
+}
+training_building_construction_speed_variable_setter = {
+	set_variable = {training_facilities_1_speed = global.training_facilities_1_global_speed}
+	set_variable = {special_forces_training_facilities_1_speed = global.special_forces_training_facilities_1_global_speed}
+	set_variable = {special_forces_training_facilities_2_speed = global.special_forces_training_facilities_2_global_speed}
+	set_variable = {military_bootcamp_1_speed = global.military_bootcamp_1_global_speed}
+	set_variable = {military_bootcamp_2_speed = global.military_bootcamp_2_global_speed}
+	
+	multiply_variable = {training_facilities_1_speed = final_calulation_multiplier}
+	multiply_variable = {special_forces_training_facilities_1_speed = final_calulation_multiplier}
+	multiply_variable = {special_forces_training_facilities_2_speed = final_calulation_multiplier}
+	multiply_variable = {military_bootcamp_1_speed = final_calulation_multiplier}
+	multiply_variable = {military_bootcamp_2_speed = final_calulation_multiplier}
+}
+intelligence_building_construction_speed_variable_setter = {
+	set_variable = {intelligence_center_1_speed = global.intelligence_center_1_global_speed}
+	set_variable = {sensor_array_1_speed = global.sensor_array_1_global_speed}
+	set_variable = {sensor_array_2_speed = global.sensor_array_2_global_speed}
+	set_variable = {spy_academy_1_speed = global.spy_academy_1_global_speed}
+	set_variable = {spy_academy_2_speed = global.spy_academy_2_global_speed}
+	
+	multiply_variable = {intelligence_center_1_speed = final_calulation_multiplier}
+	multiply_variable = {sensor_array_1_speed = final_calulation_multiplier}
+	multiply_variable = {sensor_array_2_speed = final_calulation_multiplier}
+	multiply_variable = {spy_academy_1_speed = final_calulation_multiplier}
+	multiply_variable = {spy_academy_2_speed = final_calulation_multiplier}
+}
+research_building_construction_speed_variable_setter = {
+	set_variable = {research_center_1_speed = global.research_center_1_global_speed}
+	set_variable = {research_center_2_speed = global.research_center_2_global_speed}
+	set_variable = {research_center_3_speed = global.research_center_3_global_speed}
+	
+	multiply_variable = {research_center_1_speed = final_calulation_multiplier}
+	multiply_variable = {research_center_2_speed = final_calulation_multiplier}
+	multiply_variable = {research_center_3_speed = final_calulation_multiplier}
+}
+military_academy_building_construction_speed_variable_setter = {
+	set_variable = {military_academy_1_speed = global.military_academy_1_global_speed}
+	set_variable = {military_academy_2_speed = global.military_academy_2_global_speed}
+	set_variable = {military_academy_3_speed = global.military_academy_3_global_speed}
+	set_variable = {starfighter_academy_1_speed = global.starfighter_academy_1_global_speed}
+	set_variable = {admiralty_academy_1_speed = global.admiralty_academy_1_global_speed}
+	set_variable = {naval_academy_1_speed = global.naval_academy_1_global_speed}
+	
+	multiply_variable = {military_academy_1_speed = final_calulation_multiplier}
+	multiply_variable = {military_academy_2_speed = final_calulation_multiplier}
+	multiply_variable = {military_academy_3_speed = final_calulation_multiplier}
+	multiply_variable = {starfighter_academy_1_speed = final_calulation_multiplier}
+	multiply_variable = {admiralty_academy_1_speed = final_calulation_multiplier}
+	multiply_variable = {naval_academy_1_speed = final_calulation_multiplier}
+}
+homestead_building_construction_speed_variable_setter = {
+	set_variable = {homestead_1_speed = global.homestead_1_global_speed}
+	set_variable = {homestead_2_speed = global.homestead_2_global_speed}
+	set_variable = {homestead_3_speed = global.homestead_3_global_speed}
+	
+	multiply_variable = {homestead_1_speed = final_calulation_multiplier}
+	multiply_variable = {homestead_2_speed = final_calulation_multiplier}
+	multiply_variable = {homestead_3_speed = final_calulation_multiplier}
+}
+corporate_office_building_construction_speed_variable_setter = {
+	set_variable = {corporate_office_1_speed = global.corporate_office_1_global_speed}
+	set_variable = {corporate_office_2_speed = global.corporate_office_2_global_speed}
+	set_variable = {corporate_office_3_speed = global.corporate_office_3_global_speed}
+	
+	multiply_variable = {corporate_office_1_speed = final_calulation_multiplier}
+	multiply_variable = {corporate_office_2_speed = final_calulation_multiplier}
+	multiply_variable = {corporate_office_3_speed = final_calulation_multiplier}
+}
+recycle_center_building_construction_speed_variable_setter = {
+	set_variable = {recycle_center_1_speed = global.recycle_center_1_global_speed}
+	set_variable = {recycle_center_2_speed = global.recycle_center_2_global_speed}
+	set_variable = {recycle_center_3_speed = global.recycle_center_3_global_speed}
+	
+	multiply_variable = {recycle_center_1_speed = final_calulation_multiplier}
+	multiply_variable = {recycle_center_2_speed = final_calulation_multiplier}
+	multiply_variable = {recycle_center_3_speed = final_calulation_multiplier}
+}
+spice_market_building_construction_speed_variable_setter = {
+	set_variable = {spice_market_1_speed = global.spice_market_1_global_speed}
+	set_variable = {spice_market_2_speed = global.spice_market_2_global_speed}
+	set_variable = {spice_market_3_speed = global.spice_market_3_global_speed}
+	
+	multiply_variable = {spice_market_1_speed = final_calulation_multiplier}
+	multiply_variable = {spice_market_2_speed = final_calulation_multiplier}
+	multiply_variable = {spice_market_3_speed = final_calulation_multiplier}
+}
+fuel_refinery_building_construction_speed_variable_setter = {
+	set_variable = {fuel_refinery_1_speed = global.fuel_refinery_1_global_speed}
+	set_variable = {fuel_refinery_2_speed = global.fuel_refinery_2_global_speed}
+	set_variable = {fuel_refinery_3_speed = global.fuel_refinery_3_global_speed}
+	
+	multiply_variable = {fuel_refinery_1_speed = final_calulation_multiplier}
+	multiply_variable = {fuel_refinery_2_speed = final_calulation_multiplier}
+	multiply_variable = {fuel_refinery_3_speed = final_calulation_multiplier}
+}
+anti_air_building_construction_speed_variable_setter = {
+	set_variable = {anti_air_1_speed = global.anti_air_1_global_speed}
+	set_variable = {anti_air_2_speed = global.anti_air_2_global_speed}
+	set_variable = {anti_air_3_speed = global.anti_air_3_global_speed}
+	
+	multiply_variable = {anti_air_1_speed = final_calulation_multiplier}
+	multiply_variable = {anti_air_2_speed = final_calulation_multiplier}
+	multiply_variable = {anti_air_3_speed = final_calulation_multiplier}
+}
+starfighter_building_construction_speed_variable_setter = {
+	set_variable = {starfighter_factory_1_speed = global.starfighter_factory_1_global_speed}
+	set_variable = {starfighter_factory_2_speed = global.starfighter_factory_2_global_speed}
+	set_variable = {starfighter_factory_3_speed = global.starfighter_factory_3_global_speed}
+	set_variable = {starbomber_factory_1_speed = global.starbomber_factory_1_global_speed}
+	set_variable = {starbomber_factory_2_speed = global.starbomber_factory_2_global_speed}
+	
+	multiply_variable = {starfighter_factory_1_speed = final_calulation_multiplier}
+	multiply_variable = {starfighter_factory_2_speed = final_calulation_multiplier}
+	multiply_variable = {starfighter_factory_3_speed = final_calulation_multiplier}
+	multiply_variable = {starbomber_factory_1_speed = final_calulation_multiplier}
+	multiply_variable = {starbomber_factory_2_speed = final_calulation_multiplier}
+}
+taxation_center_construction_speed_variable_setter = {
+	set_variable = {taxation_center_1_speed = global.taxation_center_1_global_speed}
+	set_variable = {taxation_center_2_speed = global.taxation_center_2_global_speed}
+	set_variable = {taxation_center_3_speed = global.taxation_center_3_global_speed}
+	
+	multiply_variable = {taxation_center_1_speed = final_calulation_multiplier}
+	multiply_variable = {taxation_center_2_speed = final_calulation_multiplier}
+	multiply_variable = {taxation_center_3_speed = final_calulation_multiplier}
+}
+## Cost
+arms_factory_building_construction_cost_variable_setter = {
+
+	set_variable = {arms_factory_1_cost = global.arms_factory_1_global_cost}
+	set_variable = {soft_arms_factory_1_cost = global.soft_arms_factory_1_global_cost}
+	set_variable = {soft_arms_factory_2_cost = global.soft_arms_factory_2_global_cost}
+	set_variable = {tank_factory_1_cost = global.tank_factory_1_global_cost}
+	set_variable = {tank_factory_2_cost = global.tank_factory_2_global_cost}
+	
+	multiply_variable = {arms_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {soft_arms_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {soft_arms_factory_2_cost = final_calulation_multiplier}
+	multiply_variable = {tank_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {tank_factory_2_cost = final_calulation_multiplier}
+
+}
+shipyard_building_construction_cost_variable_setter = {
+	set_variable = {light_shipyard_1_cost = global.light_shipyard_1_global_cost}
+	set_variable = {light_shipyard_2_cost = global.light_shipyard_2_global_cost}
+	set_variable = {light_shipyard_3_cost = global.light_shipyard_3_global_cost}
+	set_variable = {medium_shipyard_1_cost = global.medium_shipyard_1_global_cost}
+	set_variable = {medium_shipyard_2_cost = global.medium_shipyard_2_global_cost}
+	set_variable = {heavy_shipyard_1_cost = global.heavy_shipyard_1_global_cost}
+	
+	multiply_variable = {arms_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {soft_arms_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {soft_arms_factory_2_cost = final_calulation_multiplier}
+	multiply_variable = {tank_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {tank_factory_2_cost = final_calulation_multiplier}
+}
+training_building_construction_cost_variable_setter = {
+	set_variable = {training_facilities_1_cost = global.training_facilities_1_global_cost}
+	set_variable = {special_forces_training_facilities_1_cost = global.special_forces_training_facilities_1_global_cost}
+	set_variable = {special_forces_training_facilities_2_cost = global.special_forces_training_facilities_2_global_cost}
+	set_variable = {military_bootcamp_1_cost = global.military_bootcamp_1_global_cost}
+	set_variable = {military_bootcamp_2_cost = global.military_bootcamp_2_global_cost}
+	
+	multiply_variable = {training_facilities_1_cost = final_calulation_multiplier}
+	multiply_variable = {special_forces_training_facilities_1_cost = final_calulation_multiplier}
+	multiply_variable = {special_forces_training_facilities_2_cost = final_calulation_multiplier}
+	multiply_variable = {military_bootcamp_1_cost = final_calulation_multiplier}
+	multiply_variable = {military_bootcamp_2_cost = final_calulation_multiplier}
+}
+intelligence_building_construction_cost_variable_setter = {
+	set_variable = {intelligence_center_1_cost = global.intelligence_center_1_global_cost}
+	set_variable = {sensor_array_1_cost = global.sensor_array_1_global_cost}
+	set_variable = {sensor_array_2_cost = global.sensor_array_2_global_cost}
+	set_variable = {spy_academy_1_cost = global.spy_academy_1_global_cost}
+	set_variable = {spy_academy_2_cost = global.spy_academy_2_global_cost}
+	
+	multiply_variable = {intelligence_center_1_cost = research_center_1_global_cost}
+	multiply_variable = {sensor_array_1_cost = final_calulation_multiplier}
+	multiply_variable = {sensor_array_2_cost = final_calulation_multiplier}
+	multiply_variable = {spy_academy_1_cost = final_calulation_multiplier}
+	multiply_variable = {spy_academy_2_cost = final_calulation_multiplier}
+}
+research_building_construction_cost_variable_setter = {
+	set_variable = {research_center_1_cost = global.research_center_1_global_cost}
+	set_variable = {research_center_2_cost = global.research_center_2_global_cost}
+	set_variable = {research_center_3_cost = global.research_center_3_global_cost}
+	
+	multiply_variable = {research_center_1_cost = final_calulation_multiplier}
+	multiply_variable = {research_center_2_cost = final_calulation_multiplier}
+	multiply_variable = {research_center_3_cost = final_calulation_multiplier}
+}
+military_academy_building_construction_cost_variable_setter = {
+	set_variable = {military_academy_1_cost = global.military_academy_1_global_cost}
+	set_variable = {military_academy_2_cost = global.military_academy_2_global_cost}
+	set_variable = {military_academy_3_cost = global.military_academy_3_global_cost}
+	set_variable = {starfighter_academy_1_cost = global.starfighter_academy_1_global_cost}
+	set_variable = {admiralty_academy_1_cost = global.admiralty_academy_1_global_cost}
+	set_variable = {naval_academy_1_cost = global.naval_academy_1_global_cost}
+	
+	multiply_variable = {military_academy_1_cost = final_calulation_multiplier}
+	multiply_variable = {military_academy_2_cost = final_calulation_multiplier}
+	multiply_variable = {military_academy_3_cost = final_calulation_multiplier}
+	multiply_variable = {starfighter_academy_1_cost = final_calulation_multiplier}
+	multiply_variable = {admiralty_academy_1_cost = final_calulation_multiplier}
+	multiply_variable = {naval_academy_1_cost = final_calulation_multiplier}
+}
+homestead_building_construction_cost_variable_setter = {
+	set_variable = {homestead_1_cost = global.homestead_1_global_cost}
+	set_variable = {homestead_2_cost = global.homestead_2_global_cost}
+	set_variable = {homestead_3_cost = global.homestead_3_global_cost}
+	
+	multiply_variable = {homestead_1_cost = final_calulation_multiplier}
+	multiply_variable = {homestead_2_cost = final_calulation_multiplier}
+	multiply_variable = {homestead_3_cost = final_calulation_multiplier}
+}
+corporate_office_building_construction_cost_variable_setter = {
+	set_variable = {corporate_office_1_cost = global.corporate_office_1_global_cost}
+	set_variable = {corporate_office_2_cost = global.corporate_office_2_global_cost}
+	set_variable = {corporate_office_3_cost = global.corporate_office_3_global_cost}
+	
+	multiply_variable = {corporate_office_1_cost = final_calulation_multiplier}
+	multiply_variable = {corporate_office_2_cost = final_calulation_multiplier}
+	multiply_variable = {corporate_office_3_cost = final_calulation_multiplier}
+}
+recycle_center_building_construction_cost_variable_setter = {
+	set_variable = {recycle_center_1_cost = global.recycle_center_1_global_cost}
+	set_variable = {recycle_center_2_cost = global.recycle_center_2_global_cost}
+	set_variable = {recycle_center_3_cost = global.recycle_center_3_global_cost}
+	
+	multiply_variable = {recycle_center_1_cost = final_calulation_multiplier}
+	multiply_variable = {recycle_center_2_cost = final_calulation_multiplier}
+	multiply_variable = {recycle_center_3_cost = final_calulation_multiplier}
+}
+spice_market_building_construction_cost_variable_setter = {
+	set_variable = {spice_market_1_cost = global.spice_market_1_global_cost}
+	set_variable = {spice_market_2_cost = global.spice_market_2_global_cost}
+	set_variable = {spice_market_3_cost = global.spice_market_3_global_cost}
+	
+	multiply_variable = {spice_market_1_cost = final_calulation_multiplier}
+	multiply_variable = {spice_market_2_cost = final_calulation_multiplier}
+	multiply_variable = {spice_market_3_cost = final_calulation_multiplier}
+}
+fuel_refinery_building_construction_cost_variable_setter = {
+	set_variable = {fuel_refinery_1_cost = global.fuel_refinery_1_global_cost}
+	set_variable = {fuel_refinery_2_cost = global.fuel_refinery_2_global_cost}
+	set_variable = {fuel_refinery_3_cost = global.fuel_refinery_3_global_cost}
+	
+	multiply_variable = {fuel_refinery_1_cost = final_calulation_multiplier}
+	multiply_variable = {fuel_refinery_2_cost = final_calulation_multiplier}
+	multiply_variable = {fuel_refinery_3_cost = final_calulation_multiplier}
+}
+anti_air_building_construction_cost_variable_setter = {
+	set_variable = {anti_air_1_cost = global.anti_air_1_global_cost}
+	set_variable = {anti_air_2_cost = global.anti_air_2_global_cost}
+	set_variable = {anti_air_3_cost = global.anti_air_3_global_cost}
+	
+	multiply_variable = {anti_air_1_cost = final_calulation_multiplier}
+	multiply_variable = {anti_air_2_cost = final_calulation_multiplier}
+	multiply_variable = {anti_air_3_cost = final_calulation_multiplier}
+}
+starfighter_building_construction_cost_variable_setter = {
+	set_variable = {starfighter_factory_1_cost = global.starfighter_factory_1_global_cost}
+	set_variable = {starfighter_factory_2_cost = global.starfighter_factory_2_global_cost}
+	set_variable = {starfighter_factory_3_cost = global.starfighter_factory_3_global_cost}
+	set_variable = {starbomber_factory_1_cost = global.starbomber_factory_1_global_cost}
+	set_variable = {starbomber_factory_2_cost = global.starbomber_factory_2_global_cost}
+	
+	multiply_variable = {starfighter_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {starfighter_factory_2_cost = final_calulation_multiplier}
+	multiply_variable = {starfighter_factory_3_cost = final_calulation_multiplier}
+	multiply_variable = {starbomber_factory_1_cost = final_calulation_multiplier}
+	multiply_variable = {starbomber_factory_2_cost = final_calulation_multiplier}
+}
+taxation_center_construction_cost_variable_setter = {
+	set_variable = {taxation_center_1_cost = global.taxation_center_1_global_cost}
+	set_variable = {taxation_center_2_cost = global.taxation_center_2_global_cost}
+	set_variable = {taxation_center_3_cost = global.taxation_center_3_global_cost}
+	
+	multiply_variable = {taxation_center_1_cost = final_calulation_multiplier}
+	multiply_variable = {taxation_center_2_cost = final_calulation_multiplier}
+	multiply_variable = {taxation_center_3_cost = final_calulation_multiplier}
+}
+
+construction_speed_calculator = {
+	if = {
+		limit = {
+			OR = {
+				check_variable = {
+					var = building_modifier_value
+					value = 0
+					compare = not_equals
+				}
+				check_variable = {
+					var = building_category_value
+					value = 0
+					compare = not_equals
+				}
+			}
+		}
+
+		set_temp_variable = {final_calulation_multiplier = 1}
+		add_to_temp_variable = {final_calulation_multiplier = building_category_value}
+		add_to_temp_variable = {final_calulation_multiplier = building_modifier_value}
+
+		meta_effect = {
+			text = {
+				[BUILDING_MODIFIER]_variable_setter = yes 
+			}
+			BUILDING_MODIFIER = "[?building_modifier_name.GetTokenKey]"
+		}
+
+	}
+}
+
+refresh_building_time_and_cost_modifiers = {
+
+	## ARMY CATEGORY
+	set_temp_variable = {building_category_value = modifier@army_building_construction_speed}
+
+
+	set_temp_variable = {building_modifier_value = modifier@arms_factory_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:arms_factory_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@anti_air_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:anti_air_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@training_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:training_building_construction_speed}
+	construction_speed_calculator = yes
+
+	## NAVAL CATEGORY
+	set_temp_variable = {building_category_value = modifier@naval_building_construction_speed}
+
+	set_temp_variable = {building_modifier_value = modifier@shipyard_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:shipyard_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@starfighter_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:starfighter_building_construction_speed}
+	construction_speed_calculator = yes
+
+
+	##Goverment
+	set_temp_variable = {building_category_value = modifier@goverment_building_construction_speed}
+
+	set_temp_variable = {building_modifier_value = modifier@intelligence_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:intelligence_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@research_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:research_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@military_academy_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:military_academy_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@taxation_center_construction_speed}
+	set_temp_variable = {building_modifier_name = token:taxation_center_construction_speed}
+	construction_speed_calculator = yes
+	
+	## ECONOMIC
+	set_temp_variable = {building_category_value = modifier@economic_building_construction_speed}
+
+	set_temp_variable = {building_modifier_value = modifier@homestead_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:homestead_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@corporate_office_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:corporate_office_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@recycle_center_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:recycle_center_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@spice_market_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:spice_market_building_construction_speed}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@fuel_refinery_building_construction_speed}
+	set_temp_variable = {building_modifier_name = token:fuel_refinery_building_construction_speed}
+	construction_speed_calculator = yes
+
+# COST
+## ARMY CATEGORY
+	set_temp_variable = {building_category_value = modifier@army_building_construction_cost}
+
+
+	set_temp_variable = {building_modifier_value = modifier@arms_factory_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:arms_factory_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@training_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:training_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@anti_air_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:anti_air_building_construction_cost}
+	construction_speed_calculator = yes
+
+	## NAVAL CATEGORY
+	set_temp_variable = {building_category_value = modifier@naval_building_construction_cost}
+
+	set_temp_variable = {building_modifier_value = modifier@shipyard_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:shipyard_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@starfighter_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:starfighter_building_construction_cost}
+	construction_speed_calculator = yes
+
+
+	##Goverment
+	set_temp_variable = {building_category_value = modifier@goverment_building_construction_cost}
+
+	set_temp_variable = {building_modifier_value = modifier@intelligence_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:intelligence_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@research_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:research_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@military_academy_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:military_academy_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@taxation_center_construction_cost}
+	set_temp_variable = {building_modifier_name = token:taxation_center_construction_cost}
+	construction_speed_calculator = yes
+
+	## ECONOMIC
+	set_temp_variable = {building_category_value = modifier@economic_building_construction_cost}
+
+	set_temp_variable = {building_modifier_value = modifier@homestead_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:homestead_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@corporate_office_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:corporate_office_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@recycle_center_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:recycle_center_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@spice_market_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:spice_market_building_construction_cost}
+	construction_speed_calculator = yes
+
+	set_temp_variable = {building_modifier_value = modifier@fuel_refinery_building_construction_cost}
+	set_temp_variable = {building_modifier_name = token:fuel_refinery_building_construction_cost}
+	construction_speed_calculator = yes
+
 }

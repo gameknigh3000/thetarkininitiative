@@ -1,90 +1,104 @@
 From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
-4626;9009;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-3959;8869;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+3105;11157;sea;1248;-1;-1;-1;-1;;Bespin
+1611;11116;sea;11120;-1;-1;-1;-1;;Bespin
+1611;11157;sea;11146;-1;-1;-1;-1;;Bespin
+11610;11694;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+243;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11727;11968;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11610;11955;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11626;11865;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11585;11694;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11636;11865;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
 3959;8892;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-8998;9035;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-960;8869;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-2195;8869;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-1431;9046;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-602;8909;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-8906;8931;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-1431;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-9004;9023;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-243;8966;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-876;1431;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-876;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+48;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11680;12035;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+1431;9023;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
 602;8931;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11727;11974;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+602;8934;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+8906;8931;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11667;11817;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11817;11959;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11680;11865;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11817;11962;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11718;11982;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+602;8909;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+2195;8869;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+9009;9036;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
 8998;9023;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
 8882;8909;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-9009;9036;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-48;772;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-9016;9036;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+960;8869;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+876;1431;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
 9009;9030;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-602;8934;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-243;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-4626;9030;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-1431;9023;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-48;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11865;11680;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11865;11636;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11865;11626;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11727;11680;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11727;11964;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11727;11968;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11727;11974;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11727;11972;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11718;11972;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-12035;11680;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11656;11694;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11585;11694;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11610;11694;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11610;11955;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11610;11969;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+876;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
 11586;11817;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11667;11817;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11962;11817;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11966;11817;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11959;11817;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+9016;9036;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11680;11727;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11718;11972;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11727;11972;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+9004;9023;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11817;11966;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+48;772;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11656;11694;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11610;11969;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+1431;4533;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+243;8966;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+4626;9030;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+8998;9035;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+4626;9009;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+11727;11964;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+1431;9046;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
+3959;8869;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
 11574;11718;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11982;11718;impassable;-1;-1;-1;-1;-1;;Kalist IV Mountains
-11656;11718;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11980;11718;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11585;11718;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11903;11585;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11903;11956;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11903;11666;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11879;11680;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11879;11599;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11879;11970;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-11879;11975;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-12025;11975;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-12025;11981;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-12025;11968;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-12025;11627;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-12025;11688;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-12025;11574;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-12025;11980;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
-2397;10414;sea;10414;-1;-1;-1;-1;;Naboo Core
-2397;10617;sea;10617;-1;-1;-1;-1;;Naboo Core
-8221;2111;sea;11639;-1;-1;-1;-1;;Kuat Ring
-8326;8276;sea;11639;-1;-1;-1;-1;;Kuat Ring
-8146;8085;sea;11639;-1;-1;-1;-1;;Kuat Ring
-7953;1648;sea;11639;-1;-1;-1;-1;;Kuat Ring
+1648;7953;sea;11639;-1;-1;-1;-1;;Kuat Ring
 689;884;sea;11639;-1;-1;-1;-1;;Kuat Ring
 2012;7998;sea;11639;-1;-1;-1;-1;;Kuat Ring
-
-12048;12050;sea;12041;-1;-1;-1;-1;;Roche
-12048;12045;sea;12041;-1;-1;-1;-1;;Roche
-12048;12047;sea;12041;-1;-1;-1;-1;;Roche
-12046;12043;sea;12041;-1;-1;-1;-1;;Roche
+8276;8326;sea;11639;-1;-1;-1;-1;;Kuat Ring
+8085;8146;sea;11639;-1;-1;-1;-1;;Kuat Ring
+2111;8221;sea;11639;-1;-1;-1;-1;;Kuat Ring
+11656;11718;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11599;11879;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11879;11975;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11968;12025;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11981;12025;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11585;11903;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11574;12025;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11903;11956;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11666;11903;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11879;11970;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11585;11718;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11980;12025;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11718;11980;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11688;12025;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11627;12025;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11975;12025;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11680;11879;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11575;11989;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11575;11794;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11575;11894;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11575;11813;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11955;11694;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11955;11762;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11610;11847;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11847;11950;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11847;11943;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11847;11623;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11762;11623;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11757;11623;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11587;11989;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11587;11861;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11587;11852;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11587;11794;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
+11575;11743;impassable;-1;-1;-1;-1;-1;;Preventing ai navies crossing deep space
 12042;12046;sea;12041;-1;-1;-1;-1;;Roche
-12042;12044;sea;12041;-1;-1;-1;-1;;Roche
-12044;12046;sea;12041;-1;-1;-1;-1;;Roche
-12045;12044;sea;12041;-1;-1;-1;-1;;Roche
-12049;12045;sea;12041;-1;-1;-1;-1;;Roche
 12049;12052;sea;12041;-1;-1;-1;-1;;Roche
-12051;12052;sea;12041;-1;-1;-1;-1;;Roche
-12052;12047;sea;12041;-1;-1;-1;-1;;Roche
+12042;12044;sea;12041;-1;-1;-1;-1;;Roche
+12047;12048;sea;12041;-1;-1;-1;-1;;Roche
+12048;12050;sea;12041;-1;-1;-1;-1;;Roche
+12043;12046;sea;12041;-1;-1;-1;-1;;Roche
+12044;12046;sea;12041;-1;-1;-1;-1;;Roche
+12045;12048;sea;12041;-1;-1;-1;-1;;Roche
+12045;12049;sea;12041;-1;-1;-1;-1;;Roche
 
 
 
@@ -93,7 +107,205 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 1611;11157;sea;11146;-1;-1;-1;-1;;Bespin
 11157;3105;sea;1248;-1;-1;-1;-1;;Bespin
 
-11157;3105;sea;1248;-1;-1;-1;-1;;Bespin
+11626;11666;;;-1;-1;-1;-1;HIDDEN_HYPERLANE_HAKASSI;Hakassai-Zero Command
+11631;11921;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Sluis Van Bith
+
+11629;11921;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Utapau Bith
+
+11929;11921;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Eriadu Bith
+11929;11570;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Eriadu Mustafar
+11929;11577;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Eriadu Sullust
+11929;11681;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Eriadu Malastare
+11929;11606;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Eriadu Naboo
+
+11618;11606;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Lambda Naboo
+11618;11927;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Lambda Pantora
+11618;11634;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Lambda Falleen
+11618;11675;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Lambda Lok
+
+11930;11675;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tatooine Lok
+11930;11638;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tatooine Ryloth
+11930;11596;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tatooine Zann
+11930;11686;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tatooine Rothana
+11930;11580;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tatooine Rodia
+11930;11615;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tatooine Bothawui
+
+11653;11686;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Eadu Rothana
+
+11662;11615;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Circumtore Bothawui
+11662;11578;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Circumtore Hutt Council
+11662;11952;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Circumtore Hutt Council
+
+11647;11927;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Alzoc Pantora
+11647;11648;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Alzoc Karazak
+
+12194;11634;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;New Cov Falleen
+12194;11673;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;New Cov Gydine
+
+11939;11577;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;YAG Sullust
+11939;11654;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;YAG THY
+11939;11943;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;YAG Hosnian
+
+11623;11943;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;BLS Hosnian
+
+11950;11943;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Nubia Hosnian
+
+11610;11666;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;COR FTU
+11610;11656;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;COR AARG
+
+11574;11656;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Coruscant AARG
+11574;11972;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Coruscant Teta
+11574;11627;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Coruscant Salliche
+11574;11601;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Coruscant Bor
+11574;11590;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Coruscant Anaxese
+
+11975;11627;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Fresia Salliche
+11975;11599;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Fresia Salliche
+
+
+11968;11972;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;PRAK Teta
+11968;11680;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;PRAK BYSS
+
+11922;11570;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Bespin Mustafar
+11922;12055;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Bespin Nagai
+11922;11928;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Bespin Lotho
+11922;11593;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Bespin Kafrene
+
+11654;11593;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Thyferra Kafrene
+11654;11584;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Thyferra Fondor
+
+11670;11584;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;LTF Fondor
+11670;11682;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;LTF Tapani
+
+
+11636;11584;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ABR Fondor
+
+11646;11928;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Bakura Lotho
+11646;11600;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Bakura SSI
+
+11660;11600;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;VON SSI
+
+11643;11600;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;INR SSI
+11643;11979;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;INR MITTH
+11643;11651;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;INR CHS
+
+11998;11651;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ZAA CHS
+
+12006;12000;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;PEN EOH
+12006;11605;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;PEN BEX
+12006;12016;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;PEN JAE
+12006;11630;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;PEN IBC
+12006;11622;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;PEN Billbringi
+
+11601;11622;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Bor Billbringi
+
+11594;11622;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ord Mantell Billbringi
+11594;11678;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ord Mantell Ord Cantrell
+11594;12193;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ord Mantell Mindor
+11594;11603;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ord Mantell Taris
+
+11644;12193;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Chandrila Mindor
+11644;11590;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Chandrila Anaxese
+11644;11603;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Chandrila Taris
+
+11609;11603;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Mimban Taris
+
+11607;11603;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Wayland Taris
+11607;12011;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Wayland Mandalore
+
+12019;12011;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Yavin Mandalore
+12019;12190;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Yavin Taanab
+12019;11663;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Yavin Korriban
+
+
+11620;12011;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Concordia Mandalore
+
+12193;11590;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Mindor Anaxese
+
+11687;11590;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tepasi Anaxese
+11687;11644;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tepasi Chandrila
+
+12022;12016;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;GAL JAE
+12022;11632;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;GAL Bastion
+12022;11650;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;GAL REE
+
+12187;11650;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ITH REE
+12187;12188;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ITH Ciutric
+12187;11678;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ITH ORD
+
+
+12188;12020;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ciutric DAT
+12188;11603;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ciutric Taris
+12188;11650;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ciutric REE
+
+12020;11603;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;DAT Taris
+12020;11641;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;DAT Guav
+12020;11661;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;DAT Serreno
+
+12189;11661;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Toprawa Serreno
+
+11619;11661;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Telos Serreno
+11619;12192;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Telos Mirial
+11619;11665;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Telos Etti 4
+
+11604;11665;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Catonica Etti 4
+11604;12017;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Catonica Zyg
+
+12017;12192;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ZYG Mirial
+12017;12001;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ZYG Lianna
+
+
+12191;12192;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Elom Mirial
+12191;11663;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Elom Korriban
+12191;11995;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Elom Maldrood
+12191;12001;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Elom Lianna
+
+11995;12001;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Maldrood Lianna
+11995;11988;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Maldrood The Wheel
+
+11667;11988;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Saleucami The Wheel
+
+11575;12001;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Mon Cala Lianna
+11575;11587;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Mon Cala Sienar
+11575;11649;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Mon Cala Jabim
+
+11588;11649;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ossus Jabim
+11588;11995;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ossus Maldrood
+
+11678;11650;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;ORD REE
+11678;12187;;-1;-1;-1;-1;-1;HYPERSPACE_ROUTE;ORD ITH
+
+11597;11649;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Obe Diah Jabim
+11597;11959;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Obe Diah Kessel
+11597;11683;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Obe Diah Honoghr
+11597;11653;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Obe Diah Eadu
+
+11959;11683;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Kessel Honoghr
+11959;11586;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Kessel Maw
+11959;11952;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Kessel Nar Shaddaa
+11959;11572;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Kessel Slehyron
+
+11628;11572;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ubrikka Slehyron
+11628;11673;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Ubrikka Gydine
+
+11954;11673;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Manaan Gydine
+11954;11639;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Manaan Kuat
+
+11955;11639;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Rendili Kuat
+11955;11579;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Rendili Caamas
+11955;11681;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Rendili Malastare
+
+11687;11579;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Tepasi Caamas
+
+11612;11639;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Zeltros Kuat
+11612;11617;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Zeltros Relephon
+11612;11669;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Zeltros Kashyyyk
+
+11986;11994;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Hapes terephon
+12190;11994;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Taanab terephon
+
+11576;12041;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Trandosha Roche
+11576;11667;;;-1;-1;-1;-1;HYPERSPACE_ROUTE;Trandosha Saleucami
 
 
 -1;-1;;-1;-1;-1;-1;-1;-1

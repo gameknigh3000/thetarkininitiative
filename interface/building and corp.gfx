@@ -1,0 +1,1555 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_under_construction_texticon" 
+		texturefile = "gfx/interface/text/under_construction.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "building_construction_underlay"
+		textureFile = "gfx/interface/building_big_photos/building_construction.dds"
+	}
+	SpriteType = {
+		name = "GFX_question_mark_market"
+		textureFile = "gfx/interface/corporation/question_mark_market.dds"
+	}
+	SpriteType = {
+		name = "GFX_corp_item"
+		textureFile = "gfx/interface/corporation/corp_item.dds"
+	}
+	SpriteType = {
+		name = "GFX_corp_screen"
+		textureFile = "gfx/interface/corporation/corp_screen.dds"
+	}
+	SpriteType = {
+		name = "GFX_droid"
+		textureFile = "gfx/interface/corporation/droid.dds"
+	}
+	SpriteType = {
+		name = "GFX_entertainment"
+		textureFile = "gfx/interface/corporation/entertainment.dds"
+	}
+	SpriteType = {
+		name = "GFX_food"
+		textureFile = "gfx/interface/corporation/food.dds"
+	}
+	SpriteType = {
+		name = "GFX_medicine"
+		textureFile = "gfx/interface/corporation/medicine.dds"
+	}
+	SpriteType = {
+		name = "GFX_small_box_corp"
+		textureFile = "gfx/interface/corporation/small_box_corp.dds"
+	}
+	SpriteType = { 
+		name = "GFX_vehicles"
+		textureFile = "gfx/interface/corporation/vehicles.dds"
+	}
+	SpriteType = {
+		name = "GFX_xizor"
+		textureFile = "gfx/interface/corporation/xizor.dds"
+	}
+	SpriteType = {
+		name = "GFX_corp_item_v2"
+		textureFile = "gfx/interface/corporation/corp_item_v2.dds"
+	}
+	SpriteType = {
+		name = "GFX_products"
+		textureFile = "gfx/interface/corporation/products.dds"
+	}
+	SpriteType = {
+		name = "GFX_small_rectangle"
+		textureFile = "gfx/interface/corporation/small_rectangle.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Stonks"
+		textureFile = "gfx/interface/corporation/Stonks.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Stonksbad"
+		textureFile = "gfx/interface/corporation/Stonksbad.dds"
+	}
+	SpriteType = { 
+		name = "GFX_soda_drink"
+		textureFile = "gfx/interface/corporation/soda_drink.dds"
+	}
+	SpriteType = { 
+		name = "GFX_products_selection"
+		textureFile = "gfx/interface/corporation/products_selection.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corp_contract_empty" 
+		textureFile = "gfx/interface/corporation/corp_contract_empty.dds"
+	}
+############################## Buy Market #################################
+	SpriteType = { 
+		name = "GFX_corporate_buy_screen"
+		textureFile = "gfx/interface/corporation/corporate_buy_screen.dds"
+	}
+	SpriteType = { 
+		name = "GFX_higher_button"
+		textureFile = "gfx/interface/corporation/higher_button.dds"
+	}
+	SpriteType = { 
+		name = "GFX_lower_button"
+		textureFile = "gfx/interface/corporation/lower_button.dds"
+	}
+	SpriteType = { 
+		name = "GFX_yellow_button"
+		textureFile = "gfx/interface/corporation/yellow_button.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corp_entry"
+		textureFile = "gfx/interface/corporation/corp_entry.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corp_screen_sell"
+		textureFile = "gfx/interface/corporation/corp_contracts.dds"
+	}
+	SpriteType = { 
+		name = "GFX_contract"
+		textureFile = "gfx/interface/corporation/contract.dds"
+	}
+	SpriteType = { 
+		name = "GFX_buy_order"
+		textureFile = "gfx/interface/corporation/buy_order.dds"
+	}
+	SpriteType = { 
+		name = "GFX_issue_order"
+		textureFile = "gfx/interface/corporation/issue_order.dds"
+	}
+	SpriteType = { 
+		name = "GFX_guns_charter"
+		textureFile = "gfx/interface/corporation/guns.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bid"
+		textureFile = "gfx/interface/corporation/bid.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fighters_button"
+		textureFile = "gfx/interface/corporation/fighters.dds"
+	}
+	SpriteType = { 
+		name = "GFX_item_background"
+		textureFile = "gfx/interface/corporation/item_background.dds"
+	}
+	SpriteType = { 
+		name = "GFX_place_order"
+		textureFile = "gfx/interface/corporation/place_order.dds"
+	}
+########################### Product Screen #########################################
+	SpriteType = { 
+		name = "GFX_product_screen"
+		textureFile = "gfx/interface/corporation/product_screen.dds"
+	}
+	SpriteType = {  
+		name = "GFX_empire_market_icon"
+		textureFile = "gfx/interface/corporation/empire_market_icon.dds"
+	}
+	SpriteType = { 
+		name = "GFX_rebel_market_icon"
+		textureFile = "gfx/interface/corporation/rebel_market_icon.dds"
+	}
+	SpriteType = { 
+		name = "GFX_neutral_market_icon"
+		textureFile = "gfx/interface/corporation/neutral_market_icon.dds"
+	}
+	SpriteType = { 
+		name = "GFX_red_button"
+		textureFile = "gfx/interface/corporation/red_button.dds"
+	}
+	SpriteType = { 
+		name = "GFX_big_button_production" 
+		textureFile = "gfx/interface/corporation/big_button_production.dds"
+	}
+	SpriteType = { 
+		name = "GFX_droid_category" 
+		textureFile = "gfx/interface/corporation/product_screen/droid_category.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fighter_category" 
+		textureFile = "gfx/interface/corporation/product_screen/fighter_category.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ship_category" 
+		textureFile = "gfx/interface/corporation/product_screen/ship_category.dds"
+	}
+	SpriteType = { 
+		name = "GFX_vehicle_category" 
+		textureFile = "gfx/interface/corporation/product_screen/vehicle_category.dds"
+	}
+	SpriteType = { 
+		name = "GFX_new_rep_fighters"  
+		textureFile = "gfx/interface/corporation/new_rep_fighters.dds"
+	}
+	SpriteType = { 
+		name = "GFX_empire_fighters" 
+		textureFile = "gfx/interface/corporation/empire_fighters.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fighter_item_product" 
+		textureFile = "gfx/interface/corporation/fighter_item_product.dds"
+	}
+	SpriteType = { 
+		name = "GFX_flag_overlay_product" 
+		textureFile = "gfx/interface/corporation/flag_overlay_product.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fighter_product" 
+		textureFile = "gfx/interface/corporation/fighter_product.dds"
+	}
+	SpriteType = { 
+		name = "GFX_research_product"  
+		textureFile = "gfx/interface/corporation/research.dds"
+	}
+	SpriteType = { 
+		name = "GFX_flagship_product"  
+		textureFile = "gfx/interface/corporation/flagship.dds"
+	}
+
+########################### Products  ##############################################
+	SpriteType = { 
+		name = "GFX_tie_fighter"
+		textureFile = "gfx/interface/corporation/products/tie_fighter.dds"
+	}
+	SpriteType = { 
+		name = "GFX_tie_defender"
+		textureFile = "gfx/interface/corporation/products/tie_defender.dds"
+	}
+	SpriteType = { 
+		name = "GFX_tie_dagger"
+		textureFile = "gfx/interface/corporation/products/tie_dagger.dds"
+	}
+########################## Board ################################################
+	SpriteType = { 
+		name = "GFX_board_regular"
+		textureFile = "gfx/interface/corporation/board/board_regular.dds"
+	}
+	SpriteType = { 
+		name = "GFX_board_emp_loyalty"
+		textureFile = "gfx/interface/corporation/board/emp_loyalty.dds"
+	}
+	SpriteType = { 
+		name = "GFX_board_rep_loyalty"
+		textureFile = "gfx/interface/corporation/board/rep_loyalty.dds"
+	}
+	SpriteType = { 
+		name = "GFX_board_ambitious"
+		textureFile = "gfx/interface/corporation/board/board_ambitious.dds"
+	}
+	SpriteType = { 
+		name = "GFX_board_science"
+		textureFile = "gfx/interface/corporation/board/board_science.dds"
+	}
+	SpriteType = { 
+		name = "GFX_board_consolidator"
+		textureFile = "gfx/interface/corporation/board/board_consolidator.dds"
+	}
+########################## Stock ################################################
+	SpriteType = { 
+		name = "GFX_stock_screen" 
+		textureFile = "gfx/interface/corporation/stock/stock_screen.dds"
+	}
+	SpriteType = { 
+		name = "GFX_stock_info_screen" 
+		textureFile = "gfx/interface/corporation/stock/stock_info.dds"
+	}
+	SpriteType = { 
+		name = "GFX_1_selected" 
+		textureFile = "gfx/interface/corporation/stock/1_selected.dds"
+	}
+	SpriteType = { 
+		name = "GFX_10_selected" 
+		textureFile = "gfx/interface/corporation/stock/10_selected.dds"
+	}
+	SpriteType = { 
+		name = "GFX_100_selected" 
+		textureFile = "gfx/interface/corporation/stock/100_selected.dds"
+	}
+	SpriteType = { 
+		name = "GFX_stock_buy" 
+		textureFile = "gfx/interface/corporation/stock/stock_buy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_stock_sell" 
+		textureFile = "gfx/interface/corporation/stock/stock_sell.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ardees"
+		textureFile = "gfx/interface/corporation/Companies/ardees.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Accutronics"
+		textureFile = "gfx/interface/corporation/Companies/Accutronics.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ayelixe"
+		textureFile = "gfx/interface/corporation/Companies/ayelixe.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bank_of_core"
+		textureFile = "gfx/interface/corporation/Companies/bank_of_core.dds"
+	}
+	SpriteType = { 
+		name = "GFX_blastech"
+		textureFile = "gfx/interface/corporation/Companies/blastech.dds"
+	}
+	SpriteType = { 
+		name = "GFX_dynamic"
+		textureFile = "gfx/interface/corporation/Companies/dynamic.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Fretek"
+		textureFile = "gfx/interface/corporation/Companies/fretek.dds"
+	}
+	SpriteType = { 
+		name = "GFX_galentro"
+		textureFile = "gfx/interface/corporation/Companies/galentro.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Incom"
+		textureFile = "gfx/interface/corporation/Companies/Incom.dds"
+	}
+	SpriteType = { 
+		name = "GFX_merr"
+		textureFile = "gfx/interface/corporation/Companies/merr.dds"
+	}
+	SpriteType = { 
+		name = "GFX_millenium"
+		textureFile = "gfx/interface/corporation/Companies/millenium.dds"
+	}
+	SpriteType = { 
+		name = "GFX_rendili"
+		textureFile = "gfx/interface/corporation/Companies/rendili.dds"
+	}
+	SpriteType = { 
+		name = "GFX_sorosubb"
+		textureFile = "gfx/interface/corporation/Companies/sorosubb.dds"
+	}
+	SpriteType = { 
+		name = "GFX_zaltin"
+		textureFile = "gfx/interface/corporation/Companies/zaltin.dds"
+	}
+########################## Tabs ################################################
+	SpriteType = { 
+		name = "GFX_ardees_tab"
+		textureFile = "gfx/interface/corporation/Companies/ardees_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_accutronics_tab"
+		textureFile = "gfx/interface/corporation/Companies/accutronics_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ayelixe_tab"
+		textureFile = "gfx/interface/corporation/Companies/ayelixe_tab.dds"
+	} 
+	SpriteType = { 
+		name = "GFX_bank_of_core_tab"
+		textureFile = "gfx/interface/corporation/Companies/bank_of_core_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_blastech_tab"
+		textureFile = "gfx/interface/corporation/Companies/blastech_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_dynamic_tab"
+		textureFile = "gfx/interface/corporation/Companies/dynamic_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fretek_tab"
+		textureFile = "gfx/interface/corporation/Companies/fretek_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_galentro_tab"
+		textureFile = "gfx/interface/corporation/Companies/galentro_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_incom_tab"
+		textureFile = "gfx/interface/corporation/Companies/incom_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_merr_tab"
+		textureFile = "gfx/interface/corporation/Companies/merr_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_millenium_tab"
+		textureFile = "gfx/interface/corporation/Companies/millenium_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_rendili_tab"
+		textureFile = "gfx/interface/corporation/Companies/rendili_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_sorosubb_tab"
+		textureFile = "gfx/interface/corporation/Companies/sorosubb_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_zaltin_tab"
+		textureFile = "gfx/interface/corporation/Companies/zaltin_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_arakyd_tab"
+		textureFile = "gfx/interface/corporation/Companies/arakyd_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_czerka_tab"
+		textureFile = "gfx/interface/corporation/Companies/czerka_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_industrial_tab"
+		textureFile = "gfx/interface/corporation/Companies/industrial_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_karflo_tab"
+		textureFile = "gfx/interface/corporation/Companies/karflo_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_kuat_tab"
+		textureFile = "gfx/interface/corporation/Companies/kuat_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_sienar_tab"
+		textureFile = "gfx/interface/corporation/Companies/sienar_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_slayn_tab"
+		textureFile = "gfx/interface/corporation/Companies/slayn_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_taggeco_tab"
+		textureFile = "gfx/interface/corporation/Companies/taggeco_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Trilon_tab"
+		textureFile = "gfx/interface/corporation/Companies/Trilon_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Ubrikkian_tab"
+		textureFile = "gfx/interface/corporation/Companies/Ubrikkian_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_cybot_tab"
+		textureFile = "gfx/interface/corporation/Companies/cybot_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_biotech_tab"
+		textureFile = "gfx/interface/corporation/Companies/biotech_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ibc_tab"
+		textureFile = "gfx/interface/corporation/Companies/ibc_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_chiewab_tab"
+		textureFile = "gfx/interface/corporation/Companies/chiewab_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Corellia_tab"
+		textureFile = "gfx/interface/corporation/Companies/Corellia_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_Athakam_tab"
+		textureFile = "gfx/interface/corporation/Companies/Athakam_tab.dds"
+	}
+	SpriteType = { 
+		name = "GFX_aargau_bank"
+		textureFile = "gfx/interface/corporation/bank/aargau.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bank_button"
+		textureFile = "gfx/interface/corporation/bank/bank_button.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bank_ui_2"
+		textureFile = "gfx/interface/corporation/bank/bank_ui.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ibc_bank"
+		textureFile = "gfx/interface/corporation/bank/ibc.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_core_bank"
+		textureFile = "gfx/interface/corporation/bank/the_core.dds"
+	}
+	### PRODUCTION TAB
+	SpriteType = { 
+		name = "GFX_air_production_top_button"
+		textureFile = "gfx/interface/corporation/production_market/air_button_production.dds"
+	}
+	SpriteType = { 
+		name = "GFX_land_production_top_button"
+		textureFile = "gfx/interface/corporation/production_market/land_button_production.dds"
+	}
+	SpriteType = { 
+		name = "GFX_naval_production_top_button"
+		textureFile = "gfx/interface/corporation/production_market/naval_button_production.dds"
+	}
+	SpriteType = { 
+		name = "GFX_droid_production_top_button"
+		textureFile = "gfx/interface/corporation/production_market/droid_button_production.dds"
+	}
+	SpriteType = { 
+		name = "GFX_entertainment_production_top_button"
+		textureFile = "gfx/interface/corporation/production_market/entertainment_button_production.dds"
+	}
+	SpriteType = { 
+		name = "GFX_medicine_production_top_button"
+		textureFile = "gfx/interface/corporation/production_market/medicine_button_production.dds"
+	}
+	SpriteType = { 
+		name = "GFX_raw_goods_production_top_button"
+		textureFile = "gfx/interface/corporation/production_market/raw_goods_button_production.dds"
+	}
+	spriteType = {
+		name = "GFX_Level_1_production_factory"
+		textureFile = "gfx/interface/corporation/production_market/lvl_1_factory.dds"
+	}
+	spriteType = {
+		name = "GFX_Level_2_production_factory"
+		textureFile = "gfx/interface/corporation/production_market/lvl_2_factory.dds"
+	}
+	spriteType = {
+		name = "GFX_Level_3_production_factory"
+		textureFile = "gfx/interface/corporation/production_market/lvl_3_factory.dds"
+	}
+	spriteType = {
+		name = "GFX_Plus_production_button"
+		textureFile = "gfx/interface/corporation/production_market/+.png"
+	}
+	spriteType = {
+		name = "GFX_Minus_production_button"
+		textureFile = "gfx/interface/corporation/production_market/-.png"
+	}
+	spriteType = {
+		name = "GFX_production_screen_market"
+		textureFile = "gfx/interface/corporation/production_market/production_screen.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ship_market_entry"
+		textureFile = "gfx/interface/corporation/ship_market_selection.dds"
+	}
+	#progressbartype = {
+	#	name = "GFX_progress_bar_corp"
+	#	textureFile1 = "gfx/interface/corporation/corp_contract_full.dds"
+    #    textureFile2 = "gfx/interface/corporation/corp_contract_empty.dds"
+    #    size = {x=360 y=63}
+	#	effectFile = "gfx/FX/progress.lua"
+	#	horizontal = no
+	#}
+	SpriteType = { 
+		name = "GFX_corporate_factory_system"
+		textureFile = "gfx/interface/corporation/corporate_factory_system.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_factory_system_economics"
+		textureFile = "gfx/interface/corporation/economics.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_factory_system_government_buildings"
+		textureFile = "gfx/interface/corporation/government_buildings.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_factory_system_navy_building"
+		textureFile = "gfx/interface/corporation/navy_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_factory_system_military_buildings"
+		textureFile = "gfx/interface/corporation/military_buildings.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corp_construction"
+		textureFile = "gfx/interface/corporation/corp_construction.dds"
+	}
+	SpriteType = { 
+		name = "GFX_shipyard_corp"
+		textureFile = "gfx/interface/building_small_photos/shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_arms_corp"
+		textureFile = "gfx/interface/building_small_photos/arms.dds"
+	}
+	SpriteType = { 
+		name = "GFX_droid_corp"
+		textureFile = "gfx/interface/building_small_photos/droid.dds"
+	}
+	SpriteType = { 
+		name = "GFX_entertainment_corp"
+		textureFile = "gfx/interface/building_small_photos/entertainment.dds"
+	}
+	SpriteType = { 
+		name = "GFX_raw_resources_corp"
+		textureFile = "gfx/interface/building_small_photos/raw_resources.dds"
+	}
+	SpriteType = { 
+		name = "GFX_pharma_corp"
+		textureFile = "gfx/interface/building_small_photos/pharma.dds"
+	}
+	SpriteType = { 
+		name = "GFX_special_forces_corp"
+		textureFile = "gfx/interface/building_small_photos/special_forces.dds"
+	}
+	SpriteType = { 
+		name = "GFX_air_academy_corp"
+		textureFile = "gfx/interface/building_small_photos/air_academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_naval_academy_corp"
+		textureFile = "gfx/interface/building_small_photos/naval_academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_light_ship_corp"
+		textureFile = "gfx/interface/building_small_photos/light_ship.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bomber_building_corp"
+		textureFile = "gfx/interface/building_small_photos/bomber_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_medium_air_corp"
+		textureFile = "gfx/interface/building_small_photos/medium_air.dds"
+	}
+	SpriteType = { 
+		name = "GFX_sensor_array_corp"
+		textureFile = "gfx/interface/building_small_photos/sensor_array.dds"
+	}
+	SpriteType = { 
+		name = "GFX_military_academy_corp"
+		textureFile = "gfx/interface/building_small_photos/military_academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_tank_factory_corp"
+		textureFile = "gfx/interface/building_small_photos/vehicle_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_military_training_corp"
+		textureFile = "gfx/interface/building_small_photos/military_training.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_building_corp"
+		textureFile = "gfx/interface/building_small_photos/corporate_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_homestead_corp"
+		textureFile = "gfx/interface/building_small_photos/homestead.dds"
+	}
+	SpriteType = { 
+		name = "GFX_recycle_corp"
+		textureFile = "gfx/interface/building_small_photos/recycle.dds"
+	}
+	SpriteType = { 
+		name = "GFX_taxation_corp"
+		textureFile = "gfx/interface/building_small_photos/taxation.dds"
+	}
+	SpriteType = { 
+		name = "GFX_research_button_corp"
+		textureFile = "gfx/interface/building_small_photos/research_button.dds"
+	}
+	SpriteType = { 
+		name = "GFX_espionage_corp"
+		textureFile = "gfx/interface/building_small_photos/espionage.dds"
+	}
+	SpriteType = { 
+		name = "GFX_anti_air_corp"
+		textureFile = "gfx/interface/building_small_photos/anti_air.dds"
+	}
+	SpriteType = { 
+		name = "GFX_starship_corp"
+		textureFile = "gfx/interface/building_small_photos/starship.dds"
+	}
+	SpriteType = { 
+		name = "GFX_navy"
+		textureFile = "gfx/interface/building_small_photos/navy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_government_small_icon"
+		textureFile = "gfx/interface/building_small_photos/government.dds"
+	}
+	SpriteType = { 
+		name = "GFX_land_and_air_small_icon"
+		textureFile = "gfx/interface/building_small_photos/land_and_air.dds"
+	}
+	SpriteType = { 
+		name = "GFX_economy_small_icon"
+		textureFile = "gfx/interface/building_small_photos/economy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_building_list_icon"
+		textureFile = "gfx/interface/corporation/building_list.dds"
+	}
+
+
+
+	SpriteType = { 
+		name = "GFX_build_building"
+		textureFile = "gfx/interface/corporation/build_building.dds"
+	}
+#######################################################################
+	SpriteType = { 
+		name = "GFX_building_droid_1"
+		textureFile = "gfx/interface/building_big_photos/droid_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fuel_building_small"
+		textureFile = "gfx/interface/building_small_photos/fuel.dds"
+	}
+	SpriteType = { 
+		name = "GFX_arms_factory_1"
+		textureFile = "gfx/interface/building_big_photos/arms_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_soft_arms_factory_1"
+		textureFile = "gfx/interface/building_big_photos/arms_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_soft_arms_factory_2"
+		textureFile = "gfx/interface/building_big_photos/arms_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_training_facilities_1"
+		textureFile = "gfx/interface/building_big_photos/training_center.dds"
+	}
+	SpriteType = { 
+		name = "GFX_military_bootcamp_1"
+		textureFile = "gfx/interface/building_big_photos/training_facility_normal.dds"
+	}
+	SpriteType = { 
+		name = "GFX_military_bootcamp_2"
+		textureFile = "gfx/interface/building_big_photos/training_facility_normal.dds"
+	}
+	SpriteType = { 
+		name = "GFX_special_forces_training_facilities_1"
+		textureFile = "gfx/interface/building_big_photos/training_facility_special_forces.dds"
+	}
+	SpriteType = { 
+		name = "GFX_special_forces_training_facilities_2"
+		textureFile = "gfx/interface/building_big_photos/training_facility_special_forces.dds"
+	}
+	SpriteType = { 
+		name = "GFX_starfighter_factory_1"
+		textureFile = "gfx/interface/building_big_photos/air_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_starfighter_factory_2"
+		textureFile = "gfx/interface/building_big_photos/air_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_starfighter_factory_3"
+		textureFile = "gfx/interface/building_big_photos/air_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_tank_factory_1"
+		textureFile = "gfx/interface/building_big_photos/tank_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_tank_factory_2"
+		textureFile = "gfx/interface/building_big_photos/tank_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_heavy_shipyard_1"
+		textureFile = "gfx/interface/building_big_photos/shipyard_factory.dds"
+	}
+	SpriteType = { 
+		name = "GFX_medium_shipyard_1"
+		textureFile = "gfx/interface/building_big_photos/medium_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_medium_shipyard_2"
+		textureFile = "gfx/interface/building_big_photos/medium_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_light_shipyard_1"
+		textureFile = "gfx/interface/building_big_photos/light_ship_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_light_shipyard_2"
+		textureFile = "gfx/interface/building_big_photos/light_ship_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_light_shipyard_3"
+		textureFile = "gfx/interface/building_big_photos/light_ship_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_starbomber_factory_1"
+		textureFile = "gfx/interface/building_big_photos/bombers.dds"
+	}
+	SpriteType = { 
+		name = "GFX_starbomber_factory_2"
+		textureFile = "gfx/interface/building_big_photos/bombers.dds"
+	}
+	SpriteType = { 
+		name = "GFX_anti_air_1"
+		textureFile = "gfx/interface/building_big_photos/defence_tower.dds"
+	}
+	SpriteType = { 
+		name = "GFX_anti_air_2"
+		textureFile = "gfx/interface/building_big_photos/defence_tower.dds"
+	}
+	SpriteType = { 
+		name = "GFX_anti_air_3"
+		textureFile = "gfx/interface/building_big_photos/defence_tower.dds"
+	}
+	SpriteType = { 
+		name = "GFX_intelligence_center_1"
+		textureFile = "gfx/interface/building_big_photos/intelligence.dds"
+	}
+	SpriteType = { 
+		name = "GFX_taxation_center_1"
+		textureFile = "gfx/interface/building_big_photos/tax_office.dds"
+	}
+	SpriteType = { 
+		name = "GFX_taxation_center_2"
+		textureFile = "gfx/interface/building_big_photos/tax_office.dds"
+	}
+	SpriteType = { 
+		name = "GFX_taxation_center_3"
+		textureFile = "gfx/interface/building_big_photos/tax_office.dds"
+	}
+	SpriteType = { 
+		name = "GFX_research_center_1"
+		textureFile = "gfx/interface/building_big_photos/research_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_research_center_2"
+		textureFile = "gfx/interface/building_big_photos/research_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_research_center_3"
+		textureFile = "gfx/interface/building_big_photos/research_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_military_academy_1"
+		textureFile = "gfx/interface/building_big_photos/academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_military_academy_2"
+		textureFile = "gfx/interface/building_big_photos/academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_military_academy_3"
+		textureFile = "gfx/interface/building_big_photos/academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_naval_academy_1"
+		textureFile = "gfx/interface/building_big_photos/academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_admiralty_academy_1"
+		textureFile = "gfx/interface/building_big_photos/academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_starfighter_academy_1"
+		textureFile = "gfx/interface/building_big_photos/academy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_sensor_array_1"
+		textureFile = "gfx/interface/building_big_photos/intelligence.dds"
+	}
+	SpriteType = { 
+		name = "GFX_sensor_array_2"
+		textureFile = "gfx/interface/building_big_photos/intelligence.dds"
+	}
+	SpriteType = { 
+		name = "GFX_spy_academy_1"
+		textureFile = "gfx/interface/building_big_photos/intelligence.dds"
+	}
+	SpriteType = { 
+		name = "GFX_spy_academy_2"
+		textureFile = "gfx/interface/building_big_photos/intelligence.dds"
+	}
+	SpriteType = { 
+		name = "GFX_homestead_1"
+		textureFile = "gfx/interface/building_big_photos/homestead_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_homestead_2"
+		textureFile = "gfx/interface/building_big_photos/homestead_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_homestead_3"
+		textureFile = "gfx/interface/building_big_photos/homestead_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_kashyyyk_tree"
+		textureFile = "gfx/interface/building_big_photos/kashyyyk_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_kashyyyk_tree_2"
+		textureFile = "gfx/interface/building_big_photos/kashyyyk_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_kashyyyk_tree_3"
+		textureFile = "gfx/interface/building_big_photos/kashyyyk_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_office_1"
+		textureFile = "gfx/interface/building_big_photos/tax_office.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_office_2"
+		textureFile = "gfx/interface/building_big_photos/tax_office.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corporate_office_3"
+		textureFile = "gfx/interface/building_big_photos/tax_office.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fuel_refinery_1"
+		textureFile = "gfx/interface/building_big_photos/fuel_refinery.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fuel_refinery_2"
+		textureFile = "gfx/interface/building_big_photos/fuel_refinery.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fuel_refinery_3"
+		textureFile = "gfx/interface/building_big_photos/fuel_refinery.dds"
+	}
+
+
+	SpriteType = { 
+		name = "GFX_primitive_farm"
+		textureFile = "gfx/interface/building_big_photos/homestead_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_primitive_resource_extraction"
+		textureFile = "gfx/interface/building_big_photos/fuel_refinery.dds"
+	}
+	SpriteType = { 
+		name = "GFX_primitive_offices"
+		textureFile = "gfx/interface/building_big_photos/tax_office.dds"
+	}
+	SpriteType = { 
+		name = "GFX_primitive_industry"
+		textureFile = "gfx/interface/building_big_photos/arms_building.dds"
+	}
+
+	### BIG BUILDING PHOTO - UNIQUE
+	SpriteType = { 
+		name = "GFX_casino_catonica"
+		textureFile = "gfx/interface/building_big_photos/canto_bight.dds"
+	}
+	SpriteType = { 
+		name = "GFX_casino_catonica_2"
+		textureFile = "gfx/interface/building_big_photos/canto_bight.dds"
+	}
+	SpriteType = { 
+		name = "GFX_imperial_refinery"
+		textureFile = "gfx/interface/building_big_photos/imperial_refinery.dds"
+	}
+	SpriteType = { 
+		name = "GFX_imperial_refinery_positive"
+		textureFile = "gfx/interface/building_big_photos/imperial_refinery.dds"
+	}
+
+	SpriteType = { 
+		name = "GFX_casino_catonica_3"
+		textureFile = "gfx/interface/building_big_photos/canto_bight.dds"
+	}
+
+
+	SpriteType = { 
+		name = "GFX_great_tree_of_kashyyyk"
+		textureFile = "gfx/interface/building_big_photos/kashyyyk_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_great_tree_of_kashyyyk_2"
+		textureFile = "gfx/interface/building_big_photos/kashyyyk_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_great_tree_of_kashyyyk_3"
+		textureFile = "gfx/interface/building_big_photos/kashyyyk_building.dds"
+	}
+
+	SpriteType = { 
+		name = "GFX_korriban_temple"
+		textureFile = "gfx/interface/building_big_photos/korriban_temple.dds"
+	}
+	SpriteType = { 
+		name = "GFX_korriban_temple_2"
+		textureFile = "gfx/interface/building_big_photos/korriban_temple.dds"
+	}
+	SpriteType = { 
+		name = "GFX_korriban_temple_3"
+		textureFile = "gfx/interface/building_big_photos/korriban_temple.dds"
+	}
+
+	SpriteType = { 
+		name = "GFX_jeddah_temple"
+		textureFile = "gfx/interface/building_big_photos/jeddah.dds"
+	}
+	SpriteType = { 
+		name = "GFX_jeddah_temple_2"
+		textureFile = "gfx/interface/building_big_photos/jeddah.dds"
+	}
+	SpriteType = { 
+		name = "GFX_jeddah_temple_3"
+		textureFile = "gfx/interface/building_big_photos/jeddah.dds"
+	}
+
+
+	SpriteType = { 
+		name = "GFX_beskar_mine"
+		textureFile = "gfx/interface/building_big_photos/beskar_mine.dds"
+	}
+	SpriteType = { 
+		name = "GFX_beskar_mine_2"
+		textureFile = "gfx/interface/building_big_photos/beskar_mine.dds"
+	}
+	SpriteType = { 
+		name = "GFX_beskar_mine_3"
+		textureFile = "gfx/interface/building_big_photos/beskar_mine.dds"
+	}
+	SpriteType = { 
+		name = "GFX_cloud_city"
+		textureFile = "gfx/interface/building_big_photos/cloud_city.dds"
+	}
+	SpriteType = { 
+		name = "GFX_cloud_city_2"
+		textureFile = "gfx/interface/building_big_photos/cloud_city.dds"
+	}
+	SpriteType = { 
+		name = "GFX_cloud_city_3"
+		textureFile = "gfx/interface/building_big_photos/cloud_city.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_wheel"
+		textureFile = "gfx/interface/building_big_photos/the_wheel.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_wheel_1"
+		textureFile = "gfx/interface/building_big_photos/the_wheel.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_wheel_2"
+		textureFile = "gfx/interface/building_big_photos/the_wheel.dds"
+	}
+	SpriteType = { 
+		name = "GFX_yavin_temple"
+		textureFile = "gfx/interface/building_big_photos/yaving.dds"
+	}
+	SpriteType = { 
+		name = "GFX_yavin_temple_1"
+		textureFile = "gfx/interface/building_big_photos/yaving.dds"
+	}
+	SpriteType = { 
+		name = "GFX_yavin_temple_2"
+		textureFile = "gfx/interface/building_big_photos/yaving.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_maw_station"
+		textureFile = "gfx/interface/building_big_photos/the_maw_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_maw_station_1"
+		textureFile = "gfx/interface/building_big_photos/the_maw_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_maw_station_2"
+		textureFile = "gfx/interface/building_big_photos/the_maw_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corellian_shipyard"
+		textureFile = "gfx/interface/building_big_photos/corellian.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corellian_shipyard_2"
+		textureFile = "gfx/interface/building_big_photos/corellian.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corellian_shipyard_3"
+		textureFile = "gfx/interface/building_big_photos/corellian.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bilbringi_station"
+		textureFile = "gfx/interface/building_big_photos/fondor_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bilbringi_station_1"
+		textureFile = "gfx/interface/building_big_photos/fondor_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bilbringi_station_2"
+		textureFile = "gfx/interface/building_big_photos/fondor_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fondor_shipyard"
+		textureFile = "gfx/interface/building_big_photos/fondor_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fondor_shipyard_1"
+		textureFile = "gfx/interface/building_big_photos/fondor_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fondor_shipyard_2"
+		textureFile = "gfx/interface/building_big_photos/fondor_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_theed_palace"
+		textureFile = "gfx/interface/building_big_photos/theed.dds"
+	}
+	SpriteType = { 
+		name = "GFX_theed_palace_1"
+		textureFile = "gfx/interface/building_big_photos/theed.dds"
+	}
+	SpriteType = { 
+		name = "GFX_theed_palace_2"
+		textureFile = "gfx/interface/building_big_photos/theed.dds"
+	}
+	SpriteType = { 
+		name = "GFX_jabbas_palace"
+		textureFile = "gfx/interface/building_big_photos/jabbas_palace.dds"
+	}
+	SpriteType = { 
+		name = "GFX_jabbas_palace_1"
+		textureFile = "gfx/interface/building_big_photos/jabbas_palace.dds"
+	}
+	SpriteType = { 
+		name = "GFX_jabbas_palace_2"
+		textureFile = "gfx/interface/building_big_photos/jabbas_palace.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ring_of_kafrene"
+		textureFile = "gfx/interface/building_big_photos/ring_of_kafrene_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ring_of_kafrene_1"
+		textureFile = "gfx/interface/building_big_photos/ring_of_kafrene_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ring_of_kafrene_2"
+		textureFile = "gfx/interface/building_big_photos/ring_of_kafrene_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_wheel"
+		textureFile = "gfx/interface/building_big_photos/the_wheel.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_wheel_1"
+		textureFile = "gfx/interface/building_big_photos/the_wheel.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_wheel_2"
+		textureFile = "gfx/interface/building_big_photos/the_wheel.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_yavin_temple"
+		textureFile = "gfx/interface/building_big_photos/yaving.dds"
+	}
+	SpriteType = { 
+		name = "GFX_yavin_temple_1"
+		textureFile = "gfx/interface/building_big_photos/yaving.dds"
+	}
+	SpriteType = { 
+		name = "GFX_yavin_temple_2"
+		textureFile = "gfx/interface/building_big_photos/yaving.dds"
+	}
+
+	spriteType = {
+		name = "GFX_mount_tantiss"  
+		texturefile = "gfx/interface/building_big_photos/mount_tantiss.dds" 
+	}
+	SpriteType = { 
+		name = "GFX_mount_tantiss_1"
+		textureFile = "gfx/interface/building_big_photos/mount_tantiss.dds"
+	}
+	SpriteType = { 
+		name = "GFX_mount_tantiss_2"
+		textureFile = "gfx/interface/building_big_photos/mount_tantiss.dds"
+	}
+
+	SpriteType = { 
+		name = "GFX_mon_cala_shipyards"
+		textureFile = "gfx/interface/building_big_photos/mon_cala_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_mon_cala_shipyards_1"
+		textureFile = "gfx/interface/building_big_photos/mon_cala_shipyard.dds"
+	}
+	SpriteType = { 
+		name = "GFX_mon_cala_shipyards_2"
+		textureFile = "gfx/interface/building_big_photos/mon_cala_shipyard.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_palpatine_palace"  
+		texturefile = "gfx/interface/building_big_photos/palpatine_palace.dds" 
+	}
+	spriteType = {
+		name = "GFX_palpatine_palace_1"  
+		texturefile = "gfx/interface/building_big_photos/palpatine_palace.dds" 
+	}
+	spriteType = {
+		name = "GFX_palpatine_palace_2"  
+		texturefile = "gfx/interface/building_big_photos/palpatine_palace.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_hand_of_thrawn"  
+		texturefile = "gfx/interface/building_big_photos/hand_of_thrawn.dds"
+	}
+	spriteType = {
+		name = "GFX_hand_of_thrawn_1"  
+		texturefile = "gfx/interface/building_big_photos/hand_of_thrawn.dds"
+	}
+	spriteType = {
+		name = "GFX_hand_of_thrawn_2"  
+		texturefile = "gfx/interface/building_big_photos/hand_of_thrawn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_kuat_rings"  
+		texturefile = "gfx/interface/building_big_photos/kuat_ring.dds" 
+	}
+	spriteType = {
+		name = "GFX_kuat_rings_2"  
+		texturefile = "gfx/interface/building_big_photos/kuat_ring.dds" 
+	}
+	spriteType = {
+		name = "GFX_kuat_rings_3"  
+		texturefile = "gfx/interface/building_big_photos/kuat_ring.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_default_building"  
+		texturefile = "gfx/interface/building_big_photos/default_building.dds"
+	}
+	spriteType = {
+		name = "GFX_senate_building"  
+		texturefile = "gfx/interface/building_big_photos/senate_mega.dds"
+	}
+	spriteType = {
+		name = "GFX_shipyard_button"  
+		texturefile = "gfx/interface/building_big_photos/shipyard_button.dds"
+	}
+	spriteType = {
+		name = "GFX_science_button"  
+		texturefile = "gfx/interface/building_big_photos/science_button.dds"
+	}
+	spriteType = {
+		name = "GFX_intelligence_button"  
+		texturefile = "gfx/interface/building_big_photos/intelligence_button.dds"
+	}
+	spriteType = {
+		name = "GFX_academy_wonder_button"  
+		texturefile = "gfx/interface/building_big_photos/academy_wonder_button.dds"
+	}
+	spriteType = {
+		name = "GFX_wonder_buildings"  
+		texturefile = "gfx/interface/building_big_photos/wonder_buildings.dds"
+	}
+	spriteType = {
+		name = "GFX_wonder_buildings_open"  
+		texturefile = "gfx/interface/building_big_photos/wonder_buildings_open.dds"
+	}
+	spriteType = {
+		name = "GFX_major_shipyard"  
+		texturefile = "gfx/interface/building_big_photos/major_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_academy_building"   
+		texturefile = "gfx/interface/building_big_photos/academy.dds"
+	}
+	spriteType = {
+		name = "GFX_research_building"  
+		texturefile = "gfx/interface/building_big_photos/research_building.dds"
+	}
+	spriteType = {
+		name = "GFX_intelligence_center"  
+		texturefile = "gfx/interface/building_big_photos/intelligence_center.dds"
+	}
+	spriteType = {
+		name = "GFX_cloud_city"  
+		texturefile = "gfx/interface/building_big_photos/cloud_city.dds" 
+	}
+	spriteType = {
+		name = "GFX_jabbas_palace"  
+		texturefile = "gfx/interface/building_big_photos/jabbas_palace.dds" 
+	}
+	spriteType = {
+		name = "GFX_vaders_castle"  
+		texturefile = "gfx/interface/building_big_photos/vader_castle.dds" 
+	}
+	spriteType = {
+		name = "GFX_malastare_fuel"  
+		texturefile = "gfx/interface/building_big_photos/malastare_fuel.dds" 
+	}
+	spriteType = {
+		name = "GFX_sluis_van_shipyard"  
+		texturefile = "gfx/interface/building_big_photos/sluis_van_shipyard.dds" 
+	}
+	spriteType = {
+		name = "GFX_mega_1"  
+		texturefile = "gfx/interface/building_big_photos/mega_1.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_2"  
+		texturefile = "gfx/interface/building_big_photos/mega_2.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_3"  
+		texturefile = "gfx/interface/building_big_photos/mega_3.dds"
+	}
+	spriteType = {
+		name = "GFX_building_glow"  
+		texturefile = "gfx/interface/building_big_photos/building_glow.dds"
+	}
+
+	### Small BUILDING PHOTO - UNIQUE
+	SpriteType = { 
+		name = "GFX_theed_palace_small"
+		textureFile = "gfx/interface/building_small_photos/theed.dds"
+	}
+	SpriteType = { 
+		name = "GFX_kashyyyk_tree_small"
+		textureFile = "gfx/interface/building_small_photos/kashyyyk_tree.dds"
+	}
+	SpriteType = { 
+		name = "GFX_jabbas_palace_small"
+		textureFile = "gfx/interface/building_small_photos/jabbas_palace_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_vaders_castle_small"
+		textureFile = "gfx/interface/building_small_photos/vader_castle.dds"
+	}
+	SpriteType = { 
+		name = "GFX_the_maw_station_small"
+		textureFile = "gfx/interface/building_small_photos/the_maw.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ring_of_kafrene_small"
+		textureFile = "gfx/interface/building_small_photos/ring_of_kafrene.dds"
+	}
+	SpriteType = { 
+		name = "GFX_mustafar_works_small"
+		textureFile = "gfx/interface/building_small_photos/mustafar_works.dds"
+	}
+	SpriteType = { 
+		name = "GFX_bilbringi_station_small"
+		textureFile = "gfx/interface/building_small_photos/fondor.dds"
+	}
+	SpriteType = { 
+		name = "GFX_korriban_temple_small"
+		textureFile = "gfx/interface/building_small_photos/korriban.dds"
+	}
+	SpriteType = { 
+		name = "GFX_corellian_shipyard_small"
+		textureFile = "gfx/interface/building_small_photos/corellian.dds"
+	}
+	SpriteType = { 
+		name = "GFX_mustafar_works_small"
+		textureFile = "gfx/interface/building_small_photos/mustafar_works.dds"
+	}
+	SpriteType = { 
+		name = "GFX_fondor_shipyard_small"
+		textureFile = "gfx/interface/building_small_photos/fondor.dds"
+	}
+	SpriteType = { 
+		name = "GFX_yavin_temple_small"
+		textureFile = "gfx/interface/building_small_photos/yavin.dds"
+	}
+	SpriteType = { 
+		name = "GFX_beskar_mine_small"
+		textureFile = "gfx/interface/building_small_photos/beskar.dds"
+	}
+	SpriteType = { 
+		name = "GFX_cloud_city_small"
+		textureFile = "gfx/interface/building_small_photos/bespin_building.dds"
+	}
+	SpriteType = { 
+		name = "GFX_casino_catonica_small"
+		textureFile = "gfx/interface/building_small_photos/casino.dds"
+	}
+	SpriteType = { 
+		name = "GFX_mon_cala_shipyards_small"
+		textureFile = "gfx/interface/building_small_photos/mon_cala.dds"
+	}
+	SpriteType = { 
+		name = "GFX_kuat_rings_small"
+		textureFile = "gfx/interface/building_small_photos/kuat_rings.dds"
+	}
+	SpriteType = { 
+		name = "GFX_imperial_refinery_positive_small"
+		textureFile = "gfx/interface/building_small_photos/wroshyr_sap.dds"
+	}
+	SpriteType = { 
+		name = "GFX_sluis_van_small"
+		textureFile = "gfx/interface/building_small_photos/sluis_van.dds"
+	}
+	SpriteType = { 
+		name = "GFX_malastare_fuel_small"
+		textureFile = "gfx/interface/building_small_photos/malastare_fuel_small.dds"
+	}
+	######## TILE BLOCKER GFX #############
+	SpriteType = { 
+		name = "GFX_shadowlands"
+		textureFile = "gfx/interface/building_tileblockers/shadowlands_kashyyyk.dds"
+	}
+	SpriteType = { 
+		name = "GFX_shadowlands_spiders"
+		textureFile = "gfx/interface/building_tileblockers/shadowlands_kashyyyk_spider.dds"
+	}
+	SpriteType = { 
+		name = "GFX_undercity_slums"
+		textureFile = "gfx/interface/building_tileblockers/undercity_slums.dds"
+	}
+	SpriteType = { 
+		name = "GFX_untamed_jungle"
+		textureFile = "gfx/interface/building_tileblockers/shadowlands_kashyyyk.dds"
+	}
+	SpriteType = { 
+		name = "GFX_dead_land_desert"
+		textureFile = "gfx/interface/building_tileblockers/dead_land_desert.dds"
+	}
+	SpriteType = { 
+		name = "GFX_lava_fields"
+		textureFile = "gfx/interface/building_tileblockers/lava_fields.dds"
+	}
+	SpriteType = { 
+		name = "GFX_rock_slides"
+		textureFile = "gfx/interface/building_tileblockers/rock_slides.dds"
+	}
+	SpriteType = { 
+		name = "GFX_dangerous_fauna"
+		textureFile = "gfx/interface/building_tileblockers/dangerous_fauna.dds"
+	}
+	SpriteType = { 
+		name = "GFX_ruined_city"
+		textureFile = "gfx/interface/building_tileblockers/ruined_city.dds"
+	}
+	SpriteType = { 
+		name = "GFX_inhospitable_area"
+		textureFile = "gfx/interface/building_tileblockers/inhospitable.dds"
+	}
+	SpriteType = { 
+		name = "GFX_snow_area"
+		textureFile = "gfx/interface/building_tileblockers/snow.dds"
+	}
+	SpriteType = { 
+		name = "GFX_glassed_surface"
+		textureFile = "gfx/interface/building_tileblockers/glassed.dds"
+	}
+	SpriteType = { 
+		name = "GFX_dathomir_badlands"
+		textureFile = "gfx/interface/building_tileblockers/dathomir_ground.dds"
+	}
+	SpriteType = { 
+		name = "GFX_rolling_mountains"
+		textureFile = "gfx/interface/building_tileblockers/rolling_mountains.dds"
+	}
+	#SpriteType = { 
+	#	name = "GFX_corporate_building_strip"
+	#	textureFile = "gfx//interface//corporation/corporate_building_strip.dds"
+	#	noOfFrames = 7		
+	#}
+	####################### Corp Logos ############################
+	SpriteType = { 
+		name = "GFX_idea_kuat_drive_yards"
+		textureFile = "gfx/interface/corp_logo/kuat_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_ubrikkian"
+		textureFile = "gfx/interface/corp_logo/ubrikkian_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_tagge"
+		textureFile = "gfx/interface/corp_logo/tagge_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_sorosuub"
+		textureFile = "gfx/interface/corp_logo/sorosuub_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_sfs"
+		textureFile = "gfx/interface/corp_logo/sfs_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_rendili"
+		textureFile = "gfx/interface/corp_logo/rendili.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_merr"
+		textureFile = "gfx/interface/corp_logo/merr_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_incom"
+		textureFile = "gfx/interface/corp_logo/incom_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_czerka"
+		textureFile = "gfx/interface/corp_logo/czerka_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_cec"
+		textureFile = "gfx/interface/corp_logo/cec_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_blastech"
+		textureFile = "gfx/interface/corp_logo/blastech_logo.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_Yutrane_Trackata"
+		textureFile = "gfx/interface/corp_logo/Yutrane_Trackata.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_koens"
+		textureFile = "gfx/interface/corp_logo/koens.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_mon_cala"
+		textureFile = "gfx/interface/corp_logo/mon_cala.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_slayn"
+		textureFile = "gfx/interface/corp_logo/slayn.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_trilion"
+		textureFile = "gfx/interface/corp_logo/trilion.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_new_rep_engineering"
+		textureFile = "gfx/interface/corp_logo/new_rep_engineering.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_mandal_motors"
+		textureFile = "gfx/interface/corp_logo/mandal_motors.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_appazanna"
+		textureFile = "gfx/interface/corp_logo/appazanna.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_freitek"
+		textureFile = "gfx/interface/corp_logo/freitek.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_hydrospeare"
+		textureFile = "gfx/interface/corp_logo/hydrospeare.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_nubian"
+		textureFile = "gfx/interface/corp_logo/nubian.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_olanji"
+		textureFile = "gfx/interface/corp_logo/olanji.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_sublight"
+		textureFile = "gfx/interface/corp_logo/sublight.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_theed"
+		textureFile = "gfx/interface/corp_logo/theed.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_mio_tie_fighter"
+		textureFile = "gfx/interface/military_industrial_organization/mio_tie_fighter.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_mio_x_wing"
+		textureFile = "gfx/interface/military_industrial_organization/mio_x_wing.dds"
+	}
+}

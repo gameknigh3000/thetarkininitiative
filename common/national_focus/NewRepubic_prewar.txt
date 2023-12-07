@@ -12,6 +12,7 @@ focus_tree = {
 	focus = {
 		id = REB_first_conference_of_free_peoples
 		icon = GFX_REP_First_Conference_Of_Free_Peoples
+		text_icon = REPUBLIC_focus_style
 		x = 8
 		y = 0
 		cost = 1.5
@@ -28,9 +29,10 @@ focus_tree = {
 	focus = {
 		id = REB_taxation
 		icon = GFX_Taxation_REP
+		text_icon = REPUBLIC_focus_style
 		x = 5
 		y = 1
-		cost = 5
+		cost = 1
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
@@ -44,9 +46,10 @@ focus_tree = {
 	focus = {
 		id = REB_administration
 		icon = GFX_Administration_REP
+		text_icon = REPUBLIC_focus_style
 		x = 7
 		y = 1
-		cost = 5
+		cost = 1
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -59,10 +62,11 @@ focus_tree = {
 	#Adjudication
 	focus = {
 		id = REB_adjudication
-		icon = GFX_WIP_focus
+		icon = GFX_reb_adjudication
+		text_icon = REPUBLIC_focus_style
 		x = 9
 		y = 1
-		cost = 5
+		cost = 1
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -76,9 +80,10 @@ focus_tree = {
 	focus = {
 		id = REB_military
 		icon = GFX_Military_REP
+		text_icon = REPUBLIC_focus_style
 		x = 11
 		y = 1
-		cost = 5
+		cost = 1
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
@@ -92,6 +97,7 @@ focus_tree = {
 	focus = {
 		id = REB_the_alliance_of_free_planets
 		icon = GFX_The_Alliance_of_Free_Planets
+		text_icon = REPUBLIC_focus_style
 		x = 8
 		y = 2
 		cost = 5
@@ -107,6 +113,7 @@ focus_tree = {
 	focus = {
 		id = REB_nagai_problem
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		x = 17
 		y = 3
 		cost = 5
@@ -124,6 +131,7 @@ focus_tree = {
 	focus = {
 		id = REB_a_new_friend
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		x = 15
 		y = 3
 		cost = 5
@@ -141,6 +149,7 @@ focus_tree = {
 		id = REB_attack_on_saijo
 		icon = GFX_reb_attack_on_saijo_goal
 		relative_position_id = REB_nagai_problem
+		text_icon = REPUBLIC_focus_style
 		x = -1
 		y = 2
 		cost = 5
@@ -151,10 +160,14 @@ focus_tree = {
 		completion_reward = {
 			
 		}
+		ai_will_do = {
+			factor = 0
+		}
 	}
 	focus = {
 		id = REB_defence_of_kashyyyk
 		icon = GFX_reb_defence_of_kashyyyk_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_nagai_problem
 		x = -2
 		y = 1
@@ -190,12 +203,30 @@ focus_tree = {
 	focus = {
 		id = REB_defence_of_zeltros
 		icon = GFX_reb_defence_of_zeltros_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_nagai_problem
 		x = 0
 		y = 1
 		cost = 5
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
+		}
+		available={
+			282={
+				is_controlled_by = ZEL
+			}
+			278={
+				is_controlled_by = ZEL
+			}
+			54={
+				is_controlled_by = ZEL
+			}
+			280={
+				is_controlled_by = ZEL
+			}
+			ZEL={
+				has_government = democratic
+			}
 		}
 		prerequisite = { focus = REB_nagai_problem focus = REB_a_new_friend }
 		completion_reward = {
@@ -209,6 +240,7 @@ focus_tree = {
 	focus = {
 		id = REB_problems_within_alliance
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		x = 11
 		y = 3
 		cost = 5
@@ -217,12 +249,13 @@ focus_tree = {
 		}
 		prerequisite = { focus = REB_the_alliance_of_free_planets  }
 		completion_reward = {
-			
+			add_political_power = 75
 		}
 	}
 	focus = {
 		id = REB_reassure_representatives
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_problems_within_alliance
 		x = 0
 		y = 1
@@ -238,6 +271,7 @@ focus_tree = {
 	focus = {
 		id = REB_settling_the_problems_on_endor
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_problems_within_alliance
 		x = -2
 		y = 1
@@ -253,6 +287,7 @@ focus_tree = {
 	focus = {
 		id = REB_keeping_up_momentum
 		icon = GFX_reb_keeping_up_momentium_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_problems_within_alliance
 		x = 2
 		y = 1
@@ -264,7 +299,7 @@ focus_tree = {
 		completion_reward = {
 			add_days_mission_timeout = {
 				mission = republican_momentum
-				days = 70
+				days = 90
 			}
 		}
 	}
@@ -272,6 +307,7 @@ focus_tree = {
 	focus = {
 		id = REB_reorg_fleets
 		icon = GFX_reb_new_republic_navy_goal
+		text_icon = REPUBLIC_focus_style
 		x = 5
 		y = 3
 		cost = 5
@@ -286,6 +322,7 @@ focus_tree = {
 	focus = {
 		id = REB_gather_more_ships
 		icon = GFX_reb_gather_more_ships_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_reorg_fleets
 		x = 2
 		y = 1
@@ -295,12 +332,13 @@ focus_tree = {
 		}
 		prerequisite = { focus = REB_reorg_fleets  }
 		completion_reward = {
-			
+			load_oob = REB_gathered_ships
 		}
 	}
 	focus = {
 		id = REB_rebuild_rogue_squadron
 		icon = GFX_reb_rebuild_rogue_squadron_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_reorg_fleets
 		x = 0
 		y = 1
@@ -326,6 +364,7 @@ focus_tree = {
 	focus = {
 		id = REB_using_old_supply_dumps
 		icon = GFX_reb_using_old_supply_dumps_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_reorg_fleets
 		x = -2
 		y = 1
@@ -346,6 +385,7 @@ focus_tree = {
 	focus = {
 		id = REB_new_republic_army
 		icon = GFX_reb_new_republic_army_goal
+		text_icon = REPUBLIC_focus_style
 		x = 0
 		y = 3
 		cost = 5
@@ -360,6 +400,7 @@ focus_tree = {
 	focus = {
 		id = REB_arming_the_troops
 		icon = GFX_reb_arming_the_troops_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_new_republic_army
 		x = -1
 		y = 1
@@ -379,6 +420,7 @@ focus_tree = {
 	focus = {
 		id = REB_form_the_new_republic_special_forces
 		icon = GFX_reb_new_republic_special_forces_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_new_republic_army
 		x = 1
 		y = 1
@@ -395,6 +437,7 @@ focus_tree = {
 	focus = {
 		id = REB_our_concentration_divided
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		x = -6
 		y = 3
 		cost = 5
@@ -403,12 +446,13 @@ focus_tree = {
 		}
 		prerequisite = { focus = REB_the_alliance_of_free_planets  }
 		completion_reward = {
-			
+			add_ideas = {REB_intervening_across_the_galaxy}
 		}
 	}
 	focus = {
 		id = REB_western_reaches_focus
 		icon = GFX_reb_western_reaches_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_our_concentration_divided
 		x = 0
 		y = 1
@@ -424,6 +468,7 @@ focus_tree = {
 	focus = {
 		id = REB_invation_of_utapau
 		icon = GFX_reb_invitation_utapau_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_western_reaches_focus
 		x = 1
 		y = 1
@@ -456,6 +501,7 @@ focus_tree = {
 	focus = {
 		id = REB_retaking_bespin
 		icon = GFX_reb_retaking_bespin_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_western_reaches_focus
 		x = -1
 		y = 1
@@ -487,6 +533,7 @@ focus_tree = {
 	focus = {
 		id = REB_trailing_sectors_focus
 		icon = GFX_reb_trailing_sectors_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_our_concentration_divided
 		x = 3
 		y = 1
@@ -505,6 +552,7 @@ focus_tree = {
 	focus = {
 		id = REB_reinforce_tatooine
 		icon = GFX_reb_reinforce_tatooine_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_trailing_sectors_focus
 		x = 0
 		y = 1
@@ -537,6 +585,7 @@ focus_tree = {
 	focus = {
 		id = REB_unknown_region_focus
 		icon = GFX_reb_unknown_region_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_our_concentration_divided
 		x = -3
 		y = 1
@@ -552,6 +601,7 @@ focus_tree = {
 	focus = {
 		id = REB_helping_bakura
 		icon = GFX_reb_helping_bakura_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_unknown_region_focus
 		x = 0
 		y = 1
@@ -584,6 +634,7 @@ focus_tree = {
 	focus = {
 		id = REB_containment_of_ssi-ruuvi
 		icon = GFX_reb_containment_of_ssi_ruuvi_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_helping_bakura
 		x = 0
 		y = 1
@@ -604,6 +655,7 @@ focus_tree = {
 	focus = {
 		id = REB_prepare_for_reclamation
 		icon = GFX_the_invasion_begins
+		text_icon = REPUBLIC_focus_style
 		x = 22
 		y = 3
 		cost = 5
@@ -614,12 +666,20 @@ focus_tree = {
 		completion_reward = {
 			
 		}
+		ai_will_do = {
+			factor = 0
+			modifier={
+				add = 10
+				date > 5.01.01
+			}
+		}
 	}
 
 	#The Black Sun Captives
 	focus = {
 		id = REB_the_black_sun_captives
 		icon = GFX_The_Black_Sun_Captives
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = 3
 		y = 1
@@ -637,6 +697,7 @@ focus_tree = {
 	focus = {
 		id = REB_contact_criminal_cells
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = 2
 		y = 2
@@ -653,6 +714,7 @@ focus_tree = {
 	focus = {
 		id = REB_taking_bilbringi
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = -3
 		y = 1
@@ -670,6 +732,7 @@ focus_tree = {
 	focus = {
 		id = REB_securing_the_approch
 		icon = GFX_reb_securing_our_approach_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = -2
 		y = 2
@@ -677,6 +740,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
 		}
+		will_lead_to_war_with = BOR
 		prerequisite = { focus = REB_taking_bilbringi  }
 		completion_reward = {
 			BRL={
@@ -703,6 +767,7 @@ focus_tree = {
 	focus = {
 		id = REB_take_back_the_capital
 		icon = GFX_new_rep_invasion
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = 0
 		y = 3
@@ -728,6 +793,7 @@ focus_tree = {
 		bypass={
 			owns_state = 235
 		}
+		will_lead_to_war_with = EMP
 		completion_reward = {
 			activate_mission_tooltip = invasion_of_coruscant
 			declare_war_on = {
@@ -771,6 +837,7 @@ focus_tree = {
 	focus = {
 		id = REB_encourage_resistance_cells
 		icon = GFX_support_resistance_cell
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = -1
 		y = 1
@@ -790,6 +857,7 @@ focus_tree = {
 	focus = {
 		id = REB_the_army_of_freedom
 		icon = GFX_WIP_focus
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = 1
 		y = 1
@@ -823,6 +891,7 @@ focus_tree = {
 	focus = {
 		id = REB_rallying_alliance_members
 		icon = GFX_reb_ralling_alliance_members_goal
+		text_icon = REPUBLIC_focus_style
 		relative_position_id = REB_prepare_for_reclamation
 		x = 0
 		y = 2
@@ -852,6 +921,7 @@ focus_tree = {
 	focus = {
 		id = REB_the_republic_reborn_a
 		icon = GFX_republic_reborn
+		text_icon = REPUBLIC_focus_style
 		x = 8
 		y = 5
 		cost = 7.2
@@ -864,6 +934,7 @@ focus_tree = {
 			NOT={has_idea = REB_centralisation_unrest}
 			has_idea = REB_new_republic_special_forces
 			has_idea = REB_reorganised_fleet
+			has_completed_focus = REB_rebuild_rogue_squadron
 		}
 		prerequisite = { focus = REB_the_alliance_of_free_planets  }
 		completion_reward = {
@@ -875,6 +946,32 @@ focus_tree = {
 				set_capital = {
 					state = 235
 					remember_old_capital = no
+				}
+			}
+			for_each_scope_loop = {
+				array = Global.rep_populists
+				if = {
+					limit = {
+						NOT = { is_in_faction_with = REB }
+						NOT={tag = REB}
+						is_subject = no
+					}
+					REB={
+						add_to_faction = PREV
+					}
+				}
+			}
+			for_each_scope_loop = {
+				array = Global.rep_centrists
+				if = {
+					limit = {
+						NOT = { is_in_faction_with = REB }
+						NOT={tag = REB}
+						is_subject = no
+					}
+					REB={
+						add_to_faction = PREV
+					}
 				}
 			}
 			#set_power_balance = {

@@ -38,19 +38,6 @@ set_technology = {
 	a_wing = 1
 }
 
-284 = {
-	set_variable = { building_1 = token:kuat_rings }
-}
-65 = {
-	set_variable = { building_1 = token:kuat_rings }
-}
-287 = {
-	set_variable = { building_1 = token:kuat_rings }
-}
-56 = {
-	set_variable = { building_1 = token:kuat_rings }
-}
-
 add_ideas = {
 	development_4
 	reb_influence_1

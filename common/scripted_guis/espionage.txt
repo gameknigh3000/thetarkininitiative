@@ -8,6 +8,31 @@ scripted_gui = {
 			always = yes
 		}
 		triggers = {
+			agent_Background_cover_visible = {
+				NOT = {
+					check_variable = {agent_maximum_total > 0}
+				}
+			}
+			agent_2_Background_cover_visible = {
+				NOT = {
+					check_variable = {agent_maximum_total > 1}
+				}
+			}
+			agent_3_Background_cover_visible = {
+				NOT = {
+					check_variable = {agent_maximum_total > 2}
+				}
+			}
+			agent_4_Background_cover_visible = {
+				NOT = {
+					check_variable = {agent_maximum_total > 3}
+				}
+			}
+			agent_5_Background_cover_visible = {
+				NOT = {
+					check_variable = {agent_maximum_total > 4}
+				}
+			}
 			espionage_mission_1_select_mission_visible = {
 				NOT = {
 					has_variable = mission_identifier_1
@@ -68,8 +93,43 @@ scripted_gui = {
 					has_idea = espionage_mission_5_progress
 				}
             }
+			character_border_1_click_enabled = {
+				check_variable = {agent_maximum_total > 0}
+			}
+			character_border_2_click_enabled = {
+				check_variable = {agent_maximum_total > 1}
+			}
+            character_border_3_click_enabled = {
+				check_variable = {agent_maximum_total > 2}
+            }
+			character_border_4_click_enabled = {
+				check_variable = {agent_maximum_total > 3}
+            }
+			character_border_5_click_enabled = {
+				check_variable = {agent_maximum_total > 4}
+            }
 		}
 		effects = {
+			espionage_missions_1_get_rid_of_click = {
+				set_temp_variable = {agent_slot_number = 1}
+				agent_death_effect = yes
+			}
+			espionage_missions_2_get_rid_of_click = {
+				set_temp_variable = {agent_slot_number = 2}
+				agent_death_effect = yes
+			}
+			espionage_missions_3_get_rid_of_click = {
+				set_temp_variable = {agent_slot_number = 3}
+				agent_death_effect = yes
+			}
+			espionage_missions_4_get_rid_of_click = {
+				set_temp_variable = {agent_slot_number = 4}
+				agent_death_effect = yes
+			}
+			espionage_missions_5_get_rid_of_click = {
+				set_temp_variable = {agent_slot_number = 5}
+				agent_death_effect = yes
+			}
 			espionage_target_nation_1_click = {
 				if = {
 					limit = {
@@ -465,41 +525,6 @@ scripted_gui = {
             #has_country_flag = operations_open
 			has_country_flag = operation_mission_selection
 		}
-		triggers = {
-			select_martial_missions_click_enabled = {
-				NOT = {
-					has_country_flag = martial_mission_box_open
-				}
-			}
-			select_intelligence_missions_click_enabled = {
-				NOT = {
-					has_country_flag = intelligence_mission_box_open
-				}
-			}
-			select_charisma_missions_click_enabled = {
-				NOT = {
-					has_country_flag = charisma_mission_box_open
-				}
-			}
-			Title_of_mission_intelligence_visible = {
-				has_country_flag = intelligence_mission_box_open
-			}
-			background_box_intelligence_visible = {
-				has_country_flag = intelligence_mission_box_open
-			}
-			background_box_charisma_visible = {
-				has_country_flag = charisma_mission_box_open
-			}
-			Title_of_mission_charisma_visible = {
-				has_country_flag = charisma_mission_box_open
-			}
-			background_box_martial_visible = {
-				has_country_flag = martial_mission_box_open
-			}
-			Title_of_mission_martial_visible = {
-				has_country_flag = martial_mission_box_open
-			}
-		}
 		effects = {
 			background_box_martial_click = {
 				if = {
@@ -507,7 +532,6 @@ scripted_gui = {
 						has_country_flag = operation_selection_slot_1
 					}
 					set_variable = {mission_identifier_1 = global.espionage_mission_martial_missions^i}
-					log = "Tried Set"
 				}else_if = {
 					limit = {
 						has_country_flag = operation_selection_slot_2
@@ -608,23 +632,50 @@ scripted_gui = {
 				set_country_flag = charisma_mission_box_open
 			}
 		}
-		dynamic_lists = {
-            martial_mission_gridbox = {
-                array = global.espionage_mission_martial_missions
-                entry_container = martial_espionage_mission_boxes
-                change_scope = no
-            }
-			intelligence_mission_gridbox = {
-                array = global.espionage_mission_intelligence_missions
-                entry_container = intelligence_espionage_mission_boxes
-                change_scope = no
-            }
-			charisma_mission_gridbox = {
-                array = global.espionage_mission_charisma_missions
-                entry_container = charisma_espionage_mission_boxes
-                change_scope = no
-            }
-        }
+		triggers = {
+			select_martial_missions_click_enabled = {
+				NOT = {
+					has_country_flag = martial_mission_box_open
+				}
+			}
+			select_intelligence_missions_click_enabled = {
+				NOT = {
+					has_country_flag = intelligence_mission_box_open
+				}
+			}
+			select_charisma_missions_click_enabled = {
+				NOT = {
+					has_country_flag = charisma_mission_box_open
+				}
+			}
+		}
+	}
+	espionage_mission_military = {
+		context_type = player_context
+		parent_window_name = "espionage_mission_selection"
+        window_name = "espionage_mission_military"
+		visible = {
+            #has_country_flag = operations_open
+			has_country_flag = martial_mission_box_open
+		}
+	}
+	espionage_mission_intelligence = {
+		context_type = player_context
+		parent_window_name = "espionage_mission_selection"
+        window_name = "espionage_mission_intelligence"
+		visible = {
+            #has_country_flag = operations_open
+			has_country_flag = intelligence_mission_box_open
+		}
+	}
+	espionage_mission_charisma = {
+		context_type = player_context
+		parent_window_name = "espionage_mission_selection"
+        window_name = "espionage_mission_charisma"
+		visible = {
+            #has_country_flag = operations_open
+			has_country_flag = charisma_mission_box_open
+		}
 	}
 	espionage_agent_recruitment_screen = {
 		context_type = player_context
@@ -1094,11 +1145,9 @@ scripted_gui = {
 		}
 		effects = {
 			member_flag_click = {
-				log = "Got here"
 				meta_effect = {
 					text = {
 						set_variable = { ROOT.targeted_country_slot_[WHAT_SLOT_IT_IS]  = This.id}
-						log = "targeted_country_slot_[WHAT_SLOT_IT_IS]"
 					}
 					WHAT_SLOT_IT_IS = "[?ROOT.what_espionage_slot]"
 				}

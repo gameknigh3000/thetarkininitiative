@@ -28,12 +28,20 @@ spriteTypes = {
 		textureFile = "gfx/interface/espionage/guild_screen.dds"
 	}
 	SpriteType = {
+		name = "GFX_agent_selection_screen"
+		textureFile = "gfx/interface/espionage/agent_selection_screen.dds"
+	}
+	SpriteType = {
 		name = "GFX_scrap_button"
 		textureFile = "gfx/interface/espionage/scrap_button.dds"
 	}
 	SpriteType = {
 		name = "GFX_initiate_button"
 		textureFile = "gfx/interface/espionage/initiate_button.dds"
+	}
+	SpriteType = {
+		name = "GFX_espionage_agent_cover"
+		textureFile = "gfx/interface/espionage/espionage_agent_cover.dds"
 	}
 ## TRAIT GFXES
 	## CLASS TRAITS
@@ -147,6 +155,62 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_agent_photo_polo_lye"
 		textureFile = "gfx/interface/espionage/Espionage_character_pictures/polo_lye.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_arkhan_bremtu"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/Arkhan_Bremtu.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_din"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/din.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_durge"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/durge.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_embo"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/embo.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_just_lucky"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/just_lucky.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_mak_eshkarey"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/mak_eshkarey.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_ota"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/ota.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_polo_selab"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/polo_selab.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_shady_pers"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/shady_pers.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_sidon_ithano"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/sidon_ithano.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_chewbacca"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/chewbacca.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_tenaar_bel"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/tenaar_bel.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_thweek"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/thweek.dds"
+	}
+	SpriteType = {
+		name = "GFX_agent_photo_vendri_deralm"
+		textureFile = "gfx/interface/espionage/Espionage_character_pictures/vendri_deralm.dds"
 	}
 ##
 	SpriteType = {
@@ -396,6 +460,70 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_test_coloured"
 		textureFile = "gfx/interface/espionage/Rectangle_10_coloured.dds"
+	}
+	SpriteType = {
+		name = "GFX_army_training_mission"
+		textureFile = "gfx/interface/espionage/Missions/army_training.dds"
+	}
+	SpriteType = {
+		name = "GFX_assassinate_officer_mission"
+		textureFile = "gfx/interface/espionage/Missions/assassinate_officer.dds"
+	}
+	SpriteType = {
+		name = "GFX_destroy_capital_ships_mission"
+		textureFile = "gfx/interface/espionage/Missions/destroy_capital_ships.dds"
+	}
+	SpriteType = {
+		name = "GFX_industrial_sabotage_mission"
+		textureFile = "gfx/interface/espionage/Missions/industrial_sabotage.dds"
+	}
+	SpriteType = {
+		name = "GFX_kidnapping_mission"
+		textureFile = "gfx/interface/espionage/Missions/kidnapping.dds"
+	}
+	SpriteType = {
+		name = "GFX_logistics_sabotage_mission"
+		textureFile = "gfx/interface/espionage/Missions/logistics_sabotage.dds"
+	}
+	SpriteType = {
+		name = "GFX_steal_blueprint_mission"
+		textureFile = "gfx/interface/espionage/Missions/steal_blueprint.dds"
+	}
+	SpriteType = {
+		name = "GFX_steal_equipment_mission"
+		textureFile = "gfx/interface/espionage/Missions/steal_equipment.dds"
+	}
+	SpriteType = {
+		name = "GFX_weapons_smuggling_mission"
+		textureFile = "gfx/interface/espionage/Missions/weapons_smuggling.dds"
+	}
+	SpriteType = {
+		name = "GFX_market_crash"
+		textureFile = "gfx/interface/espionage/Missions/market_crash.dds"
+	}
+	SpriteType = {
+		name = "GFX_reroute_supply_mission"
+		textureFile = "gfx/interface/espionage/Missions/reroute_supply.dds"
+	}
+	SpriteType = {
+		name = "GFX_sprout_disease_mission"
+		textureFile = "gfx/interface/espionage/Missions/sprout_disease.dds"
+	}
+	SpriteType = {
+		name = "GFX_blow_up_industry_mission"
+		textureFile = "gfx/interface/espionage/Missions/blow_up_industry.dds"
+	}
+	SpriteType = {
+		name = "GFX_infiltrate_military_mission"
+		textureFile = "gfx/interface/espionage/Missions/infiltrate_military.dds"
+	}
+	SpriteType = {
+		name = "GFX_intimidate_senator_mission"
+		textureFile = "gfx/interface/espionage/Missions/intimidate_senator.dds"
+	}
+	SpriteType = {
+		name = "GFX_market_crash_mission"
+		textureFile = "gfx/interface/espionage/Missions/market_crash.dds"
 	}
 	progressbartype = {
 	   name = "GFX_espionage_progress_bar"

@@ -15,6 +15,11 @@
 	}
 
 	shared_focus = ae_our_planet
+	shared_focus = REB_the_warlord_crisis
+	shared_focus = REB_new_republic_defense_forces
+	shared_focus = REB_new_republic_economy
+	shared_focus = REB_new_republic_research
+	shared_focus = REB_new_republic_intelligence
 
 	###############################################################################
 	############################ Base, Pick a Faction #############################

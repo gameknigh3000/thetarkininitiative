@@ -1,8 +1,137 @@
+## LIST OF ALL BASE BUILDING TOKENS
+
+## FACTORY BUILDING
+	#arms_factory_1
+	#soft_arms_factory_1
+	#soft_arms_factory_2
+	#tank_factory_1
+	#tank_factory_2
+
+## Starfighter Building
+	#starfighter_factory_1
+	#starfighter_factory_2
+	#starfighter_factory_3
+	#starbomber_factory_1
+	#starbomber_factory_2
+
+## SHIPYARD	
+	#light_shipyard_1
+	#light_shipyard_2
+	#light_shipyard_3
+	#medium_shipyard_1
+	#medium_shipyard_2
+	#heavy_shipyard_1
+
+## TRAINING BUILDING
+	#training_facilities_1
+	#special_forces_training_facilities_1
+	#special_forces_training_facilities_2
+	#military_bootcamp_1
+	#military_bootcamp_2
+
+# INTELLIGENCE
+	#intelligence_center_1
+	#sensor_array_1
+	#sensor_array_2
+	#spy_academy_1
+	#spy_academy_2
+
+# RESEARCH
+	#research_center_1
+	#research_center_2
+	#research_center_3
+
+# MILITARY ACADEMY
+	#military_academy_1
+	#military_academy_2
+	#military_academy_3
+	#starfighter_academy_1
+	#admiralty_academy_1
+
+# TAXATION
+	#taxation_center_1
+	#taxation_center_2
+	#taxation_center_3
+
+# HOMESTEAD
+	#homestead_1
+	#homestead_2
+	#homestead_3
+
+# CORPORATE OFFICE
+	#corporate_office_1
+	#corporate_office_2
+	#corporate_office_3
+
+# RECYCLE
+	#recycle_center_1
+	#recycle_center_2
+	#recycle_center_3
+
+# SPICE
+	#spice_market_1
+	#spice_market_2
+	#spice_market_3
+
+# FUEL
+	#fuel_refinery_1
+	#fuel_refinery_2
+	#fuel_refinery_3
+
+# ANTI AIR
+	#anti_air_1
+	#anti_air_2
+	#anti_air_3
+
+
+
 ideas = {
+	country = {
+		no_building_to_allow_bigger_ships = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = MTG_naval_treaty_adherent
+			modifier = {
+				production_cost_max_isd_hull = 2000
+				production_cost_max_ship_hull_carrier = 2000
+				production_cost_max_ship_hull_cruiser = 2000
+				production_cost_max_ship_hull_heavy = 2000
+				production_cost_max_ship_hull_light = 2000
+				production_cost_max_ship_hull_submarine = 2000
+			}
+		}
+	}
 	hidden_ideas = {
 		### UNIQUE BUILDINGS
 		## LEAVE FIRST LEVEL WITHOUT THE 1 OTHERWISE EVERYTHING WILL BREAK
+		## ALL IDEAS AFTER FIRST CONTAIN TOOLTIP HOLDER REQUIRING DECOY TOOLTIP HOLDER FOR FIRST SINCE THATS THE NAME
+		## I.E.
+		cloud_city = { ## CONTAINS Cloud City LOCASTION FOR BUILDING HOVER WHEN BUILT
+			allowed = { always = no }
+		}
+		cloud_city_first_tt_localisation_holder = { ## CONTAINS adds 20 Rhydonium To State TT IN BUILDING CONSTRUCTION MENU
+			allowed = { always = no }
+		}
+		cloud_city_2 = { ## CONTAINS adds 30 Rhydonium To State TT IN BUILDING CONSTRUCTION MENU
+			allowed = { always = no }
+		}
+		cloud_city_3 = {  ## CONTAINS adds 50 Rhydonium To State TT IN BUILDING CONSTRUCTION MENU
+			allowed = { always = no }
+		}
+		## CLOUD CITY - FUEL INCREASES THROUGH SCRIPTED EFFECT
+
 		mastfarian_fuel = {
+			allowed = { always = no }
+		}
+		mastfarian_fuel_first_tt_localisation_holder = {
 			allowed = { always = no }
 		}
 		mastfarian_fuel_2 = {
@@ -11,8 +140,12 @@ ideas = {
 		mastfarian_fuel_3 = {
 			allowed = { always = no }
 		}
+		## MASTFARIAN FUEL - FUEL INCREASES THROUGH SCRIPTED EFFECT
 
 		beskar_mine = {
+			allowed = { always = no }
+		}
+		beskar_mine_first_tt_localisation_holder = {
 			allowed = { always = no }
 		}
 		beskar_mine_2 = {
@@ -21,18 +154,12 @@ ideas = {
 		beskar_mine_3 = {
 			allowed = { always = no }
 		}
-
-		cloud_city = {
-			allowed = { always = no }
-		}
-		cloud_city_2 = {
-			allowed = { always = no }
-		}
-		cloud_city_3 = {
-			allowed = { always = no }
-		}
+		## MASTFARIAN FUEL - ACTIVATES ON ACTION GIVING BESKAR WHEN PALPY FINSIHES THAT SYSTEM
 
 		theed_palace = {
+			allowed = { always = no }
+		}
+		theed_palace_first_tt_localisation_holder = {
 			allowed = { always = no }
 		}
 		theed_palace_2 = {
@@ -41,18 +168,12 @@ ideas = {
 		theed_palace_3 = {
 			allowed = { always = no }
 		}
-
-		jabbas_palace = {
-			allowed = { always = no }
-		}
-		jabbas_palace_2 = {
-			allowed = { always = no }
-		}
-		jabbas_palace_3 = {
-			allowed = { always = no }
-		}
+		## MASTFARIAN FUEL - FUEL INCREASES THROUGH SCRIPTED EFFECT
 
 		casino_catonica = {
+			allowed = { always = no }
+		}
+		casino_catonica_first_tt_localisation_holder = {
 			allowed = { always = no }
 		}
 		casino_catonica_2 = {
@@ -62,49 +183,470 @@ ideas = {
 			allowed = { always = no }
 		}
 
-
-
-		## Unique Buildings
 		hand_of_thrawn = {
 			allowed = { always = no }
 		}
+		hand_of_thrawn_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		hand_of_thrawn_2 = {
+			allowed = { always = no }
+		}
+		hand_of_thrawn_3 = {
+			allowed = { always = no }
+		}
+
+		corellian_shipyard = {
+			allowed = { always = no }
+		}
+		corellian_shipyard_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		corellian_shipyard_2 = {
+			allowed = { always = no }
+		}
+		corellian_shipyard_3 = {
+			allowed = { always = no }
+		}
+
 		vaders_castle = {
 			allowed = { always = no }
 		}
+		vaders_castle_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		vaders_castle_2 = {
+			allowed = { always = no }
+		}
+		vaders_castle_3 = {
+			allowed = { always = no }
+		}
+
+		
 		senate_building = {
 			allowed = { always = no }
 		}
-		kuat_rings = {
+		senate_building_first_tt_localisation_holder = {
 			allowed = { always = no }
 		}
+		senate_building_2 = {
+			allowed = { always = no }
+		}
+		senate_building_3 = {
+			allowed = { always = no }
+		}
+
+		
+		kuat_rings = {
+			allowed = { always = no }
+			equipment_bonus = {
+				isd_1 = {
+					build_cost_ic = -0.10 instant = yes
+				}
+				isd_2 = {
+					build_cost_ic = -0.10 instant = yes
+				}
+				isd_3 = {
+					build_cost_ic = -0.10 instant = yes
+				}
+				victory_1 = {
+					build_cost_ic = -0.10 instant = yes
+				}
+				victory_2 = {
+					build_cost_ic = -0.10 instant = yes
+				}
+			}
+		}
+		kuat_rings_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		kuat_rings_2 = {
+			allowed = { always = no }
+			equipment_bonus = {
+				isd_1 = {
+					build_cost_ic = -0.20 instant = yes
+				}
+				isd_2 = {
+					build_cost_ic = -0.20 instant = yes
+				}
+				isd_3 = {
+					build_cost_ic = -0.20 instant = yes
+				}
+				victory_1 = {
+					build_cost_ic = -0.20 instant = yes
+				}
+				victory_2 = {
+					build_cost_ic = -0.20 instant = yes
+				}
+			}
+		}
+		kuat_rings_3 = {
+			allowed = { always = no }
+			equipment_bonus = {
+				isd_1 = {
+					build_cost_ic = -0.30 instant = yes
+				}
+				isd_2 = {
+					build_cost_ic = -0.30 instant = yes
+				}
+				isd_3 = {
+					build_cost_ic = -0.30 instant = yes
+				}
+				victory_1 = {
+					build_cost_ic = -0.30 instant = yes
+				}
+				victory_2 = {
+					build_cost_ic = -0.30 instant = yes
+				}
+			}
+		}
+
+		
 		jabbas_palace = {
 			allowed = { always = no }
 		}
-		cloud_city = {
+		jabbas_palace_first_tt_localisation_holder = {
 			allowed = { always = no }
 		}
+		jabbas_palace_2 = {
+			allowed = { always = no }
+		}
+		jabbas_palace_3 = {
+			allowed = { always = no }
+		}
+
+		
 		palpatine_palace = {
 			allowed = { always = no }
 		}
-		kuat_rings = {
+		palpatine_palace_first_tt_localisation_holder = {
 			allowed = { always = no }
 		}
+		palpatine_palace_2 = {
+			allowed = { always = no }
+		}
+		palpatine_palace_3 = {
+			allowed = { always = no }
+		}
+
+		
 		yavin_temple = {
 			allowed = { always = no }
+			modifier = {
+				equipment_capture_factor = 0.10
+			}
+			targeted_modifier = {
+				tag = EMP
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = ZSJ
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = EOH
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = PEN
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = ERI
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
 		}
+		yavin_temple_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		yavin_temple_2 = {
+			allowed = { always = no }
+			modifier = {
+				equipment_capture_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = EMP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = ZSJ
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = EOH
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = PEN
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = ERI
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		yavin_temple_3 = {
+			allowed = { always = no }
+			modifier = {
+				equipment_capture_factor = 0.20
+			}
+			targeted_modifier = {
+				tag = EMP
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = ZSJ
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = EOH
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = PEN
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = ERI
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
+
+		
 		mustafar_works = {
 			allowed = { always = no }
 		}
+		mustafar_works_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		mustafar_works_2 = {
+			allowed = { always = no }
+		}
+		mustafar_works_3 = {
+			allowed = { always = no }
+		}
+
+		
 		ring_of_kafrene = {
 			allowed = { always = no }
 		}
+		ring_of_kafrene_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		ring_of_kafrene_2 = {
+			allowed = { always = no }
+		}
+		ring_of_kafrene_3 = {
+			allowed = { always = no }
+		}
+
+		
 		the_maw_station = {
 			allowed = { always = no }
 		}
+		the_maw_station_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		the_maw_station_2 = {
+			allowed = { always = no }
+		}
+		the_maw_station_3 = {
+			allowed = { always = no }
+		}
+
+		
 		the_wheel = {
 			allowed = { always = no }
 		}
-		## General Tile Blockers
+		the_wheel_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		the_wheel_2 = {
+			allowed = { always = no }
+		}
+		the_wheel_3 = {
+			allowed = { always = no }
+		}
+
+		mon_cala_shipyards = {
+			allowed = { always = no }
+		}
+		mon_cala_shipyards_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		mon_cala_shipyards_2 = {
+			allowed = { always = no }
+		}
+		mon_cala_shipyards_3 = {
+			allowed = { always = no }
+		}
+
+		kashyyyk_tree = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.08
+				conscription = 0.01
+			}
+		}
+		kashyyyk_tree_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		kashyyyk_tree_2 = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.12
+				industry_air_damage_factor = 0.1
+				conscription = 0.02
+			}
+		}
+		kashyyyk_tree_3 = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.15
+				industry_air_damage_factor = 0.15
+				conscription = 0.03
+			}
+		}
+
+		fondor_shipyard = {
+			allowed = { always = no }
+		}
+		fondor_shipyard_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		fondor_shipyard_2 = {
+			allowed = { always = no }
+		}
+		fondor_shipyard_3 = {
+			allowed = { always = no }
+		}
+		
+		bilbringi_station = {
+			allowed = { always = no }
+		}
+		bilbringi_station_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		bilbringi_station_2 = {
+			allowed = { always = no }
+		}
+		bilbringi_station_3 = {
+			allowed = { always = no }
+		}
+
+		palpatine_palace = {
+			allowed = { always = no }
+		}
+		palpatine_palace_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		palpatine_palace_2 = {
+			allowed = { always = no }
+		}
+		palpatine_palace_3 = {
+			allowed = { always = no }
+		}
+
+		mount_tantiss = {
+			allowed = { always = no }
+		}
+		mount_tantiss_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		mount_tantiss_2 = {
+			allowed = { always = no }
+		}
+		mount_tantiss_3 = {
+			allowed = { always = no }
+		}
+
+		korriban_temple = {
+			allowed = { always = no }
+		}
+		korriban_temple_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		korriban_temple_2 = {
+			allowed = { always = no }
+		}
+		korriban_temple_3 = {
+			allowed = { always = no }
+		}
+
+		jeddah_temple = {
+			allowed = { always = no }
+		}
+		jeddah_temple_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		jeddah_temple_2 = {
+			allowed = { always = no }
+		}
+		jeddah_temple_3 = {
+			allowed = { always = no }
+		}
+
+		sluis_van = {
+			allowed = { always = no }
+		}
+		sluis_van_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		sluis_van_2 = {
+			allowed = { always = no }
+		}
+		sluis_van_3 = {
+			allowed = { always = no }
+		}
+
+		malastare_fuel = {
+			allowed = { always = no }
+		}
+		malastare_fuel_first_tt_localisation_holder = {
+			allowed = { always = no }
+		}
+		malastare_fuel_2 = {
+			allowed = { always = no }
+		}
+		malastare_fuel_3 = {
+			allowed = { always = no }
+		}
+
+
+		imperial_refinery = {
+			allowed = { always = no }
+		}
+
+		imperial_refinery_positive = {
+			allowed = { always = no }
+		}
+		imperial_refinery_positive_first_localisation_holder = {
+			allowed = { always = no }
+		}
+		imperial_refinery_positive_2 = {
+			allowed = { always = no }
+		}
+		imperial_refinery_positive_3 = {
+			allowed = { always = no }
+		}
+
+
+	## General Tile Blockers
 		untamed_jungle = {
 			allowed = { always = no }
 		}
@@ -132,9 +674,12 @@ ideas = {
 		snow_area = {
 			allowed = { always = no }
 		}
+		rolling_mountains = {
+			allowed = { always = no }
+		}
 
 
-		#### UNIQUE TILE BLOCKERS
+		#### UNIQUE TILE BLOCKERS - IF YOU WANT A UNIQUE TILE BLOCKER FOR YOUR NATION THAT ISNT REMOVED VIA FOCUS, ASK NEVERFIRE IMPLEMENT THAT AND HE WILL DO IT
 		glassed_surface = {
 			allowed = { always = no }
 		}
@@ -147,9 +692,6 @@ ideas = {
 		shadowlands_spiders = {
 			allowed = { always = no }
 		}
-		imperial_refinery = {
-			allowed = { always = no }
-		}
 
 		## MILITARY BUILDINGS
 		#add_state_modifier = {
@@ -157,7 +699,7 @@ ideas = {
 		#		local_resources = 2.0
 		#	}
 		#}
-		building_shipyard_1 = {
+		light_shipyard_1 = {
 			allowed = { always = no }
 		}
 		light_shipyard_2 = {
@@ -172,7 +714,7 @@ ideas = {
 				production_cost_max_ship_hull_light = -0.25
 			}
 		}
-		medium_shipyard_2 = {
+		medium_shipyard_1 = {
 			allowed = { always = no }
 			modifier = {	
 				production_cost_max_ship_hull_light = -0.05
@@ -180,7 +722,7 @@ ideas = {
 				production_cost_max_ship_hull_heavy = -0.05
 			}
 		}
-		medium_shipyard_3 = {
+		medium_shipyard_2 = {
 			allowed = { always = no }
 			modifier = {
 				production_cost_max_ship_hull_light = -0.10
@@ -188,7 +730,7 @@ ideas = {
 				production_cost_max_ship_hull_heavy = -0.10
 			}
 		}
-		heavy_shipyard_3 = {
+		heavy_shipyard_1 = {
 			allowed = { always = no }
 			modifier = {	
 				production_cost_max_ship_hull_carrier = -0.25
@@ -204,7 +746,7 @@ ideas = {
 			}
 
 		}
-		soft_arms_factory_2 = {
+		soft_arms_factory_1 = {
 			allowed = { always = no }
 			equipment_bonus = {
 				infantry_equipment = {
@@ -221,7 +763,7 @@ ideas = {
 				}
 			}
 		}
-		soft_arms_factory_3 = {
+		soft_arms_factory_2 = {
 			allowed = { always = no }
 			equipment_bonus = {
 				infantry_equipment = {
@@ -238,7 +780,7 @@ ideas = {
 				}
 			}
 		}
-		tank_factory_2 = {
+		tank_factory_1 = {
 			allowed = { always = no }
 			equipment_bonus = {
 				at_at_chassis = {
@@ -268,7 +810,7 @@ ideas = {
 				t4_b_chassis = {
 					build_cost_ic = -0.15
 				}
-				t1_b_chassis = {
+				t2_b_chassis = {
 					build_cost_ic = -0.15
 				}
 				t1_c_chassis = {
@@ -294,7 +836,7 @@ ideas = {
 				}
 			}
 		}
-		tank_factory_3 = {
+		tank_factory_2 = {
 			allowed = { always = no }
 			equipment_bonus = {
 				at_at_chassis = {
@@ -324,7 +866,7 @@ ideas = {
 				t4_b_chassis = {
 					build_cost_ic = -0.25
 				}
-				t1_b_chassis = {
+				t2_b_chassis = {
 					build_cost_ic = -0.25
 				}
 				t1_c_chassis = {
@@ -482,7 +1024,7 @@ ideas = {
 				}
 			}
 		}
-		starbomber_factory_2 = {
+		starbomber_factory_1 = {
 			allowed = { always = no }
 			equipment_bonus = {
 				star_fortress_airframe = {
@@ -505,7 +1047,7 @@ ideas = {
 				}
 			}
 		}
-		starbomber_factory_3 = {
+		starbomber_factory_2 = {
 			allowed = { always = no }
 			equipment_bonus = {
 				star_fortress_airframe = {
@@ -546,25 +1088,25 @@ ideas = {
 				experience_gain_army_unit_factor = 0.2
 			}
 		}
-		special_forces_training_2 = {
+		special_forces_training_facilities_1 = {
 			allowed = { always = no }
 			modifier = {
 				special_forces_cap = 0.2
 			}
 		}
-		special_forces_training_3 = {
+		special_forces_training_facilities_2 = {
 			allowed = { always = no }
 			modifier = {
 				special_forces_cap = 0.4
 			}
 		}
-		military_bootcamp_2 = {
+		military_bootcamp_1 = {
 			allowed = { always = no }
 			modifier = {
 				experience_gain_army_unit_factor = 0.4
 			}
 		}
-		military_bootcamp_3 = {
+		military_bootcamp_2 = {
 			allowed = { always = no }
 			modifier = {
 				experience_gain_army_unit_factor = 0.6
@@ -573,26 +1115,26 @@ ideas = {
 
 		### GOVERMENT BUILDINGS
 
-		intelligence_centre_1 = {
+		intelligence_center_1 = {
 			allowed = { always = no }
 			modifier = {
 				espionage_success_chance = 0.05
 			}
 		}
-		monitoring_beacon_2 = {
+		sensor_array_1 = {
 			allowed = { always = no }
 		}
-		monitoring_beacon_3 = {
+		sensor_array_2 = {
 			allowed = { always = no }
 		}
-		spy_academy_2 = {
+		spy_academy_1 = {
 			allowed = { always = no }
 			modifier = {
 				espionage_success_chance = 10
 				espionage_agent_survivability = 5
 			}
 		}
-		spy_academy_3 = {
+		spy_academy_2 = {
 			allowed = { always = no }
 			modifier = {
 				espionage_success_chance = 15
@@ -623,78 +1165,44 @@ ideas = {
 			allowed = { always = no }
 			modifier = {
 				experience_gain_army_factor = 0.12
-			}
-			on_add = {
-				all_unit_leader = {
-					experience_gain_factor = 0.1
-				} 
-			}
-			on_remove = {
-				all_unit_leader = {
-					experience_gain_factor = -0.1
-				}
+				experience_gain_factor = 0.1
+
 			}
 		}
-		military_college_2 = {
+		military_academy_2 = {
 			allowed = { always = no }
 			modifier = {
 				experience_gain_army_factor = 0.24
 				experience_gain_army = 0.10
-			}
-			on_add = {
-				all_army_leader = {
-					experience_gain_factor = 0.3
-				} 
-			}
-			on_remove = {
-				all_army_leader = {
-					experience_gain_factor = -0.3
-				}
+				experience_gain_factor = 0.20
 			}
 		}
-		military_college_3 = {
+		military_academy_3 = {
 			allowed = { always = no }
 			modifier = {
 				experience_gain_army_factor = 0.36
 				experience_gain_army = 0.15
-			}
-			on_add = {
-				all_army_leader = {
-					experience_gain_factor = 0.6
-				} 
-			}
-			on_remove = {
-				all_army_leader = {
-					experience_gain_factor = -0.6
-				}
+				experience_gain_factor = 0.40
 			}
 		}
-		naval_academy_2 = {
+		naval_academy_1 = {
 			allowed = { always = no }
 			modifier = {
 				experience_gain_navy_factor = 0.24
 				experience_gain_navy = 0.10
-			}
-			on_add = {
-				all_navy_leader = {
-					experience_gain_factor = 0.3
-				} 
-			}
-			on_remove = {
-				all_navy_leader = {
-					experience_gain_factor = -0.3
-				}
+				experience_gain_factor = 0.2
 			}
 		}
-		starfighter_academy_3 = {
+		starfighter_academy_1 = {
 			allowed = { always = no }
 			modifier = {
 				air_ace_bonuses_factor = 0.3
 				experience_gain_air_factor = 0.24
 				experience_gain_air = 0.10
+				air_ace_generation_chance_factor = 0.25
 			}
 		}
-		naval_academy_3 = {
+		admiralty_academy_1 = {
 			allowed = { always = no }
 			modifier = {
 				experience_gain_navy_factor = 0.36
@@ -786,5 +1294,21 @@ ideas = {
 		fuel_refinery_3 = {
 			allowed = { always = no }
 		}
+		
+		## PRIMITIVE BUILDINGS
+
+		primitive_farm = {
+			allowed = { always = no }
+		}
+		primitive_resource_extraction = {
+			allowed = { always = no }
+		}
+		primitive_offices = {
+			allowed = { always = no }
+		}
+		primitive_industry = {
+			allowed = { always = no }
+		}
 	}
 }
+

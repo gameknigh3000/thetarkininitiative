@@ -22,6 +22,9 @@ Assassination_mission:0 "§YOfficer Assassination§!\nAn undercover agent in the
 # Mission_title_:0 
 # ##
 
+
+recruit_agent_tooltip_focuses:0 "Recruits Agent: §Y[?supplied_agent_name.GetTokenLocalizedKey]§!"
+
 Mission_reward_assassination:0 "Man is dead" ## What the reward of the mission is
 Mission_phase_3_assassination:0 "man got whacked" ## phase 3
 Mission_phase_2_assassination:0 "Man got scouted" ## Phase 2 
@@ -237,7 +240,7 @@ espionage_unsuccessful_mission_happened_to_you:0 "A [get_mission_title] Mission 
 espionage_critical_successful_mission_happened_to_you:0 "A [get_mission_title] Mission was criticaly successful targeting your country"
 espionage_critical_unsuccessful_mission_happened_to_you:0 "A [get_mission_title] Mission was criticaly unsuccessful targeting your country"
 
-espionage_portrait_slot_1_localisation:0 "§[?description_var.GetTokenLocalizedKey]"
+espionage_portrait_slot_1_localisation:0 "[?description_var.GetTokenLocalizedKey]"
 espionage_portrait_slot_2_localisation:0 "[?description_var.GetTokenLocalizedKey]"
 espionage_portrait_slot_3_localisation:0 "[?description_var.GetTokenLocalizedKey]"
 
@@ -250,33 +253,43 @@ polo_lye:0 "Polo Lye"
 polo_lye_desc:0 "Polos a sweetheart"
 orion_voss:0 "Orion Voss"
 orion_voss_desc:0 "Orion Voss shot vader"
+mak_eshkarey:0 "Mak Eshka'rey"
+thweek:0 "Thweek"
+tenaar_bel:0 "Tendaar Bel"
+ota:0 "Ota"
+embo:0 "Embo"
+din:0 "Din Djarin"
+chord_syfon:0 "Ch'ord Sy'fon"
+just_lucky:0 "Just Lucky"
+chewbacca:0 "Chewbacca"
+
 ## PERSONALITY TRAIT TT (exact same as idea)
-arrogant:0 "Arrogant"
-cautious:0 "Cautious"
-cheapskate:0 "Cheapskate"
-clumsy:0 "Clumsy"
-escape_artist:0 "Escape Artist"
-famous:0 "Famous"
-martial_artist:0 "Martial Artist"
-naive:0 "Naive"
-observant:0 "Observant"
+arrogant:0 "§YArrogant§! \n  Mission Speed Modifier: §R-10%§!\n  Mission Critical Failure Chance: §R+10%§!"
+cautious:0 "§YCautious§! \n  Mission Speed Modifier: §R-10%§!"
+cheapskate:0 "§YCheapskate§! \n  Mission Cost Modifier: §G-10%§!"
+clumsy:0 "§YClumsy§! \n  Mission Failure Chance: §R+5%§"
+escape_artist:0 "§YEscape Artist§! \n  Mission Critical Failure Chance: §G-10%§!"
+famous:0 "§YFamous§! \n  Charisma Score Bonus: §G+2§!"
+martial_artist:0 "§YMartial Artist§! \n  Martial Score Bonus: §G+1§!"
+naive:0 "§YNaive§!"
+observant:0 "§YObservant§! \n  Intelligence Score Bonus: §G+1§! \n  Mission Critical Failure Chance: §G-10%§!"
 ## CLASS TRAIT TT (exact same as idea)
-assassin:0 "Assassin"
-bounty_hunter:0 "Bounty Hunter"
-counter_intelligence_officer:0 "Counter Intelligence Officer"
-information_broker:0 "Information Broker"
-pirate:0 "Pirate"
-slicer:0 "Slicer"
-smuggler:0 "Smuggler"
-vigo:0 "Vigo"
-saboteur:0 "Saboteur"
+assassin:0 "§YAssassin§! \n  Assassination Success Chance §G+5%§! \n  Infiltrate Military Success Chance §G+5%§! \n Plant Sleeper Agent Success Chance §G+5%§!"
+bounty_hunter:0 "§YBounty Hunter§! \n  Random Success Chance §G+5%§! \n  Intimidate Senator Success Chance §G+5%§!"
+counter_intelligence_officer:0 "§YCounter Intelligence Officer§! \n  Counter Intelligence Chance §G+5%§!"
+information_broker:0 "§YInformation Broker§! \n  Intimidate Senator Success Chance §G+5%§! \n  Industrial Sabotage Success Chance §G+5%§! \n  Steal Blueprint Success Chance §G+5%§!"
+pirate:0 "§YPirate§! \n  Smuggle Slaves Success Chance §G+5%§! \n  Free Slaves Success Chance §G+5%§! \n  Reroute Supply Success Chance  §G+5%§!"
+slicer:0 "§YSlicer§! \n  Cyber Attack Success Chance §G+5%§! \n  Steal Blueprint Success Chance §G+5%§! \n  Market Crash Success Chance §G+5%§!"
+smuggler:0 "§YSmuggler§! \n  Smuggle Slaves Success Chance §G+5%§!  \n  Reroute Supply Success Chance  §G+5%§! \n  Steal Equipment Success Chance  §G+5%§!"
+vigo:0 "§YVigo§! \n  "
+saboteur:0 "§YSaboteur§! \n  Arm Dissadents Success Chance §G+5%§! \n  Logistics Sabotage Success Chance §G+5%§! \n  Destroy Capital Ship Success Chance §G+5%§!"
 ## RACE TRAIT TT (exact same as idea)
-bothan:0 "Bothan"
-chiss:0 "Chiss"
-falleen:0 "Falleen"
-kubaz:0 "Kubaz"
-mando:0 "Mandalorian"
-zeltros:0 "Zeltros"
+bothan:0 "§YBothan§!"
+chiss:0 "§YChiss§!"
+falleen:0 "§YFalleen§!"
+kubaz:0 "§YKubaz§!"
+mando:0 "§YMandalorian§!"
+zeltros:0 "§YZeltros§!"
 
 ## MAIN HANDLERS
 personaility_slot_1_tt:0 "Personaility Trait: [?personality_trait_slot_1.GetTokenLocalizedKey]"
@@ -333,11 +346,11 @@ charisma_score_slot_3:0 "[?agent_charisma_slot_3]"
 charisma_score_slot_4:0 "[?agent_charisma_slot_4]"
 charisma_score_slot_5:0 "[?agent_charisma_slot_5]"
 
-character_name_slot_1:0 "[?agent_name_slot_1.GetTokenLocalizedKey]"
-character_name_slot_2:0 "[?agent_name_slot_2.GetTokenLocalizedKey]"
-character_name_slot_3:0 "[?agent_name_slot_3.GetTokenLocalizedKey]"
-character_name_slot_4:0 "[?agent_name_slot_4.GetTokenLocalizedKey]"
-character_name_slot_5:0 "[?agent_name_slot_5.GetTokenLocalizedKey]"
+character_name_slot_1:0 "§Y[?agent_name_slot_1.GetTokenLocalizedKey]§!"
+character_name_slot_2:0 "§Y[?agent_name_slot_2.GetTokenLocalizedKey]§!"
+character_name_slot_3:0 "§Y[?agent_name_slot_3.GetTokenLocalizedKey]§!"
+character_name_slot_4:0 "§Y[?agent_name_slot_4.GetTokenLocalizedKey]§!"
+character_name_slot_5:0 "§Y[?agent_name_slot_5.GetTokenLocalizedKey]§!"
 
 get_mission_title_1:0 "§Y[?mission_identifier_1.GetTokenLocalizedKey]§!"
 get_mission_title_2:0 "§Y[?mission_identifier_2.GetTokenLocalizedKey]§!"
@@ -353,6 +366,28 @@ get_martial_missions_title_gridbox:0 "§Y[?global.espionage_mission_martial_miss
 get_intelligence_missions_title_gridbox:0 "§Y[?global.espionage_mission_intelligence_missions^i.GetTokenLocalizedKey]§!"
 get_charisma_missions_title_gridbox:0 "§Y[?global.espionage_mission_charisma_missions^i.GetTokenLocalizedKey]§!"
 
-agent_recruitment_agent_1:0 "Name: [?agent_name_temporary_agent_1.GetTokenLocalizedKey]\nMartial Score: §R[?agent_martial_temporary_agent_1]§! \nCharisma Score: §Y[?agent_charisma_temporary_agent_1]§! \nIntelligence Score: §B[?agent_intelligence_temporary_agent_1]§! \nPersonality Trait: [?personality_trait_temporary_agent_1.GetTokenLocalizedKey] \nClass Trait: [?class_trait_temporary_agent_1.GetTokenLocalizedKey] \nRace Trait: [?race_trait_temporary_agent_1.GetTokenLocalizedKey]"
-agent_recruitment_agent_2:0 "Name: [?agent_name_temporary_agent_2.GetTokenLocalizedKey]\nMartial Score: §R[?agent_martial_temporary_agent_2]§! \nCharisma Score: §R[?agent_charisma_temporary_agent_2]§! \nIntelligence Score: §B[?agent_intelligence_temporary_agent_2]§! \nPersonality Trait: [?personality_trait_temporary_agent_2.GetTokenLocalizedKey] \nClass Trait: [?class_trait_temporary_agent_2.GetTokenLocalizedKey] \nRace Trait: [?race_trait_temporary_agent_2.GetTokenLocalizedKey]"
-agent_recruitment_agent_3:0 "Name: [?agent_name_temporary_agent_3.GetTokenLocalizedKey]\nMartial Score: §R[?agent_martial_temporary_agent_3]§! \nCharisma Score: §R[?agent_charisma_temporary_agent_3]§! \nIntelligence Score: §B[?agent_intelligence_temporary_agent_3]§! \nPersonality Trait: [?personality_trait_temporary_agent_3.GetTokenLocalizedKey] \nClass Trait: [?class_trait_temporary_agent_3.GetTokenLocalizedKey] \nRace Trait: [?race_trait_temporary_agent_3.GetTokenLocalizedKey]"
+agent_recruitment_agent_1:0 "Name: §Y[?agent_name_temporary_agent_1.GetTokenLocalizedKey]§!\n£martial_texticon  Martial Score: §R[?agent_martial_temporary_agent_1]§! \n£charismatic_texticon  Charisma Score: §Y[?agent_charisma_temporary_agent_1]§! \n£intelligence_texticon  Intelligence Score: §C[?agent_intelligence_temporary_agent_1]§! \nPersonality Trait: [?personality_trait_temporary_agent_1.GetTokenLocalizedKey] \nClass Trait: [?class_trait_temporary_agent_1.GetTokenLocalizedKey] \nRace Trait: [?race_trait_temporary_agent_1.GetTokenLocalizedKey]"
+agent_recruitment_agent_2:0 "Name: §Y[?agent_name_temporary_agent_2.GetTokenLocalizedKey]§!\n£martial_texticon  Martial Score: §R[?agent_martial_temporary_agent_2]§! \n£charismatic_texticon  Charisma Score: §Y[?agent_charisma_temporary_agent_2]§! \n£intelligence_texticon  Intelligence Score: §C[?agent_intelligence_temporary_agent_2]§! \nPersonality Trait: [?personality_trait_temporary_agent_2.GetTokenLocalizedKey] \nClass Trait: [?class_trait_temporary_agent_2.GetTokenLocalizedKey] \nRace Trait: [?race_trait_temporary_agent_2.GetTokenLocalizedKey]"
+agent_recruitment_agent_3:0 "Name: §Y[?agent_name_temporary_agent_3.GetTokenLocalizedKey]§!\n£martial_texticon  Martial Score: §R[?agent_martial_temporary_agent_3]§! \n£charismatic_texticon  Charisma Score: §Y[?agent_charisma_temporary_agent_3]§! \n£intelligence_texticon  Intelligence Score: §C[?agent_intelligence_temporary_agent_3]§! \nPersonality Trait: [?personality_trait_temporary_agent_3.GetTokenLocalizedKey] \nClass Trait: [?class_trait_temporary_agent_3.GetTokenLocalizedKey] \nRace Trait: [?race_trait_temporary_agent_3.GetTokenLocalizedKey]"
+
+army_training_mission_tt:0 "§YArmy Training§! \n Send out an agent to train the military of the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  Adds §Y1§! random §Ytrait§! to §Y3§! of the target countries §Ygenerals§!  \n §GSuccess§!: \n  Adds §Y1§! random §Ytrait§! to §Y1§! of the target countries §Ygenerals§! \n §RFailure§!: \n  Nothing Happens"
+
+sabotage_ship_tt:0 "§YSabotage Ship§! \n Send out an agent to destroy the flagship or another ship of the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  §RDestroy§! up to §Y2 carriers or battleships§! of the target country  \n §GSuccess§!: \n  §RDestroy§! a§Y carrier or battleship§! of the target country   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+steal_equipment_tt:0 "§YSteal Equipment§! \n Send out an agent to steal equipment from the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  §RSteal§! up to §Y7%§!  of the target countries §Yequipment§!  \n §GSuccess§!: \n  §RSteal§! up to §Y2%§!  of the target countries §Yequipment§!   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+arm_dissidents_tt:0 "§YArm Dissidents§! \n Send out an agent to arm dissidents in the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  Increase §RResistance§! in §Ynon-core states§! by §R40§! in the target country\n §GSuccess§!: \n  Increase §RResistance§! in §Ynon-core states§! by §R20§! in the target country   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+kidnapping_tt:0 "§YKidnapping§! \n Send out an agent to arm kidnap and ransom important figures in the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  Increase §RResistance§! in §Ynon-core states§! by §R40§! in the target country\n §GSuccess§!: \n  Increase §RResistance§! in §Ynon-core states§! by §R20§! in the target country   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+steal_blueprint_tt:0 "§YSteal Blueprint§! \n Send out an agent to steal a blueprint from the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  Steal §Y2§! §Cresearch bonuses§! from the target nation\n §GSuccess§!: \n  Steal §Y1§! §Cresearch bonus§! from the target nation   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+sprout_disease_tt:0 "§YSpread Disease§! \n Send out an agent to spread disease in the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  §RKills§! §Y150000§! manpower in the target nations capital\n §GSuccess§!: \n  §RKills§! §Y50000§! manpower in the target nations capital   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+sabotage_logistics_tt:0 "§YSabotage Logistics§! \n Send out an agent to sabotage logistics in the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  Reduces §Ysupply§! in the target country for §Y80 days§! \n §GSuccess§!: \n  Reduces §Ysupply§! in the target country for §Y40 days§!   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+infiltrate_military_tt:0 "§YSabotage Logistics§! \n Send out an agent to spy on the target countries military \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  Gain §Y60§! intel on each section of the target nations §Rmilitary§! \n §GSuccess§!: \n  Gain §Y30§! intel on each section of the target nations §Rmilitary§!   \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
+
+
+### WIP ###
+assassinate_mission_tt:0 "§YAssassination§! \n Send out an agent to assassinate a military official of the target nation \n§YPotential Outcomes§!:\n §OCritical Success§!: \n  §RKills§! §Y1§! random §YGeneral or Admiral§! \n §GSuccess§!: \n  §RInjures§! §Y1§! random §YGeneral or Admiral§! \n §RFailure§!: \n  The agent sent can potentially be §Rkilled§!"
